@@ -1,0 +1,58 @@
+<h1><a href="/"><img src="/images/logo.png" alt="app logo"></a></h1>
+
+<ul class="overview" ng-repeat = 'items in menuData.menuList'>
+    
+    <li ng-repeat= '(key, value) in items'>
+        <a ui-sref-active="active" ui-sref="app.{{key}}">{{value}}</a> 
+    </li>
+
+</ul>
+
+<!-- ul class="filter">
+
+    <li>
+        <h2 class="active"><a href="#">Project</a></h2>
+
+        <div>
+
+            <ul ng-repeat = 'pro in menuData.projectList'>
+                <li ng-repeat = '(key, value) in pro'><a href="#">{{value}}</a></li>
+            </ul>
+
+            <a class="add oi" href="#" data-glyph="plus" title="plus" aria-hidden="true">Add</a>
+
+        </div>
+
+    </li>
+    <li>
+
+        <h2><a href="#">Labels</a></h2>
+
+        <div>
+
+            <ul ng-repeat = 'prolabel in menuData.projectLabel'>
+                <li ng-repeat = '(key, value) in prolabel'><a href="#">{{value}}</a></li>
+            </ul>
+
+            <a class="add oi" href="#" data-glyph="plus" title="plus" aria-hidden="true">Add</a>
+
+        </div>
+
+    </li>
+    <li>
+        <h2><a href="#">Filter</a></h2>
+
+        <div>
+            <ul ng-repeat = 'profilter in menuData.projectFilter'>
+                <li ng-repeat = '(key, value) in profilter'><a href="#">{{value}}</a></li>
+            </ul>
+
+            <a class="add oi" href="#" data-glyph="plus" title="plus" aria-hidden="true">Add</a>
+
+        </div>
+
+    </li>
+
+</ul -->
+
+<p class="copy">&copy; coolwoc - 2015 </p>

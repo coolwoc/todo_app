@@ -1,0 +1,38 @@
+<h2 class="all">All Tasks</h2>
+<button class="btn addTask" ui-sref="app.create"><span class="oi" data-glyph="task" title="task" aria-hidden="true">Task</span></button>
+
+<!-- list of task -->
+<ul class="allTask">
+	<li ng-repeat= "task in todo.allTasks | pagination: todo.numberCurrent * todo.pageSize | limitTo: todo.pageSize">
+		<ul class="stamp">
+			<li>
+				<h3>{{task.project}}</h3>
+				<div>
+					<p class="date">{{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+					<p class="label">{{task.label}}</p>
+				</div>	
+			</li>
+		</ul>
+		<div class="info">
+			<h3>{{task.headerComment}}</h3>
+			<p class="comment">{{task.comment}}</p>
+		</div>
+		<ul class="editorial">
+			<li><a href="javascript:void(0)" ng-click="todo.editTask(task)"><span class="oi" data-glyph="pencil" title="pencil" aria-hidden="true">Edit</span></a></li>
+			<li><a href="javascript:void(0)" ng-click="todo.removeTask(task)"><span class="oi" data-glyph="trash" title="trash" aria-hidden="true">Remove</span></a></li>
+		</ul>
+	</li>
+</ul>
+<ul class="pagination">
+	<li>
+		<button class="btn" ng-disabled="todo.numberCurrent == 0" ng-click="todo.numberCurrent = todo.numberCurrent-1">
+			<span class="oi" data-glyph="chevron-left" title="chevron-left" aria-hidden="true">Prev</span>
+		</button>
+	</li>
+	<li><span class="pageCounter">{{todo.numberCurrent + 1}} of {{todo.numberOfPages() }}</span></li>
+	<li>
+		<button class="btn" ng-disabled="todo.numberCurrent >= todo.allTasks.length/todo.pageSize -1" ng-click="todo.numberCurrent = todo.numberCurrent+1">
+			<span class="oi" data-glyph="chevron-right" title="chevron-right" aria-hidden="true">Next</span>
+		</button>
+	</li>
+</ul>

@@ -1,0 +1,21 @@
+.utilities {
+	.closeMenu {
+		display: none;
+	}
+	.openMenu {
+		display: block;
+	}
+	ul  {
+		position: relative;
+		width: 340px;
+		float: right;
+		li {
+			width: auto;
+			font-weight: bold;
+			color: $white;
+		}
+		li:first-child {
+			padding: 8px 2px 4px 0;
+		}
+	}
+}

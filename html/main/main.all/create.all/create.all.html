@@ -1,0 +1,45 @@
+<div class="overlayWrapper">
+
+	<div class="taskForm">
+
+		<a class="close" ui-sref="app.all"><span class="oi" data-glyph="x" title="x" aria-hidden="true">Close</span></a>
+
+	    <form ng-submit="createTodo.createTask()" novalidate>
+	      
+	      <fieldset>
+
+	      	<legend><span class="oi" data-glyph="task" title="task" aria-hidden="true">Task</span></legend>
+	      	
+	      	<div class="formGroup">
+	            <label for="project">Project</label>
+	            <input type="text" id="project" name="project" ng-model="createTodo.project" placeholder="Add Project Name">
+	        </div>
+	        <div class="formGroup">
+	            <label for="label">Label Priority</label>
+	            <input type="text" id="label" name="label" ng-model="createTodo.label" placeholder="Choose priority: Low, medium or high">
+	        </div>
+	       	<div class="formGroup">
+	            <label for="name">User name</label>
+	            <input type="text" id="label" name="label" ng-model="createTodo.name" placeholder="Type User name">
+	        </div>
+	        <div class="formGroup">
+	            <label for="date">date</label>
+	            <input type="date" id="date" name="date" ng-model="createTodo.dateNum" placeholder="Type date">
+	        </div>
+	        <div class="formGroup">
+	            <label for="header">Task Header</label>
+	            <input type="text" id="header" name="header" ng-model="createTodo.headerComment" placeholder="Type Task Title">
+	        </div>
+			<div class="formGroup">
+	            <label for="description">Task Description</label>
+	            <input type="text" id="description" name="description" ng-model="createTodo.comment" placeholder="Type Task Description">
+	        </div>
+
+	        <button type="submit" class="btn">Create</button>
+	        <button type="button" class="btn" ng-click="createTodo.resetVal()">Reset</button>
+
+	      </fieldset>
+
+	    </form>
+	</div>
+</div>

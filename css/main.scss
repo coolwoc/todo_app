@@ -1,0 +1,26 @@
+/* Reset */
+@import 'partials/_reset.scss';
+
+/* fonts mixing and variables */
+@import 'partials/_font.scss';
+@import 'partials/_open-iconic.scss';
+@import 'partials/_colors.scss';
+@import 'partials/_palette.scss';
+@import 'partials/_button.scss';
+
+@import 'partials/_overlay.scss';
+
+/* layout */
+@import 'partials/_layout.scss';
+
+/* share modules */
+@import 'partials/_form.scss';
+@import 'partials/_pagination.scss';
+
+
+/* modules */
+@import 'modules/_menu.scss';
+@import 'modules/_content.scss';
+@import 'modules/_utilites.scss';
+@import 'modules/_main.scss';
+@import 'modules/_all.scss';

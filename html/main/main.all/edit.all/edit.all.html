@@ -1,0 +1,47 @@
+<div class="overlayWrapper">
+
+	<div class="taskForm">
+
+		<a class="close" ui-sref="app.all"><span class="oi" data-glyph="x" title="x" aria-hidden="true">Close</span></a>
+
+	    <form class="editForm" ng-submit="editTodo.editTask()" novalidate>
+	      
+	      <fieldset>
+
+	      	<legend><span class="oi" data-glyph="pencil" title="pencil" aria-hidden="true">Edit</span></legend>
+	      	
+	      	<div class="formGroup">
+	            <label for="project">Project: {{editTodo.task.project}}</label>
+	            <input type="text" id="project" name="project" ng-model="editTodo.task.project" placeholder="Use keyboard to edit project">
+	        </div>
+	        <div class="formGroup">
+	            <label for="label">Priority: {{editTodo.task.label}}</label>
+	            <input type="text" id="label" name="label" ng-model="editTodo.task.label" placeholder="Use keyboard to edit priorty">
+	        </div>
+	       	<div class="formGroup">
+	            <label for="name">User name: {{editTodo.task.name}}</label>
+	            <input type="text" id="label" name="label" ng-model="editTodo.task.name" placeholder="Use keyboard to edit name">
+	        </div>
+	        <div class="formGroup">
+	            <label for="date">date: {{editTodo.task.dateNum | date: 'dd-MM-yyyy'}}</label>
+	            <input type="date" id="date" name="date" ng-model="editTodo.task.dateNum" placeholder="Use Keyboard to edit date">
+	        </div>
+	        <div class="formGroup">
+	            <label for="header">Task Header: {{editTodo.task.headerComment}}</label>
+	            <input type="text" id="header" name="header" ng-model="editTodo.task.headerComment" placeholder="Use keyboard to edit header">
+	        </div>
+			<div class="formGroup">
+	            <label for="description">Description: {{editTodo.task.comment}}</label>
+	            <input type="text" id="description" name="description" ng-model="editTodo.task.comment" placeholder="Type Task Description">
+	        </div>
+
+	        <button type="submit" class="btn">Edit</button>
+	        <button type="button" class="btn" ng-click="createTodo.resetVal()">Reset</button>
+
+	      </fieldset>
+
+	    </form>
+
+	</div>
+	
+</div>

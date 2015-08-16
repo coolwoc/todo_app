@@ -1,0 +1,100 @@
+.menu {
+	h1 {
+		width: 100%;
+		background-color: $orange;
+		margin-bottom: 30px;
+	}
+	ul {
+		display: block;
+		width: 100%;
+		overflow: hidden;
+		padding: 20px 5px 20px 15px;
+		list-style-type: none;
+		li {
+			color: $black;
+			a {
+				color: $black;
+				text-decoration: none;
+				&:hover {
+					color: $orange;
+				}
+				&.active {
+					color: $orange;
+				}
+			}
+			div {
+				ul {
+					margin-bottom: 35px;
+				}
+				.add {
+					clear: both;
+					display: block;
+					font-size: 13px;
+					color: $darkGrey;
+					text-decoration: none;
+					&:hover {
+						color: $orange;
+					}
+				}
+			}
+		}
+	}
+	.overview {
+		li {
+			font-size: 15px;
+			padding-bottom: 5px;
+		}
+	}
+	.filter {
+		li {
+			float: left;
+			width: 33%;
+			h2 {
+				float: left;
+				width: 90%;
+				margin-bottom: 10px;
+				font-family: 'colaboratelightregular';
+				border-bottom: 1px solid $black;
+				&:hover,
+				&.active {
+					font-family: 'colaborate-regularregular';
+					border-bottom: 2px solid $black;
+				}
+				a {
+					width: 100%;
+					color: $black;
+					&:hover {
+						color: $black;
+						font-family: 'colaborate-regularregular';
+					}
+				}
+			}
+			div {
+				display: none;
+				ul {
+					li {
+						width: 100%;
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+		li:first-child {
+			div {
+				display: block;
+				ul {
+					padding: 0;
+					li {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+	.copy {
+		position: absolute;
+		left: 10px;
+		bottom: 15px;
+		font-size: 10px; 
+	}
+}
