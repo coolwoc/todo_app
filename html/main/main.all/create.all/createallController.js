@@ -34,13 +34,6 @@
 
 		var CreatetodoController = this;
 
-
-		/*
-		CreatetodoController.selectPriority = function() {
-			CreatetodoController.priority = Projectlabel.query();
-		}
-		*/
-
 		CreatetodoController.priority = Projectlabel.query();
 
 		CreatetodoController.createTask = function () {
