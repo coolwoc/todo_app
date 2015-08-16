@@ -15,8 +15,9 @@
 	            <input type="text" id="project" name="project" ng-model="createTodo.project" placeholder="Add Project Name">
 	        </div>
 	        <div class="formGroup">
-	            <label for="label">Label Priority</label>
-	            <input type="text" id="label" name="label" ng-model="createTodo.label" placeholder="Choose priority: Low, medium or high">
+	        	<label for="priority">Choose Priority</label>
+	            <select ng-model="priority" ng-name="priority" ng-options="k as v for (k,v) in createTodo.priority[0]">
+	            </select>
 	        </div>
 	       	<div class="formGroup">
 	            <label for="name">User name</label>

@@ -154,11 +154,12 @@
     
     <div class="wrapper">
         
-        <div ng-controller="AvengersCtrl as actor">
+        <div ng-controller="selectController as data">
 
             <form>
-
+            {{data.items}}
                 <fieldset>
+                    <select ng-model="selectItem" ng-options='k as v for (k,v) in items[0]'></select>
                     <label>Name:</label>
                     <input type="text" placeholder="Use keyboard and type your name" ng-model="actor.name" />
                     <label>Character:</label>
@@ -177,7 +178,6 @@
 
                 <ul class="show">
                     
-                    <!--li ng-repeat="cast in actor.actorpost | orderBy: id | filter: search | pagination: actor.numberCurrent * actor.pageSize | limitTo: actor.pageSize" -->
                     
                     <li ng-repeat="cast in actor.actorpost">
 
@@ -190,12 +190,6 @@
                     
                 </ul>
 
-                <!--ul class="pagination">
-                    
-                    <li><a href="javascript:void(0);" ng-disable="actor.numberCurrent == 0" ng-click="actor.numberCurrent = actor.numberCurrent-1"> &lt; Prev </a></li>
-                    <li><span class="pagCounter">Page {{actor.numberCurrent + 1}} of {{ actor.numberOfPages() }}</span></li>
-                    <li><a href="javascript:void(0);" ng-disable="actor.numberCurrent >= actor.actorpost.length/pageSize - 1" ng-click="actor.numberCurrent = actor.numberCurrent+1"> Next &gt; </a></li>
-                </ul-->
 
             </div>
         </div>
@@ -210,7 +204,7 @@
     <script type="text/javascript">
 
     var myApp = angular.module('myApp', ['ngResource','ngStorage']);
-
+    /*
     myApp.factory('Avengers',['$resource', '$localStorage', function($resource, $localStorage){
             return $resource ('http://localhost:3000/cast', {},
                 {
@@ -270,8 +264,20 @@
             return  Math.ceil ( avengersCtrl.actorpost.length / avengersCtrl.pageSize );
         }
     }
+    */
+    function selectController($scope) {
+        
+        $scope.items = [{
+            low: 'low',
+            medium: 'medium',
+            height: 'height'
+        }];
 
-    myApp.controller("AvengersCtrl", AvengersCtrl);
+        console.log($scope.items)
+    }
+
+    //myApp.controller("AvengersCtrl", AvengersCtrl);
+    myApp.controller("selectController", selectController);
     
   </script>
 </body>

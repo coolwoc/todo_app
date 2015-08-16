@@ -28,16 +28,14 @@
   ],
   "project": [
     {
-      "name": "tweeter",
-      "name": "google",
-      "name": "facebook"
+      "project": "tweeter"
     }
   ],
   "labels": [
     {
-      "value": "high",
-      "value": "medium",
-      "value": "low"
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
     }
   ],
   "filters": [
@@ -135,6 +133,14 @@
       "headerComment": "Google Maps API",
       "comment": "Create a contact page using API",
       "done": "true"
+    },
+    {
+      "project": "TEste",
+      "name": "test",
+      "dateNum": "2015-08-19T21:00:00.000Z",
+      "headerComment": "test",
+      "comment": "test",
+      "id": 9
     }
   ]
 }

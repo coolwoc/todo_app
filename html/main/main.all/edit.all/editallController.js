@@ -57,11 +57,11 @@
 			Alltasks.update(EdittodoController.newTask);
 			$state.go('app.all');
 
-		}
+		};
 
 		EdittodoController.cancelEdit = function() {
 			$state.go('app.all');			
-		}
+		};
 
 	}
 
