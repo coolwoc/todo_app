@@ -1121,8 +1121,10 @@ body .content {
     .taskForm form .formGroup {
       padding-left: 50px; }
       .taskForm form .formGroup label {
-        display: none; }
+        display: block;
+        width: 100%; }
       .taskForm form .formGroup input {
+        clear: both;
         margin-bottom: 10px;
         padding: 8px 5px; }
       .taskForm form .formGroup input[type="text"] {
@@ -1143,8 +1145,6 @@ body .content {
       font-size: 13px; }
     .taskForm form button[type="submit"] {
       margin: 0 10px 20px 50px; }
-  .taskForm .editForm .formGroup label {
-    display: block; }
 
 .pagination {
   width: 165px;

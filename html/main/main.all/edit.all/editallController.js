@@ -59,6 +59,10 @@
 
 		}
 
+		EdittodoController.cancelEdit = function() {
+			$state.go('app.all');			
+		}
+
 	}
 
 })();

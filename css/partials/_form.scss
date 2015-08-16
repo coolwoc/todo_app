@@ -34,9 +34,11 @@
 			padding-left: 50px;
 
 			label {
-				display: none;
+				display: block;
+				width: 100%;
 			}
 			input {
+				clear: both;
 				margin-bottom: 10px;
 				padding: 8px 5px;
 			}
@@ -63,13 +65,6 @@
 		}
 		button[type="submit"] {
 			margin: 0 10px 20px 50px;
-		}
-	}
-	.editForm {
-		.formGroup {
-			label {
-				display: block;
-			}
 		}
 	}
 }
