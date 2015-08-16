@@ -8,14 +8,14 @@
 			<li>
 				<h3>{{task.project}}</h3>
 				<div>
-					<p class="date">{{task.dateNum | date: 'dd-MM-yyyy'}}</p>
-					<p class="label">{{task.label}}</p>
+					<p class="date"><span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+					<p class="label"><span>Priority:</span> {{task.label}}</p>
 				</div>	
 			</li>
 		</ul>
 		<div class="info">
-			<h3>{{task.headerComment}}</h3>
-			<p class="comment">{{task.comment}}</p>
+			<h3><span>Header:</span>{{task.headerComment}}</h3>
+			<p class="comment"><span>Comment:</span> {{task.comment}}</p>
 		</div>
 		<ul class="editorial">
 			<li><a href="javascript:void(0)" ng-click="todo.editTask(task)"><span class="oi" data-glyph="pencil" title="pencil" aria-hidden="true">Edit</span></a></li>
