@@ -6,4 +6,19 @@
 		left: 5px;
 		color: $white;
 	}
+	.main.intro {
+		h2 {
+			margin: 0;
+			padding: 0;
+			padding-bottom: 20px;
+		}
+		p {
+			margin: 0;
+			padding: 0;
+			padding-bottom: 15px;
+		}
+		p:last-child {
+			margin-top: -10px;
+		}
+	}
 }

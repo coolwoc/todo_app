@@ -1260,6 +1260,19 @@ body .content {
   left: 5px;
   color: #fffffa; }
 
+.content .main.intro h2 {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px; }
+
+.content .main.intro p {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15px; }
+
+.content .main.intro p:last-child {
+  margin-top: -10px; }
+
 .utilities .closeMenu {
   display: none; }
 

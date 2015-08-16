@@ -10,7 +10,7 @@
 
 		$stateProvider
 			.state('app.next', {
-				url:'/next',
+				url:'/next/:id',
 				views: {
 					'utilities@app': {
 						templateUrl: 'html/utilities/utilities.index.html',
@@ -26,8 +26,6 @@
 			});
 	}
 
-	function NextController() {
-		var NextController = this;
-	}
+	function NextController () {}
 
 })();
