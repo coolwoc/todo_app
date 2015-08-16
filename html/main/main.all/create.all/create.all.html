@@ -16,8 +16,9 @@
 	        </div>
 	        <div class="formGroup">
 	        	<label for="priority">Choose Priority</label>
-	            <select ng-model="priority" ng-name="priority" ng-options="k as v for (k,v) in createTodo.priority[0]">
+	            <select ng-model="createTodo.label" ng-name="priority" ng-options="k as v for (k,v) in createTodo.priority[0]">
 	            </select>
+	            <input type="hidden" name="priority" value="{{createTodo.label}}" >
 	        </div>
 	       	<div class="formGroup">
 	            <label for="name">User name</label>

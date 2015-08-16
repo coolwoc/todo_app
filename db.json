@@ -133,14 +133,6 @@
       "headerComment": "Google Maps API",
       "comment": "Create a contact page using API",
       "done": "true"
-    },
-    {
-      "project": "TEste",
-      "name": "test",
-      "dateNum": "2015-08-19T21:00:00.000Z",
-      "headerComment": "test",
-      "comment": "test",
-      "id": 9
     }
   ]
 }
