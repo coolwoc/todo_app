@@ -1270,7 +1270,7 @@ body .content {
   padding: 0;
   padding-bottom: 15px; }
 
-.content .main.intro p:last-child {
+.content .main.intro .signature {
   margin-top: -10px; }
 
 .utilities .closeMenu {
