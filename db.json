@@ -28,16 +28,16 @@
   ],
   "project": [
     {
-      "tweeter": "tweeter",
-      "google": "google",
-      "facebook": "facebook"
+      "name": "tweeter",
+      "name": "google",
+      "name": "facebook"
     }
   ],
   "labels": [
     {
-      "highPriority": "high",
-      "mediumPriority": "medium",
-      "lowPriority": "low"
+      "value": "high",
+      "value": "medium",
+      "value": "low"
     }
   ],
   "filters": [
