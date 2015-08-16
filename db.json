@@ -49,12 +49,12 @@
     {
       "id": 1,
       "user": 1,
-      "name": "m",
-      "project": "hooop",
-      "label": "m",
+      "name": "Blas",
+      "project": "Facebook",
+      "label": "Medium",
       "dateNum": "2015-08-18T21:00:00.000Z",
-      "headerComment": "boh",
-      "comment": "buh",
+      "headerComment": "Change H1",
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis mauris vitae condimentum. Donec tempus velit a orci sodales, ac vestibulum lorem blandit. Proin aliquet neque metus, et tristique ligula blandit id.",
       "done": "false"
     },
     {
@@ -131,8 +131,9 @@
       "level": "high",
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Google Maps API",
-      "comment": "Create a contact page using API",
-      "done": "true"
+      "comment": "Nunc rhoncus lobortis tortor, eget consectetur neque dignissim quis. Etiam eget auctor nibh, in sollicitudin ex. Phasellus ut malesuada velit, et sollicitudin leo. Nam ac sapien velit. Vestibulum sollicitudin scelerisque tortor, eget rutrum ante accumsan nec. Nunc porttitor faucibus est, vel suscipit augue feugiat ut. Nullam efficitur sapien eget ultricies sodales. Pellentesque in porta nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam leo arcu, sodales id ultrices sed, mollis accumsan sem. Phasellus iaculis lacinia sagittis. In interdum nisl neque, at cursus mi malesuada nec. Duis sodales risus ac molestie interdum. Phasellus scelerisque malesuada tellus, quis placerat eros scelerisque non.",
+      "done": "true",
+      "label": "medium"
     }
   ]
 }

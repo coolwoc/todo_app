@@ -15,7 +15,7 @@
 		</ul>
 		<div class="info">
 			<h3><span>Header:</span>{{task.headerComment}}</h3>
-			<p class="comment"><span>Comment:</span> {{task.comment}}</p>
+			<p class="comment"><span>Comment:</span> {{task.comment | limitTo: 100}}</p>
 		</div>
 		<ul class="editorial">
 			<li><a href="javascript:void(0)" ng-click="todo.editTask(task)"><span class="oi" data-glyph="pencil" title="pencil" aria-hidden="true">Edit</span></a></li>
