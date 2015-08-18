@@ -4,7 +4,7 @@
 
 	angular.module('app.menu',[])
 	.controller('MenuController', MenuController)
-	.directive('panelAnimates', panelAnimates);
+	.directive('elmPanel', elmPanel);
 
 	function MenuController( Menulist, Projectlist, Projectlabel, Projectfilter, $stateParams ) {
 
@@ -15,22 +15,23 @@
 		MenuController.projectLabel = Projectlabel.query();
 		MenuController.projectFilter = Projectfilter.query();
 
-	}
+	};
 
-	function panelAnimates() {
+	function elmPanel() {
 
 		var directive = {
 			link: link,
 			restrict: 'A'
-		};
+		}
 
 		return directive;
 
 		function link  (scope, elem, attrs) {
 
-			elem.on('click', function() {
+			elem.on('click', function(){
+				var $textTarget = $('.content .closeBtn').find('span');
 				$('.wrapper').toggleClass('panelAnimates');
-	            $('.content .closeBtn').find('span').html($('.content .closeBtn').find('span').text() == 'Open' ? 'Close' : 'Open');
+				$textTarget.html( $textTarget.text() == 'Close' ? 'Open' : 'Close');
 			});
 		}
 	}
