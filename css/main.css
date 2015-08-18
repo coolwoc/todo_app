@@ -1292,6 +1292,7 @@ html, body {
   display: block; }
 
 .utilities ul {
+  z-index: 500;
   position: relative;
   width: auto;
   float: right;
