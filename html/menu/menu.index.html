@@ -3,7 +3,7 @@
 <ul class="overview" ng-repeat = 'items in menuData.menuList'>
     
     <li ng-repeat= '(key, value) in items'>
-        <a ui-sref-active="active" ui-sref="app.{{key}}">{{value}}</a> 
+        <a panel-animates ui-sref-active="active" ui-sref="app.{{key}}">{{value}}</a> 
     </li>
 
 </ul>
