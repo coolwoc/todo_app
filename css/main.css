@@ -1064,44 +1064,40 @@ html, body {
   html p, body p {
     margin: 0;
     padding: 0; }
-
-body .menu {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 225px;
-  height: 100%;
-  overflow: hidden;
-  -webkit-transition: left 0.5s ease-in-out;
-          transition: left 0.5s ease-in-out; }
-
-body .content {
-  float: right;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  padding-left: 225px;
-  background-color: #fffffa;
-  -webkit-transition: padding-left 0.5s ease-in-out;
-          transition: padding-left 0.5s ease-in-out; }
-  body .content .utilities {
-    position: fixed;
-    width: 100%;
-    height: 59px;
-    background-color: #f1592a; }
-  body .content .main {
+  html .menu, body .menu {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: left 0.5s ease-in-out;
+            transition: left 0.5s ease-in-out; }
+  html .panelAnimates .menu, body .panelAnimates .menu {
+    left: -225px; }
+  html .content, body .content {
+    float: right;
     width: 100%;
     height: 100%;
-    overflow: scroll;
-    padding: 90px 10px 20px 10px;
-    margin-top: 15px; }
-
-.panelAnimates .menu {
-  left: -225px; }
-
-.panelAnimates .content {
-  padding-left: 0; }
+    overflow: hidden;
+    padding-left: 225px;
+    background-color: #fffffa;
+    -webkit-transition: padding-left 0.5s ease-in-out;
+            transition: padding-left 0.5s ease-in-out; }
+    html .content .utilities, body .content .utilities {
+      position: fixed;
+      width: 100%;
+      height: 59px;
+      background-color: #f1592a; }
+    html .content .main, body .content .main {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      padding: 80px 10px 20px 10px;
+      margin-top: 15px; }
+  html .panelAnimates .content, body .panelAnimates .content {
+    padding-left: 0; }
 
 /* share modules */
 .taskForm {
