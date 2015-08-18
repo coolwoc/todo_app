@@ -1066,27 +1066,25 @@ html, body {
     padding: 0; }
 
 body .menu {
-  display: block;
-  position: fixed;
+  display: inline-block;
+  position: absolute;
   top: 0;
-  left: -225px;
+  left: 0;
   width: 225px;
   height: 100%;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%); }
+  overflow: hidden;
+  -webkit-transition: left 0.5s ease-in-out;
+          transition: left 0.5s ease-in-out; }
 
 body .content {
-  opacity: 0.3;
   float: right;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  padding-left: 0;
+  padding-left: 225px;
   background-color: #fffffa;
-  -webkit-transform: translateX(225px);
-      -ms-transform: translateX(225px);
-          transform: translateX(225px); }
+  -webkit-transition: padding-left 0.5s ease-in-out;
+          transition: padding-left 0.5s ease-in-out; }
   body .content .utilities {
     position: fixed;
     width: 100%;
@@ -1100,15 +1098,10 @@ body .content {
     margin-top: 15px; }
 
 .panelAnimates .menu {
-  -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
-          transform: translateX(-100%); }
+  left: -225px; }
 
 .panelAnimates .content {
-  -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
-          transform: translateX(0px);
-  opacity: 1; }
+  padding-left: 0; }
 
 /* share modules */
 .taskForm {
@@ -1275,7 +1268,7 @@ body .content {
   display: block;
   position: relative;
   float: left;
-  margin: 18px 0 0 10px;
+  margin: 20px 0 0 10px;
   text-decoration: none;
   color: #fffffa; }
   .content .closeBtn:hover {

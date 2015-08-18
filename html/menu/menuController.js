@@ -16,7 +16,6 @@
             $target.toggleClass('panelAnimates');
             $('.closeBtn span')
             	.html($('.closeBtn span').text() == 'Open' ? 'Close' : 'Open');
-            //$('.closeBtn').hide();
 
         });
 

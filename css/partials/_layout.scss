@@ -33,23 +33,23 @@ html,body {
 }
 body {
 	.menu {
-		display: block;
-		position: fixed;
+		display: inline-block;
+		position: absolute;
 		top: 0;
-		left: -225px;
+		left: 0;
 		width: 225px;
 		height: 100%;
-	    transform: translateX(100%);
+		overflow: hidden;
+	    transition:left .5s ease-in-out;
 	}
 	.content {
-		opacity: 0.3;
 		float: right;
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
-		padding-left: 0;
+		padding-left: 225px;
 		background-color: $white;
-	    transform: translateX(225px);
+		transition: padding-left .5s ease-in-out;
 		.utilities {
 			position: fixed;
 			width: 100%;
@@ -67,10 +67,9 @@ body {
 }
 
 .panelAnimates .menu {
-  	transform: translateX(-100%);
+  	left: -225px;
 }
 .panelAnimates .content {
-	transform: translateX(0px);
-	opacity: 1;
+	padding-left: 0;
 }
 
