@@ -15,14 +15,14 @@
 		MenuController.projectLabel = Projectlabel.query();
 		MenuController.projectFilter = Projectfilter.query();
 
-	};
+	}
 
 	function panelAnimates() {
 
 		var directive = {
 			link: link,
 			restrict: 'A'
-		}
+		};
 
 		return directive;
 
