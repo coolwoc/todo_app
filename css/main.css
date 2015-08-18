@@ -1066,13 +1066,15 @@ html, body {
     padding: 0; }
 
 body .menu {
-  display: block;
-  position: fixed;
+  display: inline-block;
+  position: absolute;
   top: 0;
+  left: 0;
   width: 225px;
   height: 100%;
-  -webkit-transition: width 0.3s ease;
-          transition: width 0.3s ease; }
+  overflow: hidden;
+  -webkit-transition: left 0.5s ease-in-out;
+          transition: left 0.5s ease-in-out; }
 
 body .content {
   float: right;
@@ -1080,7 +1082,9 @@ body .content {
   height: 100%;
   overflow: hidden;
   padding-left: 225px;
-  background-color: #fffffa; }
+  background-color: #fffffa;
+  -webkit-transition: padding-left 0.5s ease-in-out;
+          transition: padding-left 0.5s ease-in-out; }
   body .content .utilities {
     position: fixed;
     width: 100%;
@@ -1092,6 +1096,12 @@ body .content {
     overflow: scroll;
     padding: 90px 10px 20px 10px;
     margin-top: 15px; }
+
+.panelAnimates .menu {
+  left: -225px; }
+
+.panelAnimates .content {
+  padding-left: 0; }
 
 /* share modules */
 .taskForm {
@@ -1255,10 +1265,16 @@ body .content {
 
 .content .closeBtn {
   z-index: 50;
+  display: block;
   position: relative;
-  top: 5px;
-  left: 5px;
+  float: left;
+  margin: 20px 0 0 10px;
+  text-decoration: none;
   color: #fffffa; }
+  .content .closeBtn:hover {
+    color: #000103; }
+  .content .closeBtn span {
+    display: block; }
 
 .content .main.intro h2 {
   margin: 0;
@@ -1281,8 +1297,9 @@ body .content {
 
 .utilities ul {
   position: relative;
-  width: 340px;
-  float: right; }
+  width: auto;
+  float: right;
+  padding-right: 1%; }
   .utilities ul li {
     width: auto;
     font-weight: bold;
