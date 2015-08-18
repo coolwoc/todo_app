@@ -14,14 +14,15 @@
 		'app.utility',
 		'app.alltodo',
 		'app.next',
-		'app.today'
+		'app.today',
+		'app.content'
 	])
 	
 	.constant('sitename', 'applocal')
 	.constant('apibase', 'http://localhost:3000')
 	.constant('apiversion', '/v1.0')
 
-	.config(config)
+	.config(config);
 
 	function config($stateProvider, $urlRouterProvider, $locationProvider) {
 
@@ -35,12 +36,15 @@
 						controllerAs: 'menuData'
 					},
 					'content@': {
-						templateUrl: 'html/content/content.index.html'
+						templateUrl: 'html/content/content.index.html',
+						controller: 'Contentcontroller',
+						controllerAs: 'content'
 					}
 				}
 			});
 
 		$urlRouterProvider.otherwise('/');
+
 
 		/*
 		--> we need and .htaccess file to be able to navigate through the url. Make enable $locationProvieder and 
@@ -51,12 +55,7 @@
   			requireBase: false
 		});
 		*/
-		
 
 	}
-
-	// http://www.ng-newsletter.com/posts/angular-ui-router.html
-	// http://plnkr.co/edit/9cIbOSUrSrARKSiOF6R7?p=info
-	// http://www.funnyant.com/angularjs-ui-router/
 
 })();

@@ -36,17 +36,20 @@ body {
 		display: block;
 		position: fixed;
 		top: 0;
+		left: -225px;
 		width: 225px;
 		height: 100%;
-		transition: width 0.3s ease;
+	    transform: translateX(100%);
 	}
 	.content {
+		opacity: 0.3;
 		float: right;
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
-		padding-left: 225px;
+		padding-left: 0;
 		background-color: $white;
+	    transform: translateX(225px);
 		.utilities {
 			position: fixed;
 			width: 100%;
@@ -62,3 +65,12 @@ body {
 		}
 	}
 }
+
+.panelAnimates .menu {
+  	transform: translateX(-100%);
+}
+.panelAnimates .content {
+	transform: translateX(0px);
+	opacity: 1;
+}
+

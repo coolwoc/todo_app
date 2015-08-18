@@ -19,10 +19,14 @@
     </head>
     <body>
 
-        <nav class='menu' ui-view="menu"></nav>
-        <section class='content' ui-view="content"></section>
+        <div class="wrapper panelAnimates">
+            
+            <nav class='menu' ui-view="menu"></nav>
+            <section class='content' ui-view="content"></section>
 
-        <section class='overlay' ui-view="overlay"></section>
+            <section class='overlay' ui-view="overlay"></section>
+
+        </div>
 
     <!-- Script -->
     
@@ -38,6 +42,10 @@
 
         <!-- app js -->
         <script src="/js/main.min.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+        </script>
 
     </body>
 
