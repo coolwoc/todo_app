@@ -1118,7 +1118,8 @@ html, body {
   .taskForm .oi[data-glyph=x]:before {
     top: 0; }
   .taskForm form {
-    clear: both; }
+    clear: both;
+    /**** error form ****/ }
     .taskForm form legend {
       font-size: 15px;
       font-weight: bold;
@@ -1166,6 +1167,12 @@ html, body {
       font-size: 13px; }
     .taskForm form button[type="submit"] {
       margin: 0 10px 20px 50px; }
+    .taskForm form p.msg-error {
+      color: red;
+      display: block;
+      padding-left: 50px; }
+    .taskForm form p {
+      display: none; }
 
 .pagination {
   width: 165px;

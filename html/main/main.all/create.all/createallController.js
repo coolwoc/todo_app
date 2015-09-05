@@ -34,31 +34,46 @@
 
 		var CreatetodoController = this;
 
+		CreatetodoController.submitted = false;
+
 		CreatetodoController.priority = Projectlabel.query();
 
 		CreatetodoController.createTask = function () {
 
-			CreatetodoController.data = {};
+			if (CreatetodoController.formAddTasks.$valid) {
 
-			CreatetodoController.data = {
+				CreatetodoController.data = {};
 
-				project: CreatetodoController.project,
-				label: CreatetodoController.label,
-				name: CreatetodoController.name,
-				dateNum: CreatetodoController.dateNum,
-				headerComment: CreatetodoController.headerComment,
-				comment: CreatetodoController.comment
-				
-			};
+				CreatetodoController.data = {
 
-			Alltasks.save(CreatetodoController.data);
-			$('form').find('input').val('');
+					project: CreatetodoController.project,
+					label: CreatetodoController.label,
+					name: CreatetodoController.name,
+					dateNum: CreatetodoController.dateNum,
+					headerComment: CreatetodoController.headerComment,
+					comment: CreatetodoController.comment
+					
+				};
+
+				Alltasks.save(CreatetodoController.data);
+				$('form').find('input').val('');
+				$('p.msg-error').removeClass('msg-error');
+
+			} else {
+
+				$('form').find('p').addClass('msg-error');
+				CreatetodoController.submitted = true;
+
+			}
+
+
 
 		};
 		
 		CreatetodoController.resetVal = function() {
 			$('form').find('input').val('');
 		};
+
 	}
 
 })();

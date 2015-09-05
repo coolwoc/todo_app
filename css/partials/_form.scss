@@ -82,5 +82,16 @@
 		button[type="submit"] {
 			margin: 0 10px 20px 50px;
 		}
+
+		/**** error form ****/
+
+		p.msg-error {
+			color: $error;
+			display: block;
+			padding-left: 50px;
+		}
+		p {
+			display: none;
+		}
 	}
 }

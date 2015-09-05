@@ -4,7 +4,7 @@
 
 		<a class="close" ui-sref="app.all"><span class="oi" data-glyph="x" title="x" aria-hidden="true">Close</span></a>
 
-	    <form ng-submit="createTodo.createTask()" novalidate>
+	    <form name="createTodo.formAddTasks" ng-submit="createTodo.createTask()" novalidate>
 	      
 	      <fieldset>
 
@@ -12,30 +12,33 @@
 	      	
 	      	<div class="formGroup">
 	            <label for="project">Project</label>
-	            <input type="text" id="project" name="project" ng-model="createTodo.project" placeholder="Add Project Name">
+	            <input type="text" id="project" name="project" ng-model="createTodo.project" placeholder="Add Project Title" Required>
 	        </div>
 	        <div class="formGroup">
 	        	<label for="priority">Choose Priority</label>
 	            <select ng-model="createTodo.label" ng-name="priority" ng-options="k as v for (k,v) in createTodo.priority[0]">
 	            </select>
-	            <input type="hidden" name="priority" value="{{createTodo.label}}" >
+	            <input type="hidden" name="priority" value="{{createTodo.label}}" Required>
 	        </div>
 	       	<div class="formGroup">
 	            <label for="name">User name</label>
-	            <input type="text" id="label" name="label" ng-model="createTodo.name" placeholder="Type User name">
+	            <input type="text" id="label" name="label" ng-model="createTodo.name" placeholder="Type User name" Required>
 	        </div>
 	        <div class="formGroup">
 	            <label for="date">date</label>
-	            <input type="date" id="date" name="date" ng-model="createTodo.dateNum" placeholder="Type date">
+	            <input type="date" id="date" name="date" ng-model="createTodo.dateNum" placeholder="Type date" Required>
 	        </div>
 	        <div class="formGroup">
 	            <label for="header">Task Header</label>
-	            <input type="text" id="header" name="header" ng-model="createTodo.headerComment" placeholder="Type Task Title">
+	            <input type="text" id="header" name="header" ng-model="createTodo.headerComment" placeholder="Type Task Title" Required>
 	        </div>
 			<div class="formGroup">
 	            <label for="description">Task Description</label>
-	            <input type="text" id="description" name="description" ng-model="createTodo.comment" placeholder="Type Task Description">
+	            <input type="text" id="description" name="description" ng-model="createTodo.comment" placeholder="Type Task Description" Required>
 	        </div>
+
+	        <!-- <p class="msg-error">Please make sure all the fields are completed.</p> -->
+	        <p>Please make sure all the fields are completed.</p>
 
 	        <button type="submit" class="btn">Create</button>
 	        <button type="button" class="btn" ng-click="createTodo.resetVal()">Reset</button>
