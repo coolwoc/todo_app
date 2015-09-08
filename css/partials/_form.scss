@@ -1,3 +1,127 @@
+form {
+
+	.formGroup {
+
+		padding-left: 50px;
+
+		label {
+			display: block;
+			width: 100%;
+		}
+		input {
+			clear: both;
+			margin-bottom: 10px;
+			padding: 8px 5px;
+		}
+		input[type="text"] {
+			width: 80%;
+
+		}
+		input[type="date"] {
+			color: #aaa7a7;
+			padding: 6px 8px;
+		}
+		select:focus,
+		input:focus,
+		input[type="text"]:focus,
+		input[type="date"]:focus {
+			outline: none;
+			transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+			border-color: $terciaryColor;
+			border: solid 1px $terciaryColor;
+			box-shadow: 0 0 5px 1px $terciaryColor;
+		}
+		select {
+			-webkit-appearance: none !important;
+		    -webkit-border-radius: 0px;
+		    padding: 8px 25px 8px 10px;
+		    color: #aaa7a7;
+		    line-height: normal;
+		    border-radius: 0;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+		    background-color: $white;
+		    background-position: 100% center;
+		    background-repeat: no-repeat;
+		    border-style: solid;
+		    border-width: 1px;
+		    border-color: #cccccc;
+		}
+	}
+	button {
+		margin-top: 10px;
+		font-size: 13px;
+	}
+	button[type="submit"] {
+		margin: 0 10px 20px 50px;
+	}
+}
+
+/** Login form **/
+.formLogin {
+
+	position: relative;
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 80px;
+
+	legend {
+		width: 100%;
+		font-size: 40px;
+		color: $white;
+		padding: 20px 0 10px 70px;
+		margin-bottom: 30px;
+		background: $orange url('/images/logo-small.png') no-repeat 10px 10px;
+	}
+
+	.formGroup {
+		padding-left: 0;
+		label {
+			display: none;
+		}
+		input {
+			width: 100%;
+			border: 1px solid $orange;
+		}
+		input:focus {
+			outline: none;
+			transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+			border-color: $orange;
+			border: solid 1px $orange;
+			box-shadow: 0 0 5px 1px $orange;
+		}
+		::-webkit-input-placeholder {
+		   color: $orange;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: $orange;
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: $orange;
+		}
+
+		:-ms-input-placeholder {  
+		   color: $orange;
+		}
+	}
+	button[type=submit] {
+		color: $white;
+		border: none;
+		margin: 10px 0 40px 0;
+		padding: 10px 15px;
+		background-color: $orange;
+
+	}	
+	p {
+		width: 100%;
+		color: $lightGrey;
+		text-align: center;
+	}
+
+}
+
+/** Add / Edit task form **/
 .taskForm {
 	position: relative;
 	width: 500px;
@@ -28,59 +152,6 @@
 			font-weight: bold;
 			text-transform: uppercase;
 			margin: 0 0 15px 50px;
-		}
-		.formGroup {
-
-			padding-left: 50px;
-
-			label {
-				display: block;
-				width: 100%;
-			}
-			input {
-				clear: both;
-				margin-bottom: 10px;
-				padding: 8px 5px;
-			}
-			input[type="text"] {
-				width: 80%;
-
-			}
-			input[type="date"] {
-				color: #aaa7a7;
-				padding: 6px 8px;
-			}
-			select:focus,
-			input[type="text"]:focus,
-			input[type="date"]:focus {
-				outline: none;
-    			transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-    			border-color: $terciaryColor;
-    			border: solid 1px $terciaryColor;
-    			box-shadow: 0 0 5px 1px $terciaryColor;
-			}
-			select {
-				-webkit-appearance: none !important;
-			    -webkit-border-radius: 0px;
-			    padding: 8px 25px 8px 10px;
-			    color: #aaa7a7;
-			    line-height: normal;
-			    border-radius: 0;
-				background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
-			    background-color: $white;
-			    background-position: 100% center;
-			    background-repeat: no-repeat;
-			    border-style: solid;
-			    border-width: 1px;
-			    border-color: #cccccc;
-			}
-		}
-		button {
-			margin-top: 10px;
-			font-size: 13px;
-		}
-		button[type="submit"] {
-			margin: 0 10px 20px 50px;
 		}
 
 		/**** error form ****/

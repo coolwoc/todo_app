@@ -1100,6 +1100,101 @@ html, body {
     padding-left: 0; }
 
 /* share modules */
+form .formGroup {
+  padding-left: 50px; }
+  form .formGroup label {
+    display: block;
+    width: 100%; }
+  form .formGroup input {
+    clear: both;
+    margin-bottom: 10px;
+    padding: 8px 5px; }
+  form .formGroup input[type="text"] {
+    width: 80%; }
+  form .formGroup input[type="date"] {
+    color: #aaa7a7;
+    padding: 6px 8px; }
+  form .formGroup select:focus,
+  form .formGroup input:focus,
+  form .formGroup input[type="text"]:focus,
+  form .formGroup input[type="date"]:focus {
+    outline: none;
+    -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+            transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    border-color: #ccc;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 5px 1px #ccc; }
+  form .formGroup select {
+    -webkit-appearance: none !important;
+    -webkit-border-radius: 0px;
+    padding: 8px 25px 8px 10px;
+    color: #aaa7a7;
+    line-height: normal;
+    border-radius: 0;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
+    background-color: #fffffa;
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc; }
+
+form button {
+  margin-top: 10px;
+  font-size: 13px; }
+
+form button[type="submit"] {
+  margin: 0 10px 20px 50px; }
+
+/** Login form **/
+.formLogin {
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 80px; }
+  .formLogin legend {
+    width: 100%;
+    font-size: 40px;
+    color: #fffffa;
+    padding: 20px 0 10px 70px;
+    margin-bottom: 30px;
+    background: #f1592a url("/images/logo-small.png") no-repeat 10px 10px; }
+  .formLogin .formGroup {
+    padding-left: 0; }
+    .formLogin .formGroup label {
+      display: none; }
+    .formLogin .formGroup input {
+      width: 100%;
+      border: 1px solid #f1592a; }
+    .formLogin .formGroup input:focus {
+      outline: none;
+      -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+              transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+      border-color: #f1592a;
+      border: solid 1px #f1592a;
+      box-shadow: 0 0 5px 1px #f1592a; }
+    .formLogin .formGroup ::-webkit-input-placeholder {
+      color: #f1592a; }
+    .formLogin .formGroup :-moz-placeholder {
+      /* Firefox 18- */
+      color: #f1592a; }
+    .formLogin .formGroup ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #f1592a; }
+    .formLogin .formGroup :-ms-input-placeholder {
+      color: #f1592a; }
+  .formLogin button[type=submit] {
+    color: #fffffa;
+    border: none;
+    margin: 10px 0 40px 0;
+    padding: 10px 15px;
+    background-color: #f1592a; }
+  .formLogin p {
+    width: 100%;
+    color: #515052;
+    text-align: center; }
+
+/** Add / Edit task form **/
 .taskForm {
   position: relative;
   width: 500px;
@@ -1125,48 +1220,6 @@ html, body {
       font-weight: bold;
       text-transform: uppercase;
       margin: 0 0 15px 50px; }
-    .taskForm form .formGroup {
-      padding-left: 50px; }
-      .taskForm form .formGroup label {
-        display: block;
-        width: 100%; }
-      .taskForm form .formGroup input {
-        clear: both;
-        margin-bottom: 10px;
-        padding: 8px 5px; }
-      .taskForm form .formGroup input[type="text"] {
-        width: 80%; }
-      .taskForm form .formGroup input[type="date"] {
-        color: #aaa7a7;
-        padding: 6px 8px; }
-      .taskForm form .formGroup select:focus,
-      .taskForm form .formGroup input[type="text"]:focus,
-      .taskForm form .formGroup input[type="date"]:focus {
-        outline: none;
-        -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-                transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-        border-color: #ccc;
-        border: solid 1px #ccc;
-        box-shadow: 0 0 5px 1px #ccc; }
-      .taskForm form .formGroup select {
-        -webkit-appearance: none !important;
-        -webkit-border-radius: 0px;
-        padding: 8px 25px 8px 10px;
-        color: #aaa7a7;
-        line-height: normal;
-        border-radius: 0;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+);
-        background-color: #fffffa;
-        background-position: 100% center;
-        background-repeat: no-repeat;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #cccccc; }
-    .taskForm form button {
-      margin-top: 10px;
-      font-size: 13px; }
-    .taskForm form button[type="submit"] {
-      margin: 0 10px 20px 50px; }
     .taskForm form p.msg-error {
       color: red;
       display: block;
