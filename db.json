@@ -58,39 +58,6 @@
       "done": "false"
     },
     {
-      "id": 2,
-      "user": 1,
-      "name": "blash",
-      "project": "tweeter",
-      "label": "low",
-      "dateNum": "2015-08-22T21:00:00.000Z",
-      "headerComment": "Change background colors",
-      "comment": "Use green( #91f208 )",
-      "done": "false"
-    },
-    {
-      "id": 3,
-      "user": 2,
-      "name": "Blas",
-      "project": "facebook",
-      "label": "high",
-      "dateNum": "2015-09-01T21:00:00.000Z",
-      "headerComment": "Make a FB page",
-      "comment": "Follow psd for that",
-      "done": "false"
-    },
-    {
-      "id": 4,
-      "user": 1,
-      "name": "Pia",
-      "project": "google",
-      "level": "high",
-      "dateNum": "2015-09-04T21:00:00.000Z",
-      "headerComment": "Google Maps API",
-      "comment": "Create a contact page using API",
-      "done": "false"
-    },
-    {
       "id": 5,
       "user": 1,
       "name": "Pia",
