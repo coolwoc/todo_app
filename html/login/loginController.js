@@ -18,14 +18,6 @@
 
 		LoginController.submitLogin = function() {
 
-			var isValid = function() {
-				$state.go('app');
-			};
-
-			var isNotValid = function() {
-				$('p.errorLogin').css({'display':'block'});
-			};
-
 			LoginController.credentials = Login.query(function(){
 
 				LoginController.credentials.forEach(function(data){
@@ -35,6 +27,14 @@
 				});
 
 			});
+
+			var isValid = function() {
+				$state.go('app');
+			};
+
+			var isNotValid = function() {
+				$('p.errorLogin').css({'display':'block'});
+			};
 
 			$('input').val('');
 
