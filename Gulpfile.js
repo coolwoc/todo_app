@@ -44,7 +44,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function(){
-    return gulp.src(['js/main.js','js/service/factory.js','js/service/filters.js','html/**/*.js'])
+    return gulp.src(['js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js'])
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
         .pipe(concat('main.js',{newLine: ';'}))
