@@ -1,18 +1,18 @@
 <link rel="stylesheet" type="text/css" href="/css/main.min.css">
 <section class="formLogin">
-	<form name="formLogin">
+	<form name="formLogin" ng-submit="login.submitLogin()" novalidate>
 		<fieldset>
 			<legend>Login To-Do app</legend>
 			<div class="formGroup">
 				<label for="email">Please enter your user mail</label>
-				<input type="email" name="email" placeholder="Please enter email">
+				<input type="email" name="email" placeholder="Please enter email" ng-model="login.email">
 			</div>
 			<div class="formGroup">
 				<label for="password">Please enter your password</label>
-				<input type="password" name="password" placeholder="Please enter password">
+				<input type="password" name="password" placeholder="Please enter password" ng-model="login.pass">
 			</div>
-			<button type="submit">Enter</button>
+			<button type="submit">LogIn</button>
 		</fieldset>
 	</form>
-	<p>[ email: admin@admin.com / pwd: admin ]</p>
+	<p>[ App admin credentials: admin@admin.com / admin ]</p>
 </section>

@@ -1108,7 +1108,7 @@ form .formGroup {
   form .formGroup input {
     clear: both;
     margin-bottom: 10px;
-    padding: 8px 5px; }
+    padding: 11px 5px 10px; }
   form .formGroup input[type="text"] {
     width: 80%; }
   form .formGroup input[type="date"] {

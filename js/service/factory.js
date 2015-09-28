@@ -4,6 +4,12 @@
 
 	angular.module('app.api', []);
 
+	angular.module('app.api').factory('Login', Login);
+	function Login($resource, apibase) {
+		var user = $resource(apibase + '/userlogin/:user', {user:'@user'});
+		return user;
+	}
+
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
 		return $resource(apibase + '/mainmenu', {}, 
