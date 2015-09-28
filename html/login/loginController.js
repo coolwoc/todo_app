@@ -10,8 +10,6 @@
 		var LoginController = this;
 		LoginController.submitted = false;
 
-		LoginController.credentials = Login.query();
-
 		LoginController.userlogin = {};
 		LoginController.userlogin = {
 			email: LoginController.email,
@@ -19,13 +17,24 @@
 		};
 
 		LoginController.submitLogin = function() {
-			
-			if (LoginController.email == 'admin@admin.com' && LoginController.pass == 'admin') {
-			
-				console.log('isLogged');
-				$state.go('app');
 
-			}
+			LoginController.credentials = Login.query(function(){
+				
+				LoginController.credentials.forEach(function(data){
+					
+					if (LoginController.email == data.email && LoginController.pass == data.pass) {
+
+						$state.go('app');
+
+					} else {
+
+						$('p.errorLogin').css({'display':'block'});
+
+					}
+
+				});
+
+			});
 
 			$('input').val('');
 

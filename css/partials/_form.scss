@@ -118,6 +118,11 @@ form {
 		color: $lightGrey;
 		text-align: center;
 	}
+	p.errorLogin {
+		color: $error;
+		display: none;
+		text-align: center;
+	}
 
 }
 
@@ -146,23 +151,25 @@ form {
 
 	form {
 		clear: both;
+		fieldset {
 
-		legend {
-			font-size: 15px;
-			font-weight: bold;
-			text-transform: uppercase;
-			margin: 0 0 15px 50px;
-		}
+			legend {
+				font-size: 15px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin: 0 0 15px 50px;
+			}
 
-		/**** error form ****/
+			/**** error form ****/
+			p {
+				display: none;
+			}
 
-		p.msg-error {
-			color: $error;
-			display: block;
-			padding-left: 50px;
-		}
-		p {
-			display: none;
+			p.errorLogin {
+				color: $error;
+				display: none;
+				text-align: center;
+			}
 		}
 	}
 }

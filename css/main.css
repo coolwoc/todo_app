@@ -1193,6 +1193,10 @@ form button[type="submit"] {
     width: 100%;
     color: #515052;
     text-align: center; }
+  .formLogin p.errorLogin {
+    color: red;
+    display: none;
+    text-align: center; }
 
 /** Add / Edit task form **/
 .taskForm {
@@ -1213,19 +1217,20 @@ form button[type="submit"] {
   .taskForm .oi[data-glyph=x]:before {
     top: 0; }
   .taskForm form {
-    clear: both;
-    /**** error form ****/ }
-    .taskForm form legend {
-      font-size: 15px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 0 0 15px 50px; }
-    .taskForm form p.msg-error {
-      color: red;
-      display: block;
-      padding-left: 50px; }
-    .taskForm form p {
-      display: none; }
+    clear: both; }
+    .taskForm form fieldset {
+      /**** error form ****/ }
+      .taskForm form fieldset legend {
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 0 15px 50px; }
+      .taskForm form fieldset p {
+        display: none; }
+      .taskForm form fieldset p.errorLogin {
+        color: red;
+        display: none;
+        text-align: center; }
 
 .pagination {
   width: 165px;
