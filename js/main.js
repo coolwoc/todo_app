@@ -7,6 +7,8 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
+		'angular-jwt',
+		'angular-storage',
 		'app.api',
 		'app.global',
 		'app.menu',
