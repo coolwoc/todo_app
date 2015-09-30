@@ -4,20 +4,6 @@
 
 	angular.module('app.api', []);
 
-	angular.module('app.api').factory('Token', Token);
-	function Token() {
-		var key;
-		return {
-			get: function() {
-				return key = localStorage.getItem('id_token');
-			},
-			set: function() {
-				localStorage.setItem('id_token', val)
-				return key = val;
-			}
-		}
-	}
-
 	angular.module('app.api').factory('Login', Login);
 	function Login($resource, apibase) {
 		var user = $resource(apibase + '/userlogin/:user', {user:'@user'});

@@ -1197,6 +1197,14 @@ form button[type="submit"] {
     color: red;
     display: none;
     text-align: center; }
+  .formLogin .signUp {
+    display: block;
+    color: #515052;
+    text-align: center;
+    text-decoration: none; }
+    .formLogin .signUp:hover {
+      color: #f1592a;
+      text-decoration: underline; }
 
 /** Add / Edit task form **/
 .taskForm {

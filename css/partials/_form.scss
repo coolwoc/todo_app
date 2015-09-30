@@ -123,6 +123,16 @@ form {
 		display: none;
 		text-align: center;
 	}
+	.signUp {
+		display: block;
+		color: $lightGrey;
+		text-align: center;
+		text-decoration: none;
+		&:hover {
+			color: $orange;
+			text-decoration: underline;
+		}
+	}
 
 }
 
