@@ -4,11 +4,15 @@
 
 	angular.module('app.api', []);
 
+	/*
 	angular.module('app.api').factory('Login', Login);
 	function Login($resource, apibase) {
 		var user = $resource(apibase + '/userlogin/:user', {user:'@user'});
 		return user;
 	}
+	*/
+
+
 
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
@@ -88,14 +92,14 @@
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
-		var isId = [];
+		var isIds = [];
 
 		var addIdData = function (newID) {
-			isId.push(newID);
+			isIds.push(newID);
 		};
 
 		var getIdData = function () {
-			return isId;
+			return isIds;
 		};
 
 		return {
