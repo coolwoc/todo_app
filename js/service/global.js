@@ -4,15 +4,40 @@
 
 	angular.module('app.api', []);
 
-	/*
 	angular.module('app.api').factory('Login', Login);
 	function Login($resource, apibase) {
-		var user = $resource(apibase + '/userlogin/:user', {user:'@user'});
-		return user;
+		return $resource(apibase + '/userlogin', {},
+		{
+			'get': {method:'GET', isArray: true}
+		});
 	}
-	*/
 
+	angular.module('app.api').factory('Statuscode', Statuscode);
+	function Statuscode() {
+		var value;
+		console.log( (value == 1) ? true : false );
+		return {
+			isError: function(value) { 
+				return (value == 1) ? true : false;
+			}
+		};
+	}
 
+	angular.module('app.api').factory('Token', Token);
+	function Token() {
+		var key;
+		return {
+			get: function() {
+				key = localStorage.getItem('id_token');
+				return key;
+			},
+			set: function(val) {
+				localStorage.setItem('id_token', val);
+				key = val;
+				return key;
+			}
+		};
+	}
 
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
@@ -66,7 +91,6 @@
 		});
 	}
 
-
 	angular.module('app.api').factory('Alltasks', Alltasks);
 	function Alltasks($resource, apibase) {
 
@@ -74,7 +98,7 @@
 			Alltasks = angular.fromJson(Alltasks);
 			Alltasks.dateNum = new Date (Alltasks.dateNum);
 			return Alltasks;	
-		}
+		};
 
 		return $resource(apibase + '/task/:id', {id:'@id'}, 
 		{

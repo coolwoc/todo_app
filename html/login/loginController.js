@@ -10,40 +10,33 @@
 		var LoginController = this;
 		LoginController.submitted = false;
 
-		LoginController.userlogin = {};
-		LoginController.userlogin = {
-			email: LoginController.email,
-			pass: LoginController.pass
-		};
-
 		LoginController.submitLogin = function() {
 
-			LoginController.credentials = Login.query(function(){
-
-				LoginController.credentials.forEach(function(data){
-					
-					(LoginController.email === data.email && LoginController.pass === data.pass) ? isValid() : isNotValid();
-
-				});
-
+			LoginController.userlogin = {};
+			LoginController.userlogin = {
+				email: LoginController.email,
+				pass: LoginController.pass
+			};
+			
+			var loginResult = [];
+ 			loginResult = Login.get(LoginController.userlogin, function(){
+ 				(typeof(LoginController.userlogin.email) == "undefined") ? isNotValid() : isValid();
 			});
-
+				
 			var isValid = function() {
 				$state.go('app');
 			};
 
 			var isNotValid = function() {
-				$('p.errorLogin').css({'display':'block'});
+				$('.errorLogin').css({'display':'block'});
 			};
+
 
 			$('input').val('');
 
 		};
+		
 
 	}
-
-	// Authentication jwt
-	// https://www.youtube.com/watch?t=517&v=lDb_GANDR8U
-	// https://thinkster.io/angularjs-jwt-auth
 
 })();

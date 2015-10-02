@@ -7,8 +7,6 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
-		'angular-jwt',
-		'angular-storage',
 		'app.api',
 		'app.global',
 		'app.menu',
@@ -27,7 +25,9 @@
 
 	.config(config);
 
-	function config($stateProvider, $urlRouterProvider) {
+	function config($urlRouterProvider, $httpProvider, $stateProvider) {
+
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('login', {
@@ -57,7 +57,8 @@
 				}
 			});
 
-		$urlRouterProvider.otherwise('/');
+		//jwtInterceptorProvider.tokenGetter.push('jwtInterceptor');
+		//$httpProvider.interceptors.push('authInterceptor');
 
 	}
 

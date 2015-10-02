@@ -17,6 +17,21 @@
       "name": "Pia",
       "email": "pia@pia.com",
       "pass": "pia"
+    },
+    {
+      "username": "pia",
+      "password": "pia",
+      "id": "62d994e7-e396-43f1-8785-a72062e5fde7"
+    },
+    {
+      "username": "p",
+      "password": "p",
+      "id": "844036cc-89f7-454c-b01f-3c069e429863"
+    },
+    {
+      "username": "pia",
+      "password": "pia",
+      "id": "c8a8bc05-b603-48cb-9c04-3f9d5440347f"
     }
   ],
   "mainmenu": [
@@ -111,5 +126,6 @@
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
       "id": 9
     }
-  ]
+  ],
+  "auth": []
 }

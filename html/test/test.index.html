@@ -1,0 +1,27 @@
+<!-- html>
+    <head>
+    <title>Simple Angular Auth</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+
+    <script src="test.app.js"></script>
+  </head>
+    <body ng-app="app" ng-controller="Main as main">
+    <h1>TEST with ANGULAR JWT</h1>
+
+    <input type="text" ng-model="main.username" placeholder="username"><br>
+    <input type="password" ng-model="main.password" placeholder="password"><br>
+    <br>
+
+    <button ng-click="main.register()">Register</button>
+    <button ng-click="main.login()">Login</button>
+    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+
+    <button ng-click="main.getQuote()">get quote</button>
+    <br><br>
+    {{main.message}}
+
+    <br><br><br>
+    </body>
+</html -->
