@@ -36,19 +36,17 @@
 
 		TodayController.todoTasks = Alltasks.query({}, function() {
 
-			var key,
-				value,
-				arrayPos;
+			var arrayPos = [];
 				
 			angular.forEach(TodayController.todoTasks, function(value, key){
 
 				if ( TodayController.todayDate == moment(value.dateNum).format('L') ) {
-					arrayPos = TodayController.todoTasks.length;
+					arrayPos.push(value);
 				}
 
 			});
 
-			TodayController.todoTasks = TodayController.todoTasks[(arrayPos-1)];
+			TodayController.todoTasks = arrayPos;
 
 		});
 	}

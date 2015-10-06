@@ -1,4 +1,23 @@
 <h2>Today Task</h2>
-<p>Functionality not yet here</p>
 
-{{today.todoTasks || json}}
+<div ng-show="nextSeven.nextSevenEvents.length == 0">
+	<p>There is not records for the next seven days.</p>
+</div>
+
+<ul class="allTask" ng-show="nextSeven.nextSevenEvents.length">
+	<li ng-repeat= "task in today.todoTasks" >
+		<ul class="stamp">
+			<li>
+				<h3>{{task.project}}</h3>
+				<div>
+					<p class="date"><span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+					<p class="label"><span>Priority:</span> {{task.label}}</p>
+				</div>	
+			</li>
+		</ul>
+		<div class="info">
+			<h3><span>Header:</span>{{task.headerComment}}</h3>
+			<p class="comment"><span>Comment:</span> {{task.comment | limitTo: 100}}</p>
+		</div>
+	</li>
+</ul>
