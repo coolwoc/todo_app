@@ -1,4 +1,23 @@
 <h2>Next seven</h2>
-<p>Functionality not available yet</p>
 
-{{nextSeven.nextSevenEvents}}
+<div ng-show="nextSeven.nextSevenEvents.length == 0">
+	<p>There is not records for the next seven days.</p>
+</div>
+
+<ul class="allTask" ng-show="nextSeven.nextSevenEvents.length">
+	<li ng-repeat= "task in nextSeven.nextSevenEvents" >
+		<ul class="stamp">
+			<li>
+				<h3>{{task.project}}</h3>
+				<div>
+					<p class="date"><span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+					<p class="label"><span>Priority:</span> {{task.label}}</p>
+				</div>	
+			</li>
+		</ul>
+		<div class="info">
+			<h3><span>Header:</span>{{task.headerComment}}</h3>
+			<p class="comment"><span>Comment:</span> {{task.comment | limitTo: 100}}</p>
+		</div>
+	</li>
+</ul>
