@@ -44,7 +44,6 @@
 
 				if ( TodayController.todayDate == moment(value.dateNum).format('L') ) {
 					arrayPos = TodayController.todoTasks.length;
-					console.log(arrayPos-1);
 				}
 
 			});
