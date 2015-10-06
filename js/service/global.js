@@ -14,8 +14,6 @@
 
 	angular.module('app.api').factory('Statuscode', Statuscode);
 	function Statuscode() {
-		var value;
-		console.log( (value == 1) ? true : false );
 		return {
 			isError: function(value) { 
 				return (value == 1) ? true : false;

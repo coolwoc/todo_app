@@ -121,10 +121,28 @@
       "project": "anotherTodayTask",
       "label": "high",
       "name": "TodayTask",
-      "dateNum": "2015-09-02T21:00:00.000Z",
+      "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
       "id": 9
+    },
+    {
+      "project": "Testing",
+      "label": "high",
+      "name": "Today",
+      "dateNum": "2015-10-04T21:00:00.000Z",
+      "headerComment": "Testing Filters",
+      "comment": "Testing Filters task description.",
+      "id": 10
+    },
+    {
+      "project": "Today 06/10",
+      "label": "medium",
+      "name": "Pia",
+      "dateNum": "2015-10-05T21:00:00.000Z",
+      "headerComment": "Today 06/10",
+      "comment": "Today 06/10",
+      "id": 11
     }
   ],
   "auth": []

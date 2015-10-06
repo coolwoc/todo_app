@@ -50,6 +50,7 @@
 			isId.addIdData(task.id);
 			$state.go('app.edit');
 		};
+		
 	}
 
 })();
