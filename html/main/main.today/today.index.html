@@ -1,10 +1,10 @@
 <h2>Today Task</h2>
 
-<div ng-show="nextSeven.nextSevenEvents.length == 0">
+<div ng-show="today.todoTasks.length == 0">
 	<p>There is not records for the next seven days.</p>
 </div>
 
-<ul class="allTask" ng-show="nextSeven.nextSevenEvents.length">
+<ul class="allTask" ng-show="today.todoTasks.length">
 	<li ng-repeat= "task in today.todoTasks" >
 		<ul class="stamp">
 			<li>
