@@ -4,7 +4,7 @@
 
 	angular.module('app.next',[])
 	.config(config)
-	.controller('NextDaysController', NextDaysController);
+	.controller('controllerNextDays', controllerNextDays);
 
 	function config ( $stateProvider, $urlRouterProvider ) {
 
@@ -19,33 +19,37 @@
 					},
 					'main@app': {
 						templateUrl: 'html/main/main.taskSeven/seven.index.html',
-						controller: 'NextDaysController',
+						controller: 'controllerNextDays',
 						controllerAs: 'nextSeven'
 					}
 				}
 			});
 	}
 
-	function NextDaysController ( Alltasks, $state ) {
+	function controllerNextDays ( Alltasks, $state ) {
 
-		var NextDaysController = this;
+		var controllerNextDays = this;
 
 		var today = new Date();
-		NextDaysController.todayDate = moment(today).format('L');
-		NextDaysController.weekDate = moment().weekday(7).format('L');
+		controllerNextDays.todayDate = moment(today).format('L');
+		controllerNextDays.weekDate = moment().weekday(7).format('L');
 
-		NextDaysController.nextSevenEvents = Alltasks.query({}, function() {
+		controllerNextDays.nextSevenEvents = Alltasks.query({}, function() {
 
-			var arrayPos = []
+			var arrayPos = [];
 
-			angular.forEach(NextDaysController.nextSevenEvents, function (value, key) {
+			angular.forEach(controllerNextDays.nextSevenEvents, function (value, key) {
 
-				if ( moment(value.dateNum).format('L') >= NextDaysController.todayDate && moment(value.dateNum).format('L') <= NextDaysController.weekDate ) {
+				var greaterThanSeven = ( moment(value.dateNum).format('L') >= controllerNextDays.todayDate ),
+					lessThanSeven = moment(value.dateNum).format('L') <= controllerNextDays.weekDate;
+
+				if ( greaterThanSeven &&  lessThanSeven ) {
 					arrayPos.push(value);
 				}
+				
 			});
 
-			NextDaysController.nextSevenEvents = arrayPos;
+			controllerNextDays.nextSevenEvents = arrayPos;
 
 		});
 	}

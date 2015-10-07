@@ -1046,6 +1046,7 @@ html, body {
   font: normal 62.5% 'colaboratelightregular', helvetica, arial, sans-serif;
   font-size: 13px;
   color: #333138;
+  background-color: #fffffa;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased; }
   html h2, body h2 {
@@ -1298,7 +1299,7 @@ form button[type="submit"] {
       .menu ul li div .add:hover {
         color: #f1592a; }
 
-.menu .overview li {
+.menu .menuList li {
   font-size: 15px;
   padding-bottom: 5px; }
 

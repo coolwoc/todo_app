@@ -16,7 +16,8 @@
 		'app.alltodo',
 		'app.next',
 		'app.today',
-		'app.content'
+		'app.content',
+		'app.archive'
 	])
 
 	.constant('sitename', 'applocal')
@@ -39,7 +40,6 @@
 						controllerAs: 'login'
 					}
 				}
-
 			})
 			.state('app', {
 				url: '/content',
