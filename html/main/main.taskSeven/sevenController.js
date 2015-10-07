@@ -30,9 +30,11 @@
 
 		var controllerNextDays = this;
 
-		var today = new Date();
-		controllerNextDays.todayDate = moment(today).format('L');
+		controllerNextDays.todayDate = moment().format('L');
 		controllerNextDays.weekDate = moment().weekday(7).format('L');
+
+		console.log( controllerNextDays.todayDate );
+		console.log( controllerNextDays.weekDate );
 
 		controllerNextDays.nextSevenEvents = Alltasks.query({}, function() {
 
@@ -40,10 +42,7 @@
 
 			angular.forEach(controllerNextDays.nextSevenEvents, function (value, key) {
 
-				var greaterThanSeven = ( moment(value.dateNum).format('L') >= controllerNextDays.todayDate ),
-					lessThanSeven = moment(value.dateNum).format('L') <= controllerNextDays.weekDate;
-
-				if ( greaterThanSeven &&  lessThanSeven ) {
+				if ( moment(value.dateNum).format('L') >= controllerNextDays.todayDate && moment(value.dateNum).format('L') <= controllerNextDays.weekDate ) {
 					arrayPos.push(value);
 				}
 				

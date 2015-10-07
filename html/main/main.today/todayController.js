@@ -31,8 +31,7 @@
 
 		var TodayController = this;
 
-		var today = new Date();
-		TodayController.todayDate = moment(today).format('L');
+		TodayController.todayDate = moment().format('L');
 
 		TodayController.todoTasks = Alltasks.query({}, function() {
 
