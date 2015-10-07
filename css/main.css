@@ -1104,13 +1104,13 @@ html, body {
 form .formGroup {
   clear: both;
   width: 100%;
-  padding-left: 50px; }
+  padding-left: 50px;
+  margin-bottom: 10px; }
   form .formGroup label {
     display: block;
     width: 100%; }
   form .formGroup input {
     clear: both;
-    margin-bottom: 10px;
     padding: 11px 5px 10px; }
   form .formGroup input[type="text"] {
     width: 80%; }
@@ -1118,6 +1118,8 @@ form .formGroup {
     width: 48%;
     color: #aaa7a7;
     padding: 6px 8px; }
+  form .formGroup input[type="checkbox"] {
+    vertical-align: initial; }
   form .formGroup select:focus,
   form .formGroup input:focus,
   form .formGroup input[type="text"]:focus,
@@ -1398,33 +1400,35 @@ h2.all {
   width: 100%;
   margin-bottom: 35px; }
   .allTask li {
-    padding: 8px;
+    padding: 10px 15px;
     margin-bottom: 5px;
     background-color: #C0BCB5;
     overflow: hidden; }
     .allTask li .stamp li {
       overflow: auto;
       margin: 0;
-      padding-bottom: 3px; }
+      padding: 0; }
       .allTask li .stamp li h3 {
         clear: both;
         width: 100%;
         text-transform: uppercase; }
-      .allTask li .stamp li div {
+      .allTask li .stamp li .taskStatus {
         margin: 0;
         padding: 0; }
-        .allTask li .stamp li div .date {
+        .allTask li .stamp li .taskStatus .date {
           width: 50%;
           text-align: left;
           float: left; }
-        .allTask li .stamp li div .label {
+        .allTask li .stamp li .taskStatus .label {
           width: 50%;
           text-align: right;
           float: right; }
-        .allTask li .stamp li div p span {
+        .allTask li .stamp li .taskStatus p span {
           font-weight: 'colaborate-boldregular'; }
+        .allTask li .stamp li .taskStatus .label.strong {
+          font-family: 'colaborate-boldregular'; }
     .allTask li .info {
-      padding: 0 8px 8px 8px; }
+      padding: 0; }
     .allTask li .editorial li {
       margin: 0;
       padding: 0;

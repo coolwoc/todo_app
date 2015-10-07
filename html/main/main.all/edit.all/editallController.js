@@ -50,7 +50,8 @@
 				name: EdittodoController.task.name,
 				dateNum: EdittodoController.task.dateNum,
 				headerComment: EdittodoController.task.headerComment,
-				comment: EdittodoController.task.comment
+				comment: EdittodoController.task.comment,
+				done: EdittodoController.task.done
 
 			};
 

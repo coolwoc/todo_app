@@ -6,7 +6,7 @@ h2.all {
 	width: 100%;
 	margin-bottom: 35px;
 	li {
-		padding: 8px;
+		padding: 10px 15px;
 		margin-bottom: 5px;
 		background-color: #C0BCB5;
 		overflow: hidden;
@@ -14,14 +14,14 @@ h2.all {
 			li {
 				overflow: auto;
 				margin: 0;
-				padding-bottom: 3px;
+				padding: 0;
 				h3 {
 					clear: both;
 					width: 100%;
 					text-transform: uppercase;
 				}
 
-				div {
+				.taskStatus {
 					margin: 0;
 					padding: 0;
 					.date {
@@ -39,12 +39,15 @@ h2.all {
 							font-weight: 'colaborate-boldregular';
 						}
 					}
+					.label.strong {
+						font-family: 'colaborate-boldregular';
+					}
 				}
 
 			}
 		}
 		.info {
-			padding: 0 8px 8px 8px;
+			padding: 0;
 		}
 		.editorial {
 			li {

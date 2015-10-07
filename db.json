@@ -51,12 +51,12 @@
       "id": 1,
       "user": 1,
       "name": "Blas",
-      "project": "Facebook",
+      "project": "Facebook isDone!",
       "label": "Medium",
       "dateNum": "2015-08-18T21:00:00.000Z",
       "headerComment": "Change H1",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis mauris vitae condimentum. Donec tempus velit a orci sodales, ac vestibulum lorem blandit. Proin aliquet neque metus, et tristique ligula blandit id.",
-      "isDone": "false"
+      "done": false
     },
     {
       "id": 5,
@@ -67,7 +67,7 @@
       "dateNum": "2015-01-30T22:00:00.000Z",
       "headerComment": "Add assets",
       "comment": "Change assets",
-      "isDone": "false"
+      "done": false
     },
     {
       "id": 6,
@@ -78,7 +78,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Change background colors",
       "comment": "Use green( #91f208 )",
-      "isDone": "false"
+      "done": false
     },
     {
       "id": 7,
@@ -89,7 +89,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Make a FB page",
       "comment": "Follow psd for that",
-      "isDone": "false"
+      "done": false
     },
     {
       "id": 8,
@@ -100,7 +100,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Google Maps API",
       "comment": "Nunc rhoncus lobortis tortor, eget consectetur neque dignissim quis. Etiam eget auctor nibh, in sollicitudin ex. Phasellus ut malesuada velit, et sollicitudin leo. Nam ac sapien velit. Vestibulum sollicitudin scelerisque tortor, eget rutrum ante accumsan nec. Nunc porttitor faucibus est, vel suscipit augue feugiat ut. Nullam efficitur sapien eget ultricies sodales. Pellentesque in porta nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam leo arcu, sodales id ultrices sed, mollis accumsan sem. Phasellus iaculis lacinia sagittis. In interdum nisl neque, at cursus mi malesuada nec. Duis sodales risus ac molestie interdum. Phasellus scelerisque malesuada tellus, quis placerat eros scelerisque non.",
-      "isDone": "false",
+      "done": false,
       "label": "medium"
     },
     {
@@ -110,7 +110,7 @@
       "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
-      "isDone": "false",
+      "done": false,
       "user": 1,
       "id": 9
     },
@@ -121,7 +121,7 @@
       "dateNum": "2015-10-04T21:00:00.000Z",
       "headerComment": "Testing Filters",
       "comment": "Testing Filters task description.",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 10
     },
@@ -132,7 +132,7 @@
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Today 06/10",
       "comment": "Today 06/10",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 11
     },
@@ -143,7 +143,7 @@
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Task Tomorrow",
       "comment": "Task Tomorrow",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 12
     },
@@ -154,7 +154,7 @@
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 13
     },
@@ -165,7 +165,7 @@
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 14
     },
@@ -176,9 +176,35 @@
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
-      "done": "false",
+      "done": false,
       "user": 1,
       "id": 15
+    },
+    {
+      "project": "This is a test.",
+      "label": "high",
+      "dateNum": "2015-10-06T21:00:00.000Z",
+      "headerComment": "This is a checkbox test",
+      "comment": "This is a checkbox description task",
+      "done": true,
+      "id": 16
+    },
+    {
+      "project": "Testing isDone",
+      "label": "low",
+      "dateNum": "2015-10-06T21:00:00.000Z",
+      "headerComment": "Testing isDone",
+      "comment": "Testing isDone description",
+      "done": true,
+      "id": 17
+    },
+    {
+      "project": "Testing is not done",
+      "label": "low",
+      "dateNum": "2015-10-06T21:00:00.000Z",
+      "headerComment": "Testing is not done.",
+      "comment": "Testing is not done.",
+      "id": 18
     }
   ],
   "auth": []

@@ -49,9 +49,8 @@
 			});
 
 			CreatetodoController.user = userData;
-
+			
 		});
-
 
 		CreatetodoController.createTask = function () {
 
@@ -67,9 +66,11 @@
 					dateNum: CreatetodoController.dateNum,
 					headerComment: CreatetodoController.headerComment,
 					comment: CreatetodoController.comment,
-					done: 'false'
+					done: CreatetodoController.done
 					
 				};
+
+				console.log(CreatetodoController.data.done);
 
 				Alltasks.save(CreatetodoController.data);
 				$('form').find('input').val('');
@@ -81,9 +82,6 @@
 				CreatetodoController.submitted = true;
 
 			}
-
-
-
 		};
 		
 		CreatetodoController.resetVal = function() {

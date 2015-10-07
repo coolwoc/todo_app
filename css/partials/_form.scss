@@ -4,6 +4,7 @@ form {
 		clear: both;
 		width: 100%;
 		padding-left: 50px;
+		margin-bottom: 10px;
 
 		label {
 			display: block;
@@ -11,7 +12,6 @@ form {
 		}
 		input {
 			clear: both;
-			margin-bottom: 10px;
 			padding: 11px 5px 10px;
 		}
 		input[type="text"] {
@@ -22,6 +22,9 @@ form {
 			width: 48%;
 			color: #aaa7a7;
 			padding: 6px 8px;
+		}
+		input[type="checkbox"] {
+			vertical-align: initial;
 		}
 		select:focus,
 		input:focus,
