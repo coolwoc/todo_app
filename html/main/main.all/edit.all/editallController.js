@@ -51,6 +51,7 @@
 				dateNum: EdittodoController.task.dateNum,
 				headerComment: EdittodoController.task.headerComment,
 				comment: EdittodoController.task.comment
+
 			};
 
 			EdittodoController.newTask.dateNum = new Date (EdittodoController.task.dateNum);
@@ -62,7 +63,7 @@
 		EdittodoController.cancelEdit = function() {
 			$state.go('app.all');			
 		};
-
+		
 	}
 
 })();

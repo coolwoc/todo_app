@@ -106,25 +106,23 @@
     {
       "project": "anotherTodayTask",
       "label": "high",
-      "name": "TodayTask",
+      "name": "Pia",
       "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
       "isDone": "false",
       "user": 1,
-      "name": "Pia",
       "id": 9
     },
     {
       "project": "Testing",
       "label": "high",
-      "name": "Today",
+      "name": "Pia",
       "dateNum": "2015-10-04T21:00:00.000Z",
       "headerComment": "Testing Filters",
       "comment": "Testing Filters task description.",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 10
     },
     {
@@ -136,55 +134,50 @@
       "comment": "Today 06/10",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 11
     },
     {
       "project": "Task tomorrow",
       "label": "low",
-      "name": "Task Tomorrow",
+      "name": "Pia",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Task Tomorrow",
       "comment": "Task Tomorrow",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 12
     },
     {
       "project": "Task few days.",
       "label": "low",
-      "name": "Task few days.",
+      "name": "Pia",
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 13
     },
     {
       "project": "Task more few days",
       "label": "low",
-      "name": "Task more few days",
+      "name": "Pia",
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 14
     },
     {
       "project": "AnotherToday Task",
       "label": "high",
-      "name": "AnotherToday task",
+      "name": "Pia",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
       "done": "false",
       "user": 1,
-      "name": "Pia",
       "id": 15
     }
   ],

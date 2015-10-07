@@ -37,6 +37,11 @@
 		};
 	}
 
+	angular.module('app.api').factory('User', User);
+	function User( $resource, apibase ) {
+		return $resource(apibase + '/userlogin');
+	} 
+
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
 		return $resource(apibase + '/mainmenu', {}, 

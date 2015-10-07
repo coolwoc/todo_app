@@ -1101,6 +1101,8 @@ html, body {
 
 /* share modules */
 form .formGroup {
+  clear: both;
+  width: 100%;
   padding-left: 50px; }
   form .formGroup label {
     display: block;
@@ -1112,6 +1114,7 @@ form .formGroup {
   form .formGroup input[type="text"] {
     width: 80%; }
   form .formGroup input[type="date"] {
+    width: 48%;
     color: #aaa7a7;
     padding: 6px 8px; }
   form .formGroup select:focus,
@@ -1138,6 +1141,11 @@ form .formGroup {
     border-style: solid;
     border-width: 1px;
     border-color: #cccccc; }
+
+form .formGroup.selectAlign {
+  clear: none;
+  width: auto;
+  float: left; }
 
 form button {
   margin-top: 10px;
