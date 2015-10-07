@@ -17,28 +17,14 @@
       "name": "Pia",
       "email": "pia@pia.com",
       "pass": "pia"
-    },
-    {
-      "username": "pia",
-      "password": "pia",
-      "id": "62d994e7-e396-43f1-8785-a72062e5fde7"
-    },
-    {
-      "username": "p",
-      "password": "p",
-      "id": "844036cc-89f7-454c-b01f-3c069e429863"
-    },
-    {
-      "username": "pia",
-      "password": "pia",
-      "id": "c8a8bc05-b603-48cb-9c04-3f9d5440347f"
     }
   ],
   "mainmenu": [
     {
       "all": "all tasks",
       "today": "today",
-      "next": "next 7 days"
+      "next": "next 7 days",
+      "archive": "task archived"
     }
   ],
   "project": [
@@ -70,7 +56,7 @@
       "dateNum": "2015-08-18T21:00:00.000Z",
       "headerComment": "Change H1",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis mauris vitae condimentum. Donec tempus velit a orci sodales, ac vestibulum lorem blandit. Proin aliquet neque metus, et tristique ligula blandit id.",
-      "done": "false"
+      "isDone": "false"
     },
     {
       "id": 5,
@@ -81,7 +67,7 @@
       "dateNum": "2015-01-30T22:00:00.000Z",
       "headerComment": "Add assets",
       "comment": "Change assets",
-      "done": "false"
+      "isDone": "false"
     },
     {
       "id": 6,
@@ -92,7 +78,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Change background colors",
       "comment": "Use green( #91f208 )",
-      "done": "false"
+      "isDone": "false"
     },
     {
       "id": 7,
@@ -103,7 +89,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Make a FB page",
       "comment": "Follow psd for that",
-      "done": "true"
+      "isDone": "false"
     },
     {
       "id": 8,
@@ -114,7 +100,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Google Maps API",
       "comment": "Nunc rhoncus lobortis tortor, eget consectetur neque dignissim quis. Etiam eget auctor nibh, in sollicitudin ex. Phasellus ut malesuada velit, et sollicitudin leo. Nam ac sapien velit. Vestibulum sollicitudin scelerisque tortor, eget rutrum ante accumsan nec. Nunc porttitor faucibus est, vel suscipit augue feugiat ut. Nullam efficitur sapien eget ultricies sodales. Pellentesque in porta nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam leo arcu, sodales id ultrices sed, mollis accumsan sem. Phasellus iaculis lacinia sagittis. In interdum nisl neque, at cursus mi malesuada nec. Duis sodales risus ac molestie interdum. Phasellus scelerisque malesuada tellus, quis placerat eros scelerisque non.",
-      "done": "true",
+      "isDone": "false",
       "label": "medium"
     },
     {
@@ -124,6 +110,9 @@
       "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
+      "isDone": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 9
     },
     {
@@ -133,6 +122,9 @@
       "dateNum": "2015-10-04T21:00:00.000Z",
       "headerComment": "Testing Filters",
       "comment": "Testing Filters task description.",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 10
     },
     {
@@ -142,6 +134,9 @@
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Today 06/10",
       "comment": "Today 06/10",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 11
     },
     {
@@ -151,6 +146,9 @@
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Task Tomorrow",
       "comment": "Task Tomorrow",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 12
     },
     {
@@ -160,6 +158,9 @@
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 13
     },
     {
@@ -169,6 +170,9 @@
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 14
     },
     {
@@ -178,6 +182,9 @@
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
+      "done": "false",
+      "user": 1,
+      "name": "Pia",
       "id": 15
     }
   ],
