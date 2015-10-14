@@ -33,9 +33,6 @@
 		controllerNextDays.todayDate = moment().format('L');
 		controllerNextDays.weekDate = moment().weekday(7).format('L');
 
-		console.log( controllerNextDays.todayDate );
-		console.log( controllerNextDays.weekDate );
-
 		controllerNextDays.nextSevenEvents = Alltasks.query({}, function() {
 
 			var arrayPos = [];
@@ -51,6 +48,17 @@
 			controllerNextDays.nextSevenEvents = arrayPos;
 
 		});
+
+		controllerNextDays.removeTask = function (task) {
+			Alltasks.delete({}, {'id': task.id}, function () {
+			    AlltaskController.allTasks = Alltasks.query();
+			});
+		};
+		controllerNextDays.editTask = function (task) {
+			isId.addIdData(task.id);
+			$state.go('app.edit');
+		};
+
 	}
 
 })();

@@ -48,6 +48,15 @@
 			TodayController.todoTasks = arrayPos;
 
 		});
+		TodayController.removeTask = function (task) {
+			Alltasks.delete({}, {'id': task.id}, function () {
+			    AlltaskController.allTasks = Alltasks.query();
+			});
+		};
+		TodayController.editTask = function (task) {
+			isId.addIdData(task.id);
+			$state.go('app.edit');
+		};
 	}
 
 })();

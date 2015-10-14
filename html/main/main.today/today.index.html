@@ -14,9 +14,9 @@
 					<li class="date">
 						<span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
 					</li>
-					<!--li class="label strong">
+					<li class="label strong">
 						<span>isDone:</span> {{task.isDone}}						
-					</li -->
+					</li>
 					<li class="label">
 						<span>Priority:</span> {{task.label}}
 					</li>
@@ -27,5 +27,9 @@
 			<h3><span>Header:</span>{{task.headerComment}}</h3>
 			<p class="comment"><span>Comment:</span> {{task.comment | limitTo: 100}}</p>
 		</div>
+		<ul class="editorial">
+			<li><a href="javascript:void(0)" ng-click="today.editTask(task)"><span class="oi" data-glyph="pencil" title="pencil" aria-hidden="true">Edit</span></a></li>
+			<li><a href="javascript:void(0)" ng-click="today.removeTask(task)"><span class="oi" data-glyph="trash" title="trash" aria-hidden="true">Remove</span></a></li>
+		</ul>
 	</li>
 </ul>
