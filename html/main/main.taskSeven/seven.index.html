@@ -9,10 +9,17 @@
 		<ul class="stamp">
 			<li>
 				<h3>{{task.project}}</h3>
-				<div>
-					<p class="date"><span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
-					<p class="label"><span>Priority:</span> {{task.label}}</p>
-				</div>	
+				<ul class="taskStatus">
+					<li class="date">
+						<span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+					</li>
+					<!--li class="label strong">
+						<span>isDone:</span> {{task.isDone}}						
+					</li -->
+					<li class="label">
+						<span>Priority:</span> {{task.label}}
+					</li>
+				</ul>
 			</li>
 		</ul>
 		<div class="info">

@@ -37,7 +37,7 @@
 		
 		AlltaskController.pageSize = 3;
 		AlltaskController.allTasks = Alltasks.query();
-
+		
 		AlltaskController.numberOfPages =  function () {
 			return Math.ceil(AlltaskController.allTasks.length / AlltaskController.pageSize);
 		};		
