@@ -27,7 +27,7 @@
 			});
 	}
 
-	function TodayController( Alltasks, $state ) {
+	function TodayController( Alltasks, $state, isId ) {
 
 		var TodayController = this;
 

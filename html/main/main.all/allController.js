@@ -40,12 +40,14 @@
 		
 		AlltaskController.numberOfPages =  function () {
 			return Math.ceil(AlltaskController.allTasks.length / AlltaskController.pageSize);
-		};		
+		};
+
 		AlltaskController.removeTask = function (task) {
 			Alltasks.delete({}, {'id': task.id}, function () {
 			    AlltaskController.allTasks = Alltasks.query();
 			});
 		};
+		
 		AlltaskController.editTask = function (task) {
 			isId.addIdData(task.id);
 			$state.go('app.edit');

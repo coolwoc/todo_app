@@ -26,7 +26,7 @@
 			});
 	}
 
-	function controllerNextDays ( Alltasks, $state ) {
+	function controllerNextDays ( Alltasks, $state, isId ) {
 
 		var controllerNextDays = this;
 
@@ -54,11 +54,11 @@
 			    AlltaskController.allTasks = Alltasks.query();
 			});
 		};
+
 		controllerNextDays.editTask = function (task) {
 			isId.addIdData(task.id);
 			$state.go('app.edit');
 		};
-
 	}
 
 })();
