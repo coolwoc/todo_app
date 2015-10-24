@@ -122,6 +122,7 @@
 		var isIds = [];
 
 		var addIdData = function (newID) {
+			isIds = [];
 			isIds.push(newID);
 		};
 
