@@ -6,6 +6,7 @@
 
 	// authentication
 
+
 	angular.module('app.api').factory('Login', Login);
 	function Login($resource, apibase) {
 		return $resource(apibase + '/userlogin', {},
@@ -13,6 +14,8 @@
 			'get': {method:'GET', isArray: true}
 		});
 	}
+
+	// data - statusCode.
 
 	angular.module('app.api').factory('Statuscode', Statuscode);
 	function Statuscode() {
@@ -23,8 +26,7 @@
 		};
 	}
 
-
-	// $resource data
+	// RESTful data
 
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
