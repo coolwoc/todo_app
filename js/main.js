@@ -31,7 +31,7 @@
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/login');
 
 		$stateProvider
 			.state('login', {
@@ -69,14 +69,11 @@
 					}
 				}
 			});
-
-		//jwtInterceptorProvider.tokenGetter.push('jwtInterceptor');
-		//$httpProvider.interceptors.push('authInterceptor');
-
 	}
 	function run( $rootScope, $location, $cookieStore, $http ) {
 
 		// keep user logged in after page refresh.
+		
 		$rootScope.globals = $cookieStore.get('globals') || {};
 
 		if ( $rootScope.globals.currentUser ) {

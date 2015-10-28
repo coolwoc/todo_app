@@ -5,38 +5,41 @@
 	angular.module('app.login',[])
 	.controller('LoginController', LoginController);
 
-	function LoginController ( $state, Login ) {
+	function LoginController ( $location, AuthenticationService ) { 
 
-		var LoginController = this;
-		LoginController.submitted = false;
+		var loginController = this;
 
-		LoginController.submitLogin = function() {
+		(function initController() {
 
-			LoginController.userlogin = {};
-			LoginController.userlogin = {
-				email: LoginController.email,
-				pass: LoginController.pass
-			};
-			
-			var loginResult = [];
- 			loginResult = Login.get(LoginController.userlogin, function(){
- 				(typeof(LoginController.userlogin.email) == "undefined") ? isNotValid() : isValid();
+			// reset loginStatus
+			AuthenticationService.ClearCredentials();
+
+		})();
+
+		loginController.submitLogin = function() {
+
+			//loginController.dataLoading = true;
+
+			AuthenticationService.Login(loginController.username, loginController.password, function(response) {
+
+				if (response.success) {
+
+					console.log('yes');
+					AuthenticationService.SetCredentials(loginController.username);
+					$location.path('/content');
+
+				} else {
+
+					console.log('nope');
+					//loginController.dataLoading = false;
+
+				}
+
 			});
-				
-			var isValid = function() {
-				$state.go('app');
-			};
-
-			var isNotValid = function() {
-				$('.errorLogin').css({'display':'block'});
-			};
 
 
-			$('input').val('');
 
-		};
-		
-
+		}
 	}
 
 })();

@@ -2,6 +2,7 @@
   "userlogin": [
     {
       "user": 1,
+      "username": "admin",
       "firstName": "admin",
       "lastName": "admin",
       "password": "admin",
@@ -10,11 +11,20 @@
     },
     {
       "user": 2,
-      "firstName": "pia",
+      "username": "pia",
+      "firstName": "m pia",
       "lastName": "gamon",
       "password": "pia",
       "email": "pia@pia.com",
       "role": "user"
+    },
+    {
+      "password": "admin",
+      "id": "60003bbc-0133-4ff5-9f3b-89523089ee96"
+    },
+    {
+      "password": "admin",
+      "id": "a152ab93-38f9-4c11-94e6-b8f215d7c920"
     }
   ],
   "mainmenu": [

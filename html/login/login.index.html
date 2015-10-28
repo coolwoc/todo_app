@@ -8,7 +8,7 @@
 
 			<div class="formGroup" ng-class="{'has-error': login.username.$dirty && login.username.$error.required}">
 				<label for="name">Please enter your user name</label>
-				<input type="text" name="name" placeholder="Sign-up with your name" ng-model="login.name">
+				<input type="text" name="name" placeholder="Sign-up with your name" ng-model="login.username">
 			</div>
 
 			<div class="formGroup" ng-class="{'has-error': login.username.$dirty && login.username.$error.required}">
@@ -28,5 +28,5 @@
 
 	<a class="signUp" ui-sref="login.register">New user? Sign-up</a>
 	<p>[ credentials: admin@admin.com / admin ]</p>
-	
+
 </section>
