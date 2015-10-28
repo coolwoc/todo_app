@@ -4,6 +4,8 @@
 
 	angular.module('app.api', []);
 
+	// authentication
+
 	angular.module('app.api').factory('Login', Login);
 	function Login($resource, apibase) {
 		return $resource(apibase + '/userlogin', {},
@@ -21,26 +23,8 @@
 		};
 	}
 
-	angular.module('app.api').factory('Token', Token);
-	function Token() {
-		var key;
-		return {
-			get: function() {
-				key = localStorage.getItem('id_token');
-				return key;
-			},
-			set: function(val) {
-				localStorage.setItem('id_token', val);
-				key = val;
-				return key;
-			}
-		};
-	}
 
-	angular.module('app.api').factory('User', User);
-	function User( $resource, apibase ) {
-		return $resource(apibase + '/userlogin');
-	} 
+	// $resource data
 
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
@@ -116,6 +100,8 @@
 		});
 	}
 
+
+	// Service
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
