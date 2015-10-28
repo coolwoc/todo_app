@@ -3,10 +3,15 @@
 	<form name="formLogin" ng-submit="login.submitLogin()" novalidate>
 		<fieldset>
 			<legend>Login To-Do app</legend>
+
 			<div class="formGroup">
+				<label for="name">Please enter your user name</label>
+				<input type="text" name="name" placeholder="Sign-up with your name" ng-model="login.name">
+			</div>
+			<!-- div class="formGroup">
 				<label for="email">Please enter your user mail</label>
 				<input type="email" name="email" placeholder="Please enter email" ng-model="login.email">
-			</div>
+			</div -->
 			<div class="formGroup">
 				<label for="password">Please enter your password</label>
 				<input type="password" name="password" placeholder="Please enter password" ng-model="login.pass">
@@ -15,6 +20,6 @@
 			<p class="errorLogin"> Please check your credentials</p>
 		</fieldset>
 	</form>
-	<a class="signUp" href="#">New user? Sign-up</a>
+	<a class="signUp" ui-sref="login.register">New user? Sign-up</a>
 	<p>[ credentials: admin@admin.com / admin ]</p>
 </section>

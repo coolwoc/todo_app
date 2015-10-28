@@ -7,10 +7,12 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
+		'ngCookies',
 		'app.api',
 		'app.global',
 		'app.menu',
 		'app.login',
+		'app.register',
 		'app.main',
 		'app.utility',
 		'app.alltodo',
@@ -24,7 +26,8 @@
 	.constant('apibase', 'http://localhost:3000')
 	.constant('apiversion', '/v1.0')
 
-	.config(config);
+	.config(config)
+	.run(run);
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
@@ -32,12 +35,22 @@
 
 		$stateProvider
 			.state('login', {
-				url:'',
+				url:'/login',
 				views: {
 					'content@': {
 						templateUrl: 'html/login/login.index.html',
 						controller: 'LoginController',
 						controllerAs: 'login'
+					}
+				}
+			})
+			.state('login.register', {
+				url: '/register',
+				views: {
+					'content@': {
+						templateUrl: 'html/register/register.index.html',
+						controller: 'RegisterController',
+						controllerAs: 'register'
 					}
 				}
 			})
@@ -60,6 +73,26 @@
 		//jwtInterceptorProvider.tokenGetter.push('jwtInterceptor');
 		//$httpProvider.interceptors.push('authInterceptor');
 
+	}
+	function run( $rootScope, $location, $cookieStore, $http ) {
+
+		// keep user logged in after page refresh.
+		$rootScope.globals = $cookieStore.get('globals') || {};
+
+		if ( $rootScope.globals.currentUser ) {
+			$http.defaults.headers.common['Authorization'] = 'Basic' + $rootScope.globals.currentUser.authdata;
+		}
+
+		$rootScope.$on('$locationChangeStart', function (event, next, current) {
+
+			// redirect to login page if not logged in and trying to acess a restricted page.
+			var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
+			var loggedIn = $rootScope.globals.currentUser;
+			if ( restrictedPage && !loggedIn ) {
+				$location.path('/login');
+			}
+
+		});
 	}
 
 })();
