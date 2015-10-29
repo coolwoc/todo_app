@@ -25,7 +25,7 @@
       "lastName": "user",
       "password": "pia",
       "email": "user@user.com",
-      "role": ["user"]
+      "role": "user"
     }
 
   ],
