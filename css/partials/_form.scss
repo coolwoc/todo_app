@@ -57,6 +57,11 @@ form {
 		width: auto;
 		float: left;
 	}
+	.formGroup.has-error {
+		input {
+			border: 1px solid red;
+		}
+	}
 	button {
 		margin-top: 10px;
 		font-size: 13px;

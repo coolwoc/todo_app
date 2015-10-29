@@ -5,8 +5,8 @@
 	angular.module('app.api', []);
 
 	// data - statusCode.
-	angular.module('app.api').factory('Statuscode', Statuscode);
-	function Statuscode() {
+	angular.module('app.api').factory('statuscode', statuscode);
+	function statuscode() {
 		return {
 			isError: function(value) { 
 				return (value == 1) ? true : false;

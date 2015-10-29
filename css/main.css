@@ -1150,6 +1150,9 @@ form .formGroup.selectAlign {
   width: auto;
   float: left; }
 
+form .formGroup.has-error input {
+  border: 1px solid red; }
+
 form button {
   margin-top: 10px;
   font-size: 13px; }
