@@ -31,7 +31,7 @@
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
-		$urlRouterProvider.otherwise('/login');
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('login', {

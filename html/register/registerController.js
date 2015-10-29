@@ -5,6 +5,10 @@
 	angular.module('app.register', [])
 	.controller('RegisterController', RegisterController);
 
-	function RegisterController() {};
+	function RegisterController() {
+
+		var registerController = this;
+
+	};
 
 })();

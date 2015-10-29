@@ -1,7 +1,7 @@
 {
   "userlogin": [
     {
-      "user": 1,
+      "id": 1,
       "username": "admin",
       "firstName": "admin",
       "lastName": "admin",
@@ -10,7 +10,7 @@
       "role": "admin"
     },
     {
-      "user": 2,
+      "id": 2,
       "username": "pia",
       "firstName": "m pia",
       "lastName": "gamon",
@@ -25,6 +25,33 @@
     {
       "password": "admin",
       "id": "a152ab93-38f9-4c11-94e6-b8f215d7c920"
+    },
+    {
+      "id": "0c2a1e51-b494-47c1-a639-dd2cf8587caa"
+    },
+    {
+      "id": "57c284a1-f97b-44dd-a7f2-326e88209c43"
+    },
+    {
+      "id": "7558c455-718e-479c-bfae-12f116d4b9b5"
+    },
+    {
+      "id": "6b631994-52a6-41c5-b74f-9c5cadf7ae9f"
+    },
+    {
+      "id": "d26e3927-a4d7-4f25-87f0-1b05432bbf76"
+    },
+    {
+      "id": "4e36ace2-65fe-43da-9d72-8e42a6070d08"
+    },
+    {
+      "id": "b4e7e119-244d-4f37-b866-5647bcf210b1"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ],
   "mainmenu": [
@@ -223,5 +250,13 @@
       "id": 19
     }
   ],
-  "auth": []
+  "auth": [],
+  "users": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+  ]
 }
