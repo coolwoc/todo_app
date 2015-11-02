@@ -1,20 +1,30 @@
-<link rel="stylesheet" type="text/css" href="/css/main.min.css">
 <section class="formLogin">
-	<form name="formLogin" ng-submit="login.submitLogin()" novalidate>
+
+	<form name="formLogin" ng-submit="login.submitLogin()" novalidate role="form">
+
 		<fieldset>
+
 			<legend>Login To-Do app</legend>
-			<div class="formGroup">
-				<label for="email">Please enter your user mail</label>
-				<input type="email" name="email" placeholder="Please enter email" ng-model="login.email">
+
+			<div class="formGroup" ng-class="{'has-error': login.username.$dirty && login.username.$error.required}">
+				<label for="name">Please enter your user name</label>
+				<input type="text" name="name" placeholder="Sign-up with your name" ng-model="login.username">
 			</div>
-			<div class="formGroup">
+
+			<div class="formGroup" ng-class="{'has-error': login.password.$dirty && login.password.$error.required}">
 				<label for="password">Please enter your password</label>
-				<input type="password" name="password" placeholder="Please enter password" ng-model="login.pass">
+				<input type="password" name="password" placeholder="Please enter password" ng-model="login.password">
 			</div>
-			<button type="submit">LogIn</button>
-			<p class="errorLogin"> Please check your credentials</p>
+
+			<p class="errorLogin">{{login.errorData}}</p>
+
+			<button type="submit" ng-disabled="formLogin.$invalid">LogIn</button>
+
 		</fieldset>
+
 	</form>
-	<a class="signUp" href="#">New user? Sign-up</a>
+
+	<a class="signUp" ui-sref="login.register">New user? Sign-up</a>
 	<p>[ credentials: admin@admin.com / admin ]</p>
+
 </section>

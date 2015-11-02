@@ -1,0 +1,36 @@
+<section class="formLogin">
+	
+	<form name="formRegister" ng-submit="register.submitRegister()" role="form" novalidate>
+		
+		<fieldset>
+			
+			<legend>User Registration</legend>
+
+			<div class="formGroup" ng-class="{ 'has-error': register.firstName.$dirty && register.firstName.$error.required }">
+	            <label for="username">First name</label>
+	            <input type="text" name="firstName" id="firstName" placeholder="Enter firstname is required." ng-model="register.firstName" required />
+	            <span ng-show="register.firstName.$dirty && register.firstName.$error.required">First name is required</span>
+	        </div>
+	        <div class="formGroup" ng-class="{ 'has-error': register.lastName.$dirty && register.lastName.$error.required }">
+	            <label for="username">Last name</label>
+	            <input type="text" name="lastName" id="Text1" placeholder="Enter lastname is required." ng-model="register.lastName" required />
+	            <span ng-show="register.lastName.$dirty && register.lastName.$error.required">Last name is required</span>
+	        </div>
+	        <div class="formGroup" ng-class="{ 'has-error': register.username.$dirty && register.username.$error.required }">
+	            <label for="username">Username</label>
+	            <input type="text" name="username" id="username" placeholder="Enter username is required." ng-model="register.username" required />
+	            <span ng-show="register.username.$dirty && register.username.$error.required">Username is required</span>
+	        </div>
+	        <div class="formGroup" ng-class="{ 'has-error': register.password.$dirty && register.password.$error.required }">
+	            <label for="password">Password</label>
+	            <input type="password" name="password" id="password" placeholder="Enter password is required." ng-model="register.password" required />
+	            <span ng-show="register.password.$dirty && register.password.$error.required">Password is required</span>
+	        </div>
+
+	        <button type="submit" ng-disabled="register.$invalid">Register</button>
+
+		</fieldset>
+
+	</form>
+
+</section>

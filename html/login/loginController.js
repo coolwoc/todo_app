@@ -5,38 +5,26 @@
 	angular.module('app.login',[])
 	.controller('LoginController', LoginController);
 
-	function LoginController ( $state, Login ) {
+	function LoginController ( $state, statuscode, Login ) { 
 
-		var LoginController = this;
-		LoginController.submitted = false;
-
-		LoginController.submitLogin = function() {
-
-			LoginController.userlogin = {};
-			LoginController.userlogin = {
-				email: LoginController.email,
-				pass: LoginController.pass
-			};
-			
-			var loginResult = [];
- 			loginResult = Login.get(LoginController.userlogin, function(){
- 				(typeof(LoginController.userlogin.email) == "undefined") ? isNotValid() : isValid();
-			});
-				
-			var isValid = function() {
-				$state.go('app');
-			};
-
-			var isNotValid = function() {
-				$('.errorLogin').css({'display':'block'});
-			};
-
-
-			$('input').val('');
-
-		};
+		var loginController = this;
 		
+		loginController.submitLogin = function() {
 
+			loginController.userlogin = {};
+			loginController.userlogin = {
+				username: loginController.username,
+				password: loginController.password
+			}
+
+			var loginResult = [];
+			loginResult = Login.get(loginController.userlogin, function() {
+
+				(loginResult.length == 1 && ( loginController.password != 'undefined' && loginResult[0].password == loginController.password) ) ? $state.go('app') : loginController.errorData = 'Please check username / password.';
+				
+			});
+
+		}
 	}
 
 })();

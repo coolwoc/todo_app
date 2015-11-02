@@ -4,44 +4,19 @@
 
 	angular.module('app.api', []);
 
+	//Login
 	angular.module('app.api').factory('Login', Login);
-	function Login($resource, apibase) {
+	function Login ($resource, apibase) {
 		return $resource(apibase + '/userlogin', {},
 		{
-			'get': {method:'GET', isArray: true}
+			'get': 		{method: 'GET', isArray: true},
+			'save': 	{method: 'POST'},
+			'query': 	{method: 'GET', isArray: true},
+			'delete':  	{method: 'DELETE'}
 		});
 	}
 
-	angular.module('app.api').factory('Statuscode', Statuscode);
-	function Statuscode() {
-		return {
-			isError: function(value) { 
-				return (value == 1) ? true : false;
-			}
-		};
-	}
-
-	angular.module('app.api').factory('Token', Token);
-	function Token() {
-		var key;
-		return {
-			get: function() {
-				key = localStorage.getItem('id_token');
-				return key;
-			},
-			set: function(val) {
-				localStorage.setItem('id_token', val);
-				key = val;
-				return key;
-			}
-		};
-	}
-
-	angular.module('app.api').factory('User', User);
-	function User( $resource, apibase ) {
-		return $resource(apibase + '/userlogin');
-	} 
-
+	// RESTful data
 	angular.module('app.api').factory('Menulist', Menulist);
 	function Menulist($resource, apibase) {
 		return $resource(apibase + '/mainmenu', {}, 
@@ -54,7 +29,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectlist', Projectlist);
 	function Projectlist($resource, apibase) {
 		return $resource(apibase + '/project', {}, 
@@ -67,7 +41,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectlabel', Projectlabel);
 	function Projectlabel($resource, apibase) {
 		return $resource(apibase + '/labels', {}, 
@@ -80,7 +53,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectfilter', Projectfilter);
 	function Projectfilter($resource, apibase) {
 		return $resource(apibase + '/filters', {}, 
@@ -93,7 +65,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Alltasks', Alltasks);
 	function Alltasks($resource, apibase) {
 
@@ -116,6 +87,7 @@
 		});
 	}
 
+	// Service & Factory
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
@@ -135,7 +107,31 @@
 			getIdData: getIdData
 
 		};
-
+	}
+	angular.module('app.api').factory('statuscode', statuscode);
+	function statuscode() {
+		return {
+			isError: function(value) { 
+				return (value == 1) ? true : false;
+			}
+		};
 	}
 
 })();
+
+/*
+	SOME AUTHENTICATION & LOGIN IDEAS.
+
+	SimpleLogin: 
+		https://github.com/cornflourblue/angular-registration-login-example
+
+	Authorization: 
+		http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx#app
+
+	Roles: 
+		http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
+		
+	Quick Role-Based Authentication:
+		http://jonsamwell.com/url-route-authorization-and-security-in-angular/
+
+*/

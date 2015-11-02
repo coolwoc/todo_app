@@ -57,6 +57,11 @@ form {
 		width: auto;
 		float: left;
 	}
+	.formGroup.has-error {
+		input {
+			border: 1px solid red;
+		}
+	}
 	button {
 		margin-top: 10px;
 		font-size: 13px;
@@ -130,7 +135,6 @@ form {
 	}
 	p.errorLogin {
 		color: $error;
-		display: none;
 		text-align: center;
 	}
 	.signUp {

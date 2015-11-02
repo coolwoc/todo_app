@@ -1,22 +1,31 @@
 {
   "userlogin": [
     {
-      "user": 1,
-      "name": "admin",
+      "id": 1,
+      "username": "admin",
+      "firstName": "admin",
+      "lastName": "admin",
+      "password": "admin",
       "email": "admin@admin.com",
-      "pass": "admin"
+      "role": "admin"
     },
     {
-      "user": 2,
-      "name": "Blas",
-      "email": "blas@blas.com",
-      "pass": "blas"
+      "id": 2,
+      "username": "guest",
+      "firstName": "guest",
+      "lastName": "guest",
+      "password": "guest",
+      "email": "guest@guest.com",
+      "role": "guest"
     },
     {
-      "user": 3,
-      "name": "Pia",
-      "email": "pia@pia.com",
-      "pass": "pia"
+      "id": 3,
+      "username": "user",
+      "firstName": "user",
+      "lastName": "user",
+      "password": "pia",
+      "email": "user@user.com",
+      "role": "user"
     }
   ],
   "mainmenu": [
@@ -215,5 +224,13 @@
       "id": 19
     }
   ],
-  "auth": []
+  "auth": [],
+  "users": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+  ]
 }
