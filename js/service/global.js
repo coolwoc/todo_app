@@ -4,14 +4,16 @@
 
 	angular.module('app.api', []);
 
-	// data - statusCode.
-	angular.module('app.api').factory('statuscode', statuscode);
-	function statuscode() {
-		return {
-			isError: function(value) { 
-				return (value == 1) ? true : false;
-			}
-		};
+	//Login
+	angular.module('app.api').factory('Login', Login);
+	function Login ($resource, apibase) {
+		return $resource(apibase + '/userlogin', {},
+		{
+			'get': 		{method: 'GET', isArray: true},
+			'save': 	{method: 'POST'},
+			'query': 	{method: 'GET', isArray: true},
+			'delete':  	{method: 'DELETE'}
+		});
 	}
 
 	// RESTful data
@@ -27,7 +29,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectlist', Projectlist);
 	function Projectlist($resource, apibase) {
 		return $resource(apibase + '/project', {}, 
@@ -40,7 +41,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectlabel', Projectlabel);
 	function Projectlabel($resource, apibase) {
 		return $resource(apibase + '/labels', {}, 
@@ -53,7 +53,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Projectfilter', Projectfilter);
 	function Projectfilter($resource, apibase) {
 		return $resource(apibase + '/filters', {}, 
@@ -66,7 +65,6 @@
 
 		});
 	}
-
 	angular.module('app.api').factory('Alltasks', Alltasks);
 	function Alltasks($resource, apibase) {
 
@@ -89,7 +87,7 @@
 		});
 	}
 
-	// Service
+	// Service & Factory
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
@@ -108,6 +106,14 @@
 			addIdData: addIdData,
 			getIdData: getIdData
 
+		};
+	}
+	angular.module('app.api').factory('statuscode', statuscode);
+	function statuscode() {
+		return {
+			isError: function(value) { 
+				return (value == 1) ? true : false;
+			}
 		};
 	}
 

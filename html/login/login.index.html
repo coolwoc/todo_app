@@ -11,16 +11,14 @@
 				<input type="text" name="name" placeholder="Sign-up with your name" ng-model="login.username">
 			</div>
 
-			<div class="formGroup" ng-class="{'has-error': login.username.$dirty && login.username.$error.required}">
+			<div class="formGroup" ng-class="{'has-error': login.password.$dirty && login.password.$error.required}">
 				<label for="password">Please enter your password</label>
 				<input type="password" name="password" placeholder="Please enter password" ng-model="login.password">
 			</div>
 
+			<p class="errorLogin">{{login.errorData}}</p>
+
 			<button type="submit" ng-disabled="formLogin.$invalid">LogIn</button>
-
-			<p class="errorLogin"> Please check your credentials</p>
-
-			<div ng-show="Login.error" class="errorLogin">{{login.error}}</div>
 
 		</fieldset>
 
