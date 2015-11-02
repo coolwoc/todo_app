@@ -1209,7 +1209,6 @@ form button[type="submit"] {
     text-align: center; }
   .formLogin p.errorLogin {
     color: red;
-    display: none;
     text-align: center; }
   .formLogin .signUp {
     display: block;
@@ -1367,6 +1366,7 @@ form button[type="submit"] {
 .content .main.intro p {
   margin: 0;
   padding: 0;
+  clear: both;
   padding-bottom: 15px; }
 
 .content .main.intro .signature {
