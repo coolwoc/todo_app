@@ -11,7 +11,7 @@
 		
 		loginController.submitLogin = function() {
 
-			loginController.userlogin = [];
+			loginController.userlogin = {};
 			loginController.userlogin = {
 				username: loginController.username,
 				password: loginController.password
