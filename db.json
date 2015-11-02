@@ -23,7 +23,7 @@
       "username": "user",
       "firstName": "user",
       "lastName": "user",
-      "password": "pia",
+      "password": "user",
       "email": "user@user.com",
       "role": "user"
     }
@@ -59,7 +59,7 @@
     {
       "id": 1,
       "user": 1,
-      "name": "Blas",
+      "username": "guess",
       "project": "Facebook2",
       "label": "Medium",
       "dateNum": "2015-10-18T21:00:00.000Z",
@@ -70,7 +70,7 @@
     {
       "id": 5,
       "user": 1,
-      "name": "Pia",
+      "username": "guess",
       "project": "tweeter",
       "label": "low",
       "dateNum": "2015-01-30T22:00:00.000Z",
@@ -81,7 +81,7 @@
     {
       "id": 6,
       "user": 1,
-      "name": "Pia",
+      "username": "guess",
       "project": "tweeter",
       "label": "low",
       "dateNum": "2015-08-28T21:00:00.000Z",
@@ -92,7 +92,7 @@
     {
       "id": 7,
       "user": 2,
-      "name": "Blas",
+      "username": "guess",
       "project": "facebook",
       "label": "high",
       "dateNum": "2015-08-28T21:00:00.000Z",
@@ -103,7 +103,7 @@
     {
       "id": 8,
       "user": 1,
-      "name": "Pia",
+      "username": "guess",
       "project": "google",
       "level": "high",
       "dateNum": "2015-08-28T21:00:00.000Z",
@@ -115,83 +115,77 @@
     {
       "project": "anotherTodayTask",
       "label": "high",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
       "done": false,
-      "user": 1,
       "id": 9
     },
     {
       "project": "Testing",
       "label": "high",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-04T21:00:00.000Z",
       "headerComment": "Testing Filters",
       "comment": "Testing Filters task description.",
       "done": false,
-      "user": 1,
       "id": 10
     },
     {
       "project": "Today 06/10",
       "label": "medium",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Today 06/10",
       "comment": "Today 06/10",
       "done": false,
-      "user": 1,
       "id": 11
     },
     {
       "project": "Task tomorrow",
       "label": "low",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Task Tomorrow",
       "comment": "Task Tomorrow",
       "done": false,
-      "user": 1,
       "id": 12
     },
     {
       "project": "Task few days.",
       "label": "low",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
       "done": false,
-      "user": 1,
       "id": 13
     },
     {
       "project": "Task more few days",
       "label": "low",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
       "done": false,
-      "user": 1,
       "id": 14
     },
     {
       "project": "AnotherToday Task",
       "label": "high",
-      "name": "Pia",
+      "username": "guess",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
       "done": false,
-      "user": 1,
       "id": 15
     },
     {
       "project": "This is a test.",
       "label": "high",
+      "username": "guess",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "This is a checkbox test",
       "comment": "This is a checkbox description task",
@@ -201,6 +195,7 @@
     {
       "project": "Testing isDone",
       "label": "low",
+      "username": "guess",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Testing isDone",
       "comment": "Testing isDone description",
@@ -210,9 +205,11 @@
     {
       "project": "Testing is not done",
       "label": "low",
+      "username": "guess",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Testing is not done.",
       "comment": "Testing is not done.",
+      "done": false,
       "id": 18
     },
     {
@@ -221,6 +218,7 @@
       "dateNum": "2015-10-13T21:00:00.000Z",
       "headerComment": "Today",
       "comment": "New Task Today",
+      "done": false,
       "id": 19
     }
   ],
