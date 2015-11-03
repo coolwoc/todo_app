@@ -19,7 +19,7 @@
 
 			var loginResult = [];
 			loginResult = Login.get(loginController.userlogin, function() {
-				(loginResult.length == 1 && ( loginController.password != 'undefined' && loginResult[0].password == loginController.password) ) ? isLogin() : notLogin();
+				(loginController.password != 'undefined' && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
 			});
 
 			var isLogin = function() {
