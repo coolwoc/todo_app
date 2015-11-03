@@ -23,10 +23,14 @@
 			});
 
 			var isLogin = function() {
-				// we add username to $cookie;
-				$cookies.username = loginController.username;
+
+				// we add username to $cookie service;
+				var userValue = loginController.username;
+				$cookies.username = userValue;
+
 				// re-direct to main app.
 				$state.go('app');
+				
 			};
 			var notLogin = function() {
 				loginController.errorData = 'Please check username / password.';
