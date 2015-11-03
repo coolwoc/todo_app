@@ -36,12 +36,12 @@
 				registerController.errorData = 'All fields are required';
 
 			}
-		}
+		};
 
 		registerController.resetVal = function() {
 			$('form').find('input').val('');
 		}
 
-	};
+	}
 
 })();
