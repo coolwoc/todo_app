@@ -14,10 +14,25 @@
 		li {
 			width: auto;
 			font-weight: bold;
+			padding: 8px 0 0 0;
 			color: $white;
+			a {
+				float: right;
+				font-weight: normal;
+				color: $white;
+				text-decoration: none;
+				&:hover {
+					color: #333138;
+					font-weight: bold;
+				}
+			}
 		}
-		li:first-child {
-			padding: 8px 2px 4px 0;
+		li:last-child {
+			clear: both;
+			padding: 4px 0 0 0;
+			span {
+				margin-left: 5px;
+			}
 		}
 	}
 }

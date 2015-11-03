@@ -24,7 +24,7 @@
 
 			var isLogin = function() {
 
-				// localstorage added username.
+				// Add username to localstorage provieder.
 				$localStorage.username = loginController.username;
 
 				// re-direct to main app.

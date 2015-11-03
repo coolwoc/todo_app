@@ -1,4 +1,10 @@
 <ul>
-	<li>{{ utilities.time | date: 'EEE, dd MMM yyyy' }}</li>
-	<li><span class="oi" data-glyph="person" title="person" aria-hidden="true">{{utilities.userIs}}</span></li>
+	<li>
+		<a class="oi" data-glyph="account-logout" title="account-logout" aria-hidden="true" href="#" ng-click="utilities.logOut()">Log-out</a>
+	</li>
+	<li>
+		<span>{{ utilities.time | date: 'EEE, dd MMM yyyy' }}</span>
+		<span>•</span>
+		<span class="oi" data-glyph="person" title="person" aria-hidden="true">{{utilities.userIs}}</span>
+	</li>
 </ul>
