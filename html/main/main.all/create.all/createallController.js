@@ -70,8 +70,6 @@
 					
 				};
 
-				console.log(CreatetodoController.data.done);
-
 				Alltasks.save(CreatetodoController.data);
 				$('form').find('input').val('');
 				$('p.msg-error').removeClass('msg-error');
