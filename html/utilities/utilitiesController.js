@@ -16,7 +16,7 @@
 		// logOut
 		utilitiesController.logOut = function() {
 
-			delete $localStorage;
+			delete $localStorage.username;
 			$state.go('login');
 
 		}
