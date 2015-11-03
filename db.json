@@ -65,7 +65,7 @@
       "dateNum": "2015-10-18T21:00:00.000Z",
       "headerComment": "Change H2",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis mauris vitae condimentum. Donec tempus velit a orci sodales, ac vestibulum lorem blandit. Proin aliquet neque metus, et tristique ligula blandit id.",
-      "done": false
+      "done": true
     },
     {
       "id": 5,
@@ -76,7 +76,7 @@
       "dateNum": "2015-01-30T22:00:00.000Z",
       "headerComment": "Add assets",
       "comment": "Change assets",
-      "done": false
+      "done": true
     },
     {
       "id": 6,
@@ -87,7 +87,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Change background colors",
       "comment": "Use green( #91f208 )",
-      "done": false
+      "done": true
     },
     {
       "id": 7,
@@ -98,7 +98,7 @@
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Make a FB page",
       "comment": "Follow psd for that",
-      "done": false
+      "done": true
     },
     {
       "id": 8,
@@ -155,7 +155,7 @@
     {
       "project": "Task few days.",
       "label": "low",
-      "username": "guest",
+      "username": "user",
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
@@ -165,7 +165,7 @@
     {
       "project": "Task more few days",
       "label": "low",
-      "username": "guest",
+      "username": "user",
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
@@ -175,7 +175,7 @@
     {
       "project": "AnotherToday Task",
       "label": "high",
-      "username": "guest",
+      "username": "user",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
@@ -185,7 +185,7 @@
     {
       "project": "This is a test.",
       "label": "high",
-      "username": "guest",
+      "username": "user",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "This is a checkbox test",
       "comment": "This is a checkbox description task",
