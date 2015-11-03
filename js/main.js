@@ -7,7 +7,7 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
-		'ngCookies',
+		'ngStorage',
 		'app.api',
 		'app.global',
 		'app.menu',

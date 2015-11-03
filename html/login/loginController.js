@@ -5,7 +5,7 @@
 	angular.module('app.login',[])
 	.controller('LoginController', LoginController);
 
-	function LoginController ( $cookies, $state, statuscode, Login ) { 
+	function LoginController ( $localStorage, $state, statuscode, Login ) { 
 
 		var loginController = this;
 		
@@ -24,16 +24,15 @@
 
 			var isLogin = function() {
 
-				// we add username to $cookie service;
-				var userValue = loginController.username;
-				$cookies.username = userValue;
+				// localstorage added username.
+				$localStorage.username = loginController.username;
 
 				// re-direct to main app.
 				$state.go('app');
-				
+
 			};
 			var notLogin = function() {
-				loginController.errorData = 'Please check username / password.';
+				loginController.errorData = 'Please check all the form fields and your credentials.';
 			};
 
 		};
