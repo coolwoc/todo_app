@@ -31,16 +31,16 @@
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
-		$urlRouterProvider.otherwise('/login');
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('login', {
-				url:'/login',
+				url:'',
 				views: {
 					'content@': {
 						templateUrl: 'html/login/login.index.html',
 						controller: 'LoginController',
-						controllerAs: 'login'
+						controllerAs: 'login',
 					}
 				}
 			})
@@ -72,7 +72,7 @@
 	}
 
 	function run() {
-		
+
 	}
 
 })();
