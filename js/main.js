@@ -26,8 +26,8 @@
 	.constant('apibase', 'http://localhost:3000')
 	.constant('apiversion', '/v1.0')
 
-	.config(config)
-	.run(run);
+	.config(config);
+	//.run(run);
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
@@ -61,24 +61,44 @@
 						templateUrl: 'html/menu/menu.index.html',
 						controller: 'MenuController',
 						controllerAs: 'menuData',
-						data {
-							role: ['admin', 'guest', 'user']
+						data : {
+							roleAdmin: true,
+							roleUser: true,
+							roleGuest: true
 						}
 					},
 					'content@': {
 						templateUrl: 'html/content/content.index.html',
 						controller: 'Contentcontroller',
 						controllerAs: 'content',
-						data {
-							role: ['admin', 'guest', 'user']
+						data : {
+							roleAdmin: true,
+							roleUser: true,
+							roleGuest: true
 						}
 					}
 				}
 			});
 	}
+	
+	/*
+	function run( $scopeRoute, $location ) {
 
-	function run() {
+		//
+		// roles routes with authentication should be here.
+		// we also need to inject in run() the authentication
+		//
 
+		$rootScope.$on('$stateChangeStart', function( event, toState, toParams, fromState, fromParams ) {
+
+			console.log('stateChange');
+			//event.preventDefault();
+
+		});
+
+		$rootScope.$on('$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams ) {
+			console.log(stateChangeSuccess);
+		});
 	}
-
+	*/
 })();
