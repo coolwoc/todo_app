@@ -60,12 +60,18 @@
 					'menu': {
 						templateUrl: 'html/menu/menu.index.html',
 						controller: 'MenuController',
-						controllerAs: 'menuData'
+						controllerAs: 'menuData',
+						data {
+							role: ['admin', 'guest', 'user']
+						}
 					},
 					'content@': {
 						templateUrl: 'html/content/content.index.html',
 						controller: 'Contentcontroller',
-						controllerAs: 'content'
+						controllerAs: 'content',
+						data {
+							role: ['admin', 'guest', 'user']
+						}
 					}
 				}
 			});
