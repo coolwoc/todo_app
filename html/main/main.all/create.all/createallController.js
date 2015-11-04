@@ -30,59 +30,61 @@
 			});
 	}
 
-	function CreatetodoController ( Alltasks, Projectlabel, User) {
+	function CreatetodoController ( Alltasks, Projectlabel ) {
 
-		var CreatetodoController = this;
+		var createtodoController = this;
 
-		CreatetodoController.submitted = false;
+		createtodoController.submitted = false;
 
-		CreatetodoController.priority = Projectlabel.query();
+		createtodoController.priority = Projectlabel.query();
 
-		CreatetodoController.user = User.query({}, function() {
+		/*
+		createtodoController.user = User.query({}, function() {
 
 			var userData = [];
 
-			angular.forEach(CreatetodoController.user, function(value, key) {
+			angular.forEach(createtodoController.user, function(value, key) {
 
-				userData.push(CreatetodoController.user[key].name);
+				userData.push(createtodoController.user[key].name);
 
 			});
 
-			CreatetodoController.user = userData;
+			createtodoController.user = userData;
 			
 		});
+		*/
 
-		CreatetodoController.createTask = function () {
+		createtodoController.createTask = function () {
 
-			if (CreatetodoController.formAddTasks.$valid) {
+			if (createtodoController.formAddTasks.$valid) {
 
-				CreatetodoController.data = {};
+				createtodoController.data = {};
 
-				CreatetodoController.data = {
+				createtodoController.data = {
 
-					project: CreatetodoController.project,
-					label: CreatetodoController.label,
-					name: CreatetodoController.name,
-					dateNum: CreatetodoController.dateNum,
-					headerComment: CreatetodoController.headerComment,
-					comment: CreatetodoController.comment,
-					done: CreatetodoController.done
+					project: createtodoController.project,
+					label: createtodoController.label,
+					name: createtodoController.name,
+					dateNum: createtodoController.dateNum,
+					headerComment: createtodoController.headerComment,
+					comment: createtodoController.comment,
+					done: createtodoController.done
 					
 				};
 
-				Alltasks.save(CreatetodoController.data);
+				Alltasks.save(createtodoController.data);
 				$('form').find('input').val('');
 				$('p.msg-error').removeClass('msg-error');
 
 			} else {
 
 				$('form').find('p').addClass('msg-error');
-				CreatetodoController.submitted = true;
+				createtodoController.submitted = true;
 
 			}
 		};
 		
-		CreatetodoController.resetVal = function() {
+		createtodoController.resetVal = function() {
 			$('form').find('input').val('');
 		};
 
