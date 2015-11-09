@@ -3,7 +3,7 @@
 
 <!-- list of task -->
 <ul class="allTask">
-	<li ng-repeat= "task in todo.allTasks | pagination: todo.numberCurrent * todo.pageSize | limitTo: todo.pageSize" >
+	<li ng-repeat= "task in todo.allTasks | pagination: todo.numberCurrent * todo.pageSize | limitTo: todo.pageSize">
 		<ul class="stamp">
 			<li>
 				<h3>{{task.project}}</h3>

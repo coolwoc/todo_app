@@ -6,7 +6,7 @@
 	.controller('MenuController', MenuController)
 	.directive('elmPanel', elmPanel);
 
-	function MenuController( Menulist, Projectlist, Projectlabel, Projectfilter, $stateParams ) {
+	function MenuController( Menulist, Projectlist, Projectlabel, Projectfilter, $stateParams, $state ) {
 
 		var MenuController = this;
 

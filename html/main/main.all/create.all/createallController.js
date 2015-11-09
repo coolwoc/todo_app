@@ -73,6 +73,7 @@
 				};
 
 				Alltasks.save(createtodoController.data);
+				Alltasks.apply();
 				$('form').find('input').val('');
 				$('p.msg-error').removeClass('msg-error');
 
