@@ -30,7 +30,7 @@
 			});
 	}
 
-	function CreatetodoController ( Alltasks, Projectlabel, Login ) {
+	function CreatetodoController ( Alltasks, Projectlabel, Login, $state ) {
 
 		var createtodoController = this;
 
@@ -70,12 +70,11 @@
 
 				Alltasks.save(createtodoController.data);
 				Alltasks.apply();
-				$('form').find('input').val('');
-				$('p.msg-error').removeClass('msg-error');
-
+				$state.go('app.all');
+				
 			} else {
 
-				$('form').find('p').addClass('msg-error');
+				createtodoController.errorData = "All the form fields must be filled!";
 				createtodoController.submitted = true;
 
 			}
@@ -83,6 +82,7 @@
 		
 		createtodoController.resetVal = function() {
 			$('form').find('input').val('');
+			createtodoController.errorData = '';
 		};
 
 	}

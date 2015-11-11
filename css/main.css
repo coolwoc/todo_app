@@ -1190,7 +1190,8 @@ form button[type="submit"] {
       color: #f1592a; }
     .formLogin .formGroup :-ms-input-placeholder {
       color: #f1592a; }
-  .formLogin button[type=submit] {
+  .formLogin button[type='button'],
+  .formLogin button[type='submit'] {
     color: #fffffa;
     border: none;
     margin: 10px 0 40px 0;
@@ -1239,12 +1240,11 @@ form button[type="submit"] {
         font-weight: bold;
         text-transform: uppercase;
         margin: 0 0 15px 50px; }
-      .taskForm form fieldset p {
-        display: none; }
       .taskForm form fieldset p.errorLogin {
         color: red;
-        display: none;
         text-align: center; }
+      .taskForm form fieldset .hasError input {
+        border: 1px solid red; }
 
 .pagination {
   width: 165px;

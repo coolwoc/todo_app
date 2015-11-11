@@ -120,7 +120,8 @@ form {
 		   color: $orange;
 		}
 	}
-	button[type=submit] {
+	button[type='button'],
+	button[type='submit'] {
 		color: $white;
 		border: none;
 		margin: 10px 0 40px 0;
@@ -185,14 +186,14 @@ form {
 			}
 
 			/**** error form ****/
-			p {
-				display: none;
-			}
 
 			p.errorLogin {
 				color: $error;
-				display: none;
 				text-align: center;
+			}
+
+			.hasError input {
+				border: 1px solid $error;
 			}
 		}
 	}

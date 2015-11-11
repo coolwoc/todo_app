@@ -5,7 +5,7 @@
 	angular.module('app.login',[])
 	.controller('LoginController', LoginController);
 
-	function LoginController ( $localStorage, $state, statuscode, Login ) { 
+	function LoginController ( $localStorage, $state, $timeout, statuscode, Login ) { 
 
 		var loginController = this;
 		
@@ -41,6 +41,20 @@
 			};
 
 		};
+
+		loginController.register = function() {
+
+			$('.content').fadeOut('fast');
+
+			var userRegister = function() {
+
+				$state.go('login.register');
+
+			}
+
+			$timeout(userRegister, 500);
+
+		}
 	}
 
 })();

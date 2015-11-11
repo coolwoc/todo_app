@@ -6,32 +6,32 @@
 			
 			<legend>User Registration</legend>
 
-			<div class="formGroup" ng-class="{ 'has-error': register.firstName.$dirty && register.firstName.$error.required }">
+			<div class="formGroup" ng-class="{ 'has-error': register.firstName.$invalid && register.firstName.$pristine }">
 	            <label for="firstName">First name</label>
-	            <input type="text" name="firstName" id="firstName" placeholder="Enter firstname is required." ng-model="register.firstName" required />
+	            <input type="text" name="firstName" id="firstName" placeholder="Firstname required." ng-model="register.firstName" required />
 	        </div>
-	        <div class="formGroup" ng-class="{ 'has-error': register.lastName.$dirty && register.lastName.$error.required }">
+	        <div class="formGroup" ng-class="{ 'has-error': register.lastName.$invalid && register.lastName.$pristine }">
 	            <label for="lastName">Last name</label>
-	            <input type="text" name="lastName" id="Text1" placeholder="Enter lastname is required." ng-model="register.lastName" required />
+	            <input type="text" name="lastName" id="Text1" placeholder="Lastname required." ng-model="register.lastName" required />
 	        </div>
-	        <div class="formGroup" ng-class="{ 'has-error': register.username.$dirty && register.username.$error.required }">
+	        <div class="formGroup" ng-class="{ 'has-error': register.username.$invalid && register.username.$pristine }">
 	            <label for="username">Username</label>
-	            <input type="text" name="username" id="username" placeholder="Enter username is required." ng-model="register.username" required />
+	            <input type="text" name="username" id="username" placeholder="Username required." ng-model="register.username" required />
 	        </div>
 
-	        <div class="formGroup" ng-class="{ 'has-error': register.mail.$dirty && register.mail.$error.required }">
+	        <div class="formGroup" ng-class="{ 'has-error': register.mail.$invalid && register.mail.$pristine }">
 	            <label for="mail">Email</label>
-	            <input type="email" name="mail" id="mail" placeholder="Enter email is required." ng-model="register.mail" required />
+	            <input type="email" name="mail" id="mail" placeholder="Email required." ng-model="register.mail" required />
 	        </div>
 
-	        <div class="formGroup" ng-class="{ 'has-error': register.password.$dirty && register.password.$error.required }">
+	        <div class="formGroup" ng-class="{ 'has-error': register.password.$invalid && register.password.$pristine }">
 	            <label for="password">Password</label>
-	            <input type="password" name="password" id="password" placeholder="Enter password is required." ng-model="register.password" required />
+	            <input type="password" name="password" id="password" placeholder="Password required." ng-model="register.password" required />
 	        </div>
 
 	        <p class="errorLogin">{{register.errorData}}</p>
 
-	        <button type="submit" ng-disabled="register.$invalid">Register</button>
+	        <button type="submit"  class="btn" ng-disabled="register.formRegister.$invalid">Register</button>
 	        <button type="button" class="btn" ng-click="register.resetVal()">Reset</button>
 
 		</fieldset>

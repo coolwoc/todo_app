@@ -4,7 +4,7 @@
 
 		<a class="close" ui-sref="app.all"><span class="oi" data-glyph="x" title="x" aria-hidden="true">Close</span></a>
 
-	    <form class="editForm" ng-submit="editTodo.editTask()" novalidate>
+	    <form class="editTodo.editForm" ng-submit="editTodo.editTask()" novalidate>
 	      
 	      <fieldset>
 
@@ -41,7 +41,7 @@
 	            <input type="text" id="description" name="description" ng-model="editTodo.task.comment" placeholder="Type Task Description">
 	        </div>
 
-	        <button type="submit" class="btn">Edit</button>
+	        <button type="submit" class="btn">Create</button>
 	        <button type="button" class="btn" ng-click="editTodo.cancelEdit()">Cancel</button>
 
 	      </fieldset>

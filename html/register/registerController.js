@@ -27,7 +27,8 @@
 				};
 
 				Login.save(registerController.dataRegister);
-				$('form').find('input').val('');
+				
+				$('.formLogin').empty();
 
 				$state.go('app');
 
