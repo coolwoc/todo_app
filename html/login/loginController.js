@@ -5,7 +5,7 @@
 	angular.module('app.login',[])
 	.controller('LoginController', LoginController);
 
-	function LoginController ( $state, statuscode, Login ) { 
+	function LoginController ( $localStorage, $state, statuscode, Login ) { 
 
 		var loginController = this;
 		
@@ -15,16 +15,27 @@
 			loginController.userlogin = {
 				username: loginController.username,
 				password: loginController.password
-			}
+			};
 
 			var loginResult = [];
 			loginResult = Login.get(loginController.userlogin, function() {
-
-				(loginResult.length == 1 && ( loginController.password != 'undefined' && loginResult[0].password == loginController.password) ) ? $state.go('app') : loginController.errorData = 'Please check username / password.';
-				
+				(loginController.password != 'undefined' && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
 			});
 
-		}
+			var isLogin = function() {
+
+				// Add username to localstorage provieder.
+				$localStorage.username = loginController.username;
+
+				// re-direct to main app.
+				$state.go('app');
+
+			};
+			var notLogin = function() {
+				loginController.errorData = 'Please check all the form fields and your credentials.';
+			};
+
+		};
 	}
 
 })();

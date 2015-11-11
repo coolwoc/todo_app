@@ -58,52 +58,50 @@
   "task": [
     {
       "id": 1,
-      "user": 1,
-      "username": "guess",
       "project": "Facebook2",
       "label": "Medium",
       "dateNum": "2015-10-18T21:00:00.000Z",
       "headerComment": "Change H2",
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate facilisis mauris vitae condimentum. Donec tempus velit a orci sodales, ac vestibulum lorem blandit. Proin aliquet neque metus, et tristique ligula blandit id.",
-      "done": false
+      "done": true
     },
     {
       "id": 5,
       "user": 1,
-      "username": "guess",
+      "username": "guest",
       "project": "tweeter",
       "label": "low",
       "dateNum": "2015-01-30T22:00:00.000Z",
       "headerComment": "Add assets",
       "comment": "Change assets",
-      "done": false
+      "done": true
     },
     {
       "id": 6,
       "user": 1,
-      "username": "guess",
+      "username": "guest",
       "project": "tweeter",
       "label": "low",
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Change background colors",
       "comment": "Use green( #91f208 )",
-      "done": false
+      "done": true
     },
     {
       "id": 7,
       "user": 2,
-      "username": "guess",
+      "username": "guest",
       "project": "facebook",
       "label": "high",
       "dateNum": "2015-08-28T21:00:00.000Z",
       "headerComment": "Make a FB page",
       "comment": "Follow psd for that",
-      "done": false
+      "done": true
     },
     {
       "id": 8,
       "user": 1,
-      "username": "guess",
+      "username": "guest",
       "project": "google",
       "level": "high",
       "dateNum": "2015-08-28T21:00:00.000Z",
@@ -115,7 +113,7 @@
     {
       "project": "anotherTodayTask",
       "label": "high",
-      "username": "guess",
+      "username": "guest",
       "dateNum": "2015-09-06T21:00:00.000Z",
       "headerComment": "TodaySeptemberTask",
       "comment": "Vivamus sagittis nec orci ut scelerisque. Nullam nisi dui, ornare vitae felis dapibus, rutrum euismod est. Etiam massa sapien, dapibus in tincidunt commodo, mollis nec quam. Ut sem libero, luctus quis viverra quis, iaculis in tortor.",
@@ -125,7 +123,7 @@
     {
       "project": "Testing",
       "label": "high",
-      "username": "guess",
+      "username": "guest",
       "dateNum": "2015-10-04T21:00:00.000Z",
       "headerComment": "Testing Filters",
       "comment": "Testing Filters task description.",
@@ -135,7 +133,7 @@
     {
       "project": "Today 06/10",
       "label": "medium",
-      "username": "guess",
+      "username": "guest",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Today 06/10",
       "comment": "Today 06/10",
@@ -143,19 +141,9 @@
       "id": 11
     },
     {
-      "project": "Task tomorrow",
-      "label": "low",
-      "username": "guess",
-      "dateNum": "2015-10-06T21:00:00.000Z",
-      "headerComment": "Task Tomorrow",
-      "comment": "Task Tomorrow",
-      "done": false,
-      "id": 12
-    },
-    {
       "project": "Task few days.",
       "label": "low",
-      "username": "guess",
+      "username": "user",
       "dateNum": "2015-10-08T21:00:00.000Z",
       "headerComment": "Task few days",
       "comment": "Task few days",
@@ -165,7 +153,7 @@
     {
       "project": "Task more few days",
       "label": "low",
-      "username": "guess",
+      "username": "user",
       "dateNum": "2015-10-09T21:00:00.000Z",
       "headerComment": "Task more few days",
       "comment": "Task more few days",
@@ -175,7 +163,7 @@
     {
       "project": "AnotherToday Task",
       "label": "high",
-      "username": "guess",
+      "username": "user",
       "dateNum": "2015-10-05T21:00:00.000Z",
       "headerComment": "Another Today Task",
       "comment": "Another Today Task",
@@ -185,7 +173,7 @@
     {
       "project": "This is a test.",
       "label": "high",
-      "username": "guess",
+      "username": "user",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "This is a checkbox test",
       "comment": "This is a checkbox description task",
@@ -195,7 +183,7 @@
     {
       "project": "Testing isDone",
       "label": "low",
-      "username": "guess",
+      "username": "guest",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Testing isDone",
       "comment": "Testing isDone description",
@@ -205,7 +193,7 @@
     {
       "project": "Testing is not done",
       "label": "low",
-      "username": "guess",
+      "username": "guest",
       "dateNum": "2015-10-06T21:00:00.000Z",
       "headerComment": "Testing is not done.",
       "comment": "Testing is not done.",
@@ -215,20 +203,12 @@
     {
       "project": "New Tasks Edited",
       "label": "low",
+      "username": "guest",
       "dateNum": "2015-10-13T21:00:00.000Z",
       "headerComment": "Today",
       "comment": "New Task Today",
       "done": false,
       "id": 19
-    }
-  ],
-  "auth": [],
-  "users": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
     }
   ]
 }

@@ -7,7 +7,7 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
-		'ngCookies',
+		'ngStorage',
 		'app.api',
 		'app.global',
 		'app.menu',
@@ -26,8 +26,8 @@
 	.constant('apibase', 'http://localhost:3000')
 	.constant('apiversion', '/v1.0')
 
-	.config(config)
-	.run(run);
+	.config(config);
+	//.run(run);
 
 	function config($urlRouterProvider, $httpProvider, $stateProvider) {
 
@@ -35,12 +35,12 @@
 
 		$stateProvider
 			.state('login', {
-				url:'/login',
+				url:'',
 				views: {
 					'content@': {
 						templateUrl: 'html/login/login.index.html',
 						controller: 'LoginController',
-						controllerAs: 'login'
+						controllerAs: 'login',
 					}
 				}
 			})
@@ -60,36 +60,45 @@
 					'menu': {
 						templateUrl: 'html/menu/menu.index.html',
 						controller: 'MenuController',
-						controllerAs: 'menuData'
+						controllerAs: 'menuData',
+						data : {
+							roleAdmin: true,
+							roleUser: true,
+							roleGuest: true
+						}
 					},
 					'content@': {
 						templateUrl: 'html/content/content.index.html',
 						controller: 'Contentcontroller',
-						controllerAs: 'content'
+						controllerAs: 'content',
+						data : {
+							roleAdmin: true,
+							roleUser: true,
+							roleGuest: true
+						}
 					}
 				}
 			});
 	}
-	function run( $rootScope, $location, $cookieStore, $http ) {
+	
+	/*
+	function run( $scopeRoute, $location ) {
 
-		// keep user logged in after page refresh.
-		
-		$rootScope.globals = $cookieStore.get('globals') || {};
+		//
+		// roles routes with authentication should be here.
+		// we also need to inject in run() the authentication
+		//
 
-		if ( $rootScope.globals.currentUser ) {
-			$http.defaults.headers.common['Authorization'] = 'Basic' + $rootScope.globals.currentUser.authdata;
-		}
+		$rootScope.$on('$stateChangeStart', function( event, toState, toParams, fromState, fromParams ) {
 
-		$rootScope.$on('$locationChangeStart', function (event, next, current) {
-
-			// redirect to login page if not logged in and trying to acess a restricted page.
-			var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
-			var loggedIn = $rootScope.globals.currentUser;
-			if ( restrictedPage && !loggedIn ) {
-				$location.path('/login');
-			}
+			console.log('stateChange');
+			//event.preventDefault();
 
 		});
-	}
 
+		$rootScope.$on('$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams ) {
+			console.log(stateChangeSuccess);
+		});
+	}
+	*/
 })();

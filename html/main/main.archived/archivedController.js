@@ -4,7 +4,7 @@
 
 	angular.module('app.archive',[])
 	.config(config)
-	.controller('controllerArchive', controllerArchive);
+	.controller('ArchivedController', ArchivedController);
 
 	function config ( $stateProvider, $urlRouterProvider ) {
 		
@@ -13,19 +13,24 @@
 				url: '/archive',
 				views: {
 					'utilities@app': {
-					templateUrl: 'html/utilities/utilities.index.html',
-					controller: 'UtilitiesController',
-					controllerAs: 'utilities'
-				},
-				'main@app': {
-					templateUrl: 'html/main/main.archived/archived.index.html',
-					controller: 'controllerArchive',
-					controllerAs: 'archived'
+						templateUrl: 'html/utilities/utilities.index.html',
+						controller: 'UtilitiesController',
+						controllerAs: 'utilities'
+					},
+					'main@app': {
+						templateUrl: 'html/main/main.archived/archived.index.html',
+						controller: 'ArchivedController',
+						controllerAs: 'archived'
+					}
 				}
-			}
-		});
+			});
 	}
 
-	function controllerArchive() {}
+	function ArchivedController( $state, Alltasks ) {
+
+		var archivedController = this;
+		archivedController.allTasks = Alltasks.query();
+
+	}
 
 })();

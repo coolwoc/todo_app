@@ -3,7 +3,7 @@
 
 <!-- list of task -->
 <ul class="allTask">
-	<li ng-repeat= "task in todo.allTasks | pagination: todo.numberCurrent * todo.pageSize | limitTo: todo.pageSize" >
+	<li ng-repeat= "task in todo.allTasks | pagination: todo.numberCurrent * todo.pageSize | limitTo: todo.pageSize">
 		<ul class="stamp">
 			<li>
 				<h3>{{task.project}}</h3>
@@ -12,7 +12,7 @@
 						<span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
 					</li>
 					<li class="label strong">
-						<span>isDone:</span> {{task.isDone}}						
+						<span>isDone:</span> {{task.done}}						
 					</li>
 					<li class="label">
 						<span>Priority:</span> {{task.label}}
