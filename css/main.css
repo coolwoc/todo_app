@@ -1372,25 +1372,6 @@ form button[type="submit"] {
 .content .main.intro .signature {
   margin-top: -10px; }
 
-.utilities .closeMenu {
-  display: none; }
-
-.utilities .openMenu {
-  display: block; }
-
-.utilities ul {
-  z-index: 500;
-  position: relative;
-  width: auto;
-  float: right;
-  padding-right: 1%; }
-  .utilities ul li {
-    width: auto;
-    font-weight: bold;
-    color: #fffffa; }
-  .utilities ul li:first-child {
-    padding: 8px 2px 4px 0; }
-
 .main h2 {
   font-size: 20px;
   color: #333138; }
