@@ -19,13 +19,18 @@
 
 			var loginResult = [];
 			loginResult = Login.get(loginController.userlogin, function() {
-				(loginController.password != 'undefined' && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
+
+				(loginResult.length != 0 && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
+				
 			});
 
 			var isLogin = function() {
 
 				// Add username to localstorage provieder.
 				$localStorage.username = loginController.username;
+
+				// clearBrowser before load next page.
+				$('.formLogin').empty();
 
 				// re-direct to main app.
 				$state.go('app');
