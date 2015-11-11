@@ -38,22 +38,6 @@
 
 		createtodoController.priority = Projectlabel.query();
 
-		/*
-		createtodoController.user = User.query({}, function() {
-
-			var userData = [];
-
-			angular.forEach(createtodoController.user, function(value, key) {
-
-				userData.push(createtodoController.user[key].name);
-
-			});
-
-			createtodoController.user = userData;
-			
-		});
-		*/
-
 		createtodoController.createTask = function () {
 
 			if (createtodoController.formAddTasks.$valid) {
@@ -61,15 +45,13 @@
 				createtodoController.data = {};
 
 				createtodoController.data = {
-
 					project: createtodoController.project,
 					label: createtodoController.label,
-					name: createtodoController.name,
+					username: createtodoController.username,
 					dateNum: createtodoController.dateNum,
 					headerComment: createtodoController.headerComment,
 					comment: createtodoController.comment,
-					done: createtodoController.done
-					
+					done: 'false'
 				};
 
 				Alltasks.save(createtodoController.data);
