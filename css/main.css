@@ -286,17 +286,14 @@ input[type=button] {
 
 .oi[data-glyph].oi-flip-horizontal:before {
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .oi[data-glyph].oi-flip-vertical:before {
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(-1, 1);
   transform: scale(1, -1); }
 
 .oi[data-glyph].oi-flip-horizontal-vertical:before {
   -webkit-transform: scale(-1, -1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, -1); }
 
 .oi[data-glyph=account-login]:before {
