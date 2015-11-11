@@ -1073,8 +1073,7 @@ html, body {
     width: 225px;
     height: 100%;
     overflow: hidden;
-    -webkit-transition: left 0.5s ease-in-out;
-            transition: left 0.5s ease-in-out; }
+    transition: left .5s ease-in-out; }
   html .panelAnimates .menu, body .panelAnimates .menu {
     left: -225px; }
   html .content, body .content {
@@ -1084,8 +1083,7 @@ html, body {
     overflow: hidden;
     padding-left: 225px;
     background-color: #fffffa;
-    -webkit-transition: padding-left 0.5s ease-in-out;
-            transition: padding-left 0.5s ease-in-out; }
+    transition: padding-left .5s ease-in-out; }
     html .content .utilities, body .content .utilities {
       position: fixed;
       width: 100%;
@@ -1125,8 +1123,7 @@ form .formGroup {
   form .formGroup input[type="text"]:focus,
   form .formGroup input[type="date"]:focus {
     outline: none;
-    -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-            transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
     border-color: #ccc;
     border: solid 1px #ccc;
     box-shadow: 0 0 5px 1px #ccc; }
@@ -1182,8 +1179,7 @@ form button[type="submit"] {
       border: 1px solid #f1592a; }
     .formLogin .formGroup input:focus {
       outline: none;
-      -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-              transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+      transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
       border-color: #f1592a;
       border: solid 1px #f1592a;
       box-shadow: 0 0 5px 1px #f1592a; }
@@ -1316,8 +1312,7 @@ form button[type="submit"] {
     margin-bottom: 10px;
     font-family: 'colaboratelightregular';
     border-bottom: 1px solid #000103; }
-    .menu .filter li h2:hover,
-    .menu .filter li h2.active {
+    .menu .filter li h2:hover, .menu .filter li h2.active {
       font-family: 'colaborate-regularregular';
       border-bottom: 2px solid #000103; }
     .menu .filter li h2 a {

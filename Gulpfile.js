@@ -34,13 +34,14 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init())
         .pipe(sass({  sourcemap: true, style: 'expanded' }))
         .on("error", notify.onError("SASS: <%= error.message %>"))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+        //.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('css/'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('css/'))
         .pipe(sourcemaps.write())
         .pipe(notify({ message: 'Styles task complete' }));
+        //.pipe(livereload());
 });
 
 gulp.task('js', function(){
@@ -60,6 +61,7 @@ gulp.task('js', function(){
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('js/'))
         .pipe(notify({message: 'Scripts task complete'}));
+        //.pipe(livereload());
 });
 
 gulp.task('jshint', function() {
@@ -75,7 +77,7 @@ gulp.task('clean', function(){
 // Watch Task
 gulp.task('watch', function(){
 
-    //livereload.listen();
+    // livereload.listen();
     gulp.watch('css/**/*.scss', ['sass']);
     gulp.watch('Gulpfile.js',['js']);
     gulp.watch('js/main.js',['js']);
@@ -84,21 +86,9 @@ gulp.task('watch', function(){
     gulp.watch('js/**/*.js', ['jshint']);
     gulp.watch('js/*.js', ['jshint']);
 
-    //gulp.watch(['Gulpfile.js','js/main.js', 'html/**/*.js'],['js']);
-    //gulp.watch(['appAngular/**']).on('change', livereload.changed)
+   // gulp.watch(['todo_app/**']).on('change', livereload.changed)
 
 });
 
 // gulp Task
 gulp.task('default', ['clean','watch','sass','js']);
-
-//
-// getting started gulp
-// https://markgoodyear.com/2014/01/getting-started-with-gulp/
-// handling errors
-// https://truongtx.me/2014/07/15/handle-errors-while-using-gulp-watch/
-//
-// http://artandlogic.com/2014/05/error-handling-in-gulp/
-//
-// basic GULP - http://ilikekillnerds.com/2014/07/how-to-basic-tasks-in-gulp-js/
-//
