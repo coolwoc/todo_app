@@ -30,13 +30,27 @@
 			});
 	}
 
-	function CreatetodoController ( Alltasks, Projectlabel ) {
+	function CreatetodoController ( Alltasks, Projectlabel, Login ) {
 
 		var createtodoController = this;
 
 		createtodoController.submitted = false;
 
 		createtodoController.priority = Projectlabel.query();
+
+		createtodoController.username = Login.query({}, function() {
+
+			var usernameData = [];
+
+			angular.forEach( createtodoController.username, function(value, key) {
+
+				usernameData.push(createtodoController.username[key].username);
+
+			});
+
+			createtodoController.username = usernameData;
+
+		});
 
 		createtodoController.createTask = function () {
 
