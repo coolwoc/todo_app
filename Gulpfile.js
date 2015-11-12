@@ -30,6 +30,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify');
 
 // Bower Files
+/*
 var bowerFiles = mainBowerFiles ({
     paths: {
         bowerDirectory: 'bower_components',
@@ -37,14 +38,16 @@ var bowerFiles = mainBowerFiles ({
     },
     debugging: false
 });
+*/
 
 // Project Paths
 var PATHS = {
     sass: ['css/*.scss'],
     allsass: ['css/**/*.scss'],
-    jsALL: ['js/main.js','js/modules/*.js','js/service/*.js','html/**/*.js'],
-    hintFiles: [ 'js/main.js','js/service/*.js','html/**/*.js', 'Gulpfile.js'],
-    jsmin: ['js/main.min.js']
+    jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
+    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js', 'Gulpfile.js'],
+    jsmin: ['js/main.min.js'],
+    allHTML: ['html/**/*.html']
 };
 
 // Plumber error handler.
@@ -78,7 +81,6 @@ gulp.task('sass', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('css/'))
         .pipe(sourcemaps.write())
-        //.pipe(browserSync.stream())
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -93,12 +95,11 @@ gulp.task('jshint', function() {
 
 // Task MINIFY + CONCATENATE
 gulp.task('js', function(){
-    return gulp.src(bowerFiles.concat(PATHS.jsALL)) //Adds customJS to bower_files
-        .pipe(gulpFilter('**/*.js')) // Makes sure we just have JS
+    return gulp.src(PATHS.jsALL)
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
-        .pipe(ngAnnotate({add:true}))
         .pipe(concat('main.js',{newLine: ';'}))
+        .pipe(ngAnnotate({add:true}))
         .pipe(uglify({mangle: true}))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
@@ -130,7 +131,6 @@ gulp.task('clean', function(){
 gulp.task('watch', function(){
 
     gulp.watch(PATHS.allsass,['sass','js','concate']);
-    gulp.watch(PATHS.allsass,['sass','concate']);
     gulp.watch(PATHS.jsALL,['js','concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
 
