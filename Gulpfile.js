@@ -3,10 +3,6 @@
 // Access Gulp
 var gulp = require('gulp'),
 
-    // browsersync
-    browserSync = require('browser-sync').create(),
-    reload = browserSync.reload,
-
     //css
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -21,33 +17,18 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
 
     //others
-    mainBowerFiles = require('main-bower-files'),
-    gulpFilter = require('gulp-filter'),
     del = require('del'),
-    gutil = require('gulp-util'),
+    util = require('gulp-util'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify');
 
-// Bower Files
-/*
-var bowerFiles = mainBowerFiles ({
-    paths: {
-        bowerDirectory: 'bower_components',
-        bowerJson: 'bower.json'
-    },
-    debugging: false
-});
-*/
-
-// Project Paths
 var PATHS = {
     sass: ['css/*.scss'],
     allsass: ['css/**/*.scss'],
     jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
     hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js', 'Gulpfile.js'],
-    jsmin: ['js/main.min.js'],
-    allHTML: ['html/**/*.html']
+    jsmin: ['js/main.min.js']
 };
 
 // Plumber error handler.
@@ -81,7 +62,6 @@ gulp.task('sass', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('css/'))
         .pipe(sourcemaps.write())
-        .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -107,9 +87,6 @@ gulp.task('js', function(){
         .pipe(notify({message: 'MINIFY & CONCATENATE tasks complete'}));
 });
 
-// Server JS
-gulp.task('js-server-watch',['concate'], browserSync.reload);
-
 // Task CONCAT
 gulp.task('concate', function() { 
     return gulp.src(PATHS.jsALL)
@@ -131,29 +108,12 @@ gulp.task('clean', function(){
 gulp.task('watch', function(){
 
     gulp.watch(PATHS.allsass,['sass','js','concate']);
+    gulp.watch(PATHS.allsass,['sass','concate']);
     gulp.watch(PATHS.jsALL,['js','concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
 
 });
 
-// Server
-gulp.task('server', ['sass', 'concate'], function() {
-
-    browserSync.init({
-        
-        server: {
-            baseDir: "./"
-        }
-        
-    });
-
-    // sass
-    gulp.watch(PATHS.allsass, ['sass']);
-    
-});
-
 // gulp Task
 gulp.task('dev', ['clean','jshint','watch','sass','concate']);
 gulp.task('prod', ['clean','jshint','sass','js']);
-
-gulp.task('default', ['server']);
