@@ -23,7 +23,8 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "main-bower-files": "^2.9.0",
-    "ng-annotate": "^1.0.2"
+    "ng-annotate": "^1.0.2",
+    "uglify": "^0.1.5"
   },
   "description": "GULP, SASS and AngularJS",
   "main": "Gulpfile.js",
