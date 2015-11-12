@@ -21,19 +21,30 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
 
     //others
+    mainBowerFiles = require('main-bower-files'),
+    gulpFilter = require('gulp-filter'),
     del = require('del'),
-    util = require('gulp-util'),
+    gutil = require('gulp-util'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify');
 
+// Bower Files
+var bowerFiles = mainBowerFiles ({
+    paths: {
+        bowerDirectory: 'bower_components',
+        bowerJson: 'bower.json'
+    },
+    debugging: false
+});
+
+// Project Paths
 var PATHS = {
     sass: ['css/*.scss'],
     allsass: ['css/**/*.scss'],
-    jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
-    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js', 'Gulpfile.js'],
-    jsmin: ['js/main.min.js'],
-    allHTML: ['html/**/*.html']
+    jsALL: ['js/main.js','js/modules/*.js','js/service/*.js','html/**/*.js'],
+    hintFiles: [ 'js/main.js','js/service/*.js','html/**/*.js', 'Gulpfile.js'],
+    jsmin: ['js/main.min.js']
 };
 
 // Plumber error handler.
@@ -82,11 +93,12 @@ gulp.task('jshint', function() {
 
 // Task MINIFY + CONCATENATE
 gulp.task('js', function(){
-    return gulp.src(PATHS.jsALL)
+    return gulp.src(bowerFiles.concat(PATHS.jsALL)) //Adds customJS to bower_files
+        .pipe(gulpFilter('**/*.js')) // Makes sure we just have JS
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
-        .pipe(concat('main.js',{newLine: ';'}))
         .pipe(ngAnnotate({add:true}))
+        .pipe(concat('main.js',{newLine: ';'}))
         .pipe(uglify({mangle: true}))
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
