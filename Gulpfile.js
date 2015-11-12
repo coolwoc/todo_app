@@ -115,4 +115,4 @@ gulp.task('watch', function(){
 
 // gulp Task
 gulp.task('dev', ['clean','jshint','watch','sass','concate']);
-gulp.task('prod', ['clean','jshint','watch','sass','js']);
+gulp.task('prod', ['clean','jshint','sass','js']);
