@@ -80,25 +80,4 @@
 				}
 			});
 	}
-	
-	/*
-	function run( $scopeRoute, $location ) {
-
-		//
-		// roles routes with authentication should be here.
-		// we also need to inject in run() the authentication
-		//
-
-		$rootScope.$on('$stateChangeStart', function( event, toState, toParams, fromState, fromParams ) {
-
-			console.log('stateChange');
-			//event.preventDefault();
-
-		});
-
-		$rootScope.$on('$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams ) {
-			console.log(stateChangeSuccess);
-		});
-	}
-	*/
 })();
