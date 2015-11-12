@@ -107,7 +107,6 @@ gulp.task('clean', function(){
 // Watch Task
 gulp.task('watch', function(){
 
-    gulp.watch(PATHS.allsass,['sass','js','concate']);
     gulp.watch(PATHS.allsass,['sass','concate']);
     gulp.watch(PATHS.jsALL,['js','concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
