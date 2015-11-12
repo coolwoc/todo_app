@@ -34,21 +34,23 @@
 
 		var alltaskController = this;
 			alltaskController.numberCurrent = 0;
+
+			
 		
 		alltaskController.pageSize = 3;
 		alltaskController.allTasks = Alltasks.query();
 		
-		AlltaskController.numberOfPages =  function () {
+		alltaskController.numberOfPages =  function () {
 			return Math.ceil(alltaskController.allTasks.length / alltaskController.pageSize);
 		};
 
-		AlltaskController.removeTask = function (task) {
+		alltaskController.removeTask = function (task) {
 			Alltasks.delete({}, {'id': task.id}, function () {
 			    alltaskController.allTasks = Alltasks.query();
 			});
 		};
 		
-		AlltaskController.editTask = function (task) {
+		alltaskController.editTask = function (task) {
 			isId.addIdData(task.id);
 			$state.go('app.edit');
 		};

@@ -40,7 +40,7 @@
 		edittodoController.idEdit = editId[0];
 		edittodoController.task = Alltasks.get({},{'id': editId[0]});
 
-		EdittodoController.editTask = function() {
+		edittodoController.editTask = function() {
 			
 			edittodoController.newTask = {
 
@@ -61,7 +61,7 @@
 
 		};
 
-		EdittodoController.cancelEdit = function() {
+		edittodoController.cancelEdit = function() {
 			$state.go('app.all');			
 		};
 		

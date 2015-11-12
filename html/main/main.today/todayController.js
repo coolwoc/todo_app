@@ -48,12 +48,12 @@
 			todayController.todoTasks = arrayPos;
 
 		});
-		TodayController.removeTask = function (task) {
+		todayController.removeTask = function (task) {
 			Alltasks.delete({}, {'id': task.id}, function () {
 			    AlltaskController.allTasks = Alltasks.query();
 			});
 		};
-		TodayController.editTask = function (task) {
+		todayController.editTask = function (task) {
 			isId.addIdData(task.id);
 			$state.go('app.edit');
 		};
