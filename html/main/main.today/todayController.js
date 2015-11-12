@@ -29,23 +29,23 @@
 
 	function TodayController( Alltasks, $state, isId ) {
 
-		var TodayController = this;
+		var todayController = this;
 
-		TodayController.todayDate = moment().format('L');
+		todayController.todayDate = moment().format('L');
 
-		TodayController.todoTasks = Alltasks.query({}, function() {
+		todayController.todoTasks = Alltasks.query({}, function() {
 
 			var arrayPos = [];
 				
-			angular.forEach(TodayController.todoTasks, function(value, key){
+			angular.forEach(todayController.todoTasks, function(value, key){
 
-				if ( TodayController.todayDate == moment(value.dateNum).format('L') ) {
+				if ( todayController.todayDate == moment(value.dateNum).format('L') ) {
 					arrayPos.push(value);
 				}
 
 			});
 
-			TodayController.todoTasks = arrayPos;
+			todayController.todoTasks = arrayPos;
 
 		});
 		TodayController.removeTask = function (task) {

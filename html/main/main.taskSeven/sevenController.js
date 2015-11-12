@@ -4,7 +4,7 @@
 
 	angular.module('app.next',[])
 	.config(config)
-	.controller('controllerNextDays', controllerNextDays);
+	.controller('ControllerNextDays', ControllerNextDays);
 
 	function config ( $stateProvider, $urlRouterProvider ) {
 
@@ -19,14 +19,14 @@
 					},
 					'main@app': {
 						templateUrl: 'html/main/main.taskSeven/seven.index.html',
-						controller: 'controllerNextDays',
+						controller: 'ControllerNextDays',
 						controllerAs: 'nextSeven'
 					}
 				}
 			});
 	}
 
-	function controllerNextDays ( Alltasks, $state, isId ) {
+	function ControllerNextDays ( Alltasks, $state, isId ) {
 
 		var controllerNextDays = this;
 

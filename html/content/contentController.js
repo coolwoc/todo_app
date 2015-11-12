@@ -13,7 +13,7 @@
 		var directive = {
 			link: link,
 			restrict: 'A'
-		}
+		};
 
 		return directive;
 

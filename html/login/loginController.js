@@ -17,13 +17,6 @@
 				password: loginController.password
 			};
 
-			var loginResult = [];
-			loginResult = Login.get(loginController.userlogin, function() {
-
-				(loginResult.length != 0 && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
-				
-			});
-
 			var isLogin = function() {
 
 				// Add username to localstorage provieder.
@@ -40,6 +33,13 @@
 				loginController.errorData = 'Please check all the form fields and your credentials.';
 			};
 
+			var loginResult = [];
+			loginResult = Login.get(loginController.userlogin, function() {
+
+				(loginResult.length !== 0 && loginResult[0].password == loginController.password) ? isLogin() : notLogin();
+				
+			});
+
 		};
 
 		loginController.register = function() {
@@ -50,11 +50,11 @@
 
 				$state.go('login.register');
 
-			}
+			};
 
 			$timeout(userRegister, 500);
 
-		}
+		};
 	}
 
 })();

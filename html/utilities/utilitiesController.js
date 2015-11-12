@@ -19,15 +19,12 @@
 			$('.content').fadeOut('fast');
 
 			var logOutApp = function() {
-
 				delete $localStorage.username;
 				$state.go('login');
-
-			}
-
+			};
+			
 			$timeout(logOutApp, 9000);
-
-		}
+		};
 	} 
 
 })();

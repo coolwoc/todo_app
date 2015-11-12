@@ -32,19 +32,19 @@
 
 	function AlltaskController ( Alltasks, $state, isId ) {
 
-		var AlltaskController = this;
-			AlltaskController.numberCurrent = 0;
+		var alltaskController = this;
+			alltaskController.numberCurrent = 0;
 		
-		AlltaskController.pageSize = 3;
-		AlltaskController.allTasks = Alltasks.query();
+		alltaskController.pageSize = 3;
+		alltaskController.allTasks = Alltasks.query();
 		
 		AlltaskController.numberOfPages =  function () {
-			return Math.ceil(AlltaskController.allTasks.length / AlltaskController.pageSize);
+			return Math.ceil(alltaskController.allTasks.length / alltaskController.pageSize);
 		};
 
 		AlltaskController.removeTask = function (task) {
 			Alltasks.delete({}, {'id': task.id}, function () {
-			    AlltaskController.allTasks = Alltasks.query();
+			    alltaskController.allTasks = Alltasks.query();
 			});
 		};
 		

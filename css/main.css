@@ -26,12 +26,14 @@ article, aside, figure, footer, header, nav, section, details, summary {
 /* Handle box-sizing while better addressing child elements: 
    http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit; }
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
 
 /* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
 /* Responsive images and other embedded objects
@@ -273,7 +275,8 @@ input[type=button] {
 .oi[data-glyph]:empty:before {
   width: 1em;
   text-align: center;
-  box-sizing: content-box; }
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
 
 .oi[data-glyph].oi-align-left:before {
   text-align: left; }
@@ -286,14 +289,17 @@ input[type=button] {
 
 .oi[data-glyph].oi-flip-horizontal:before {
   -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .oi[data-glyph].oi-flip-vertical:before {
   -webkit-transform: scale(1, -1);
+  -ms-transform: scale(-1, 1);
   transform: scale(1, -1); }
 
 .oi[data-glyph].oi-flip-horizontal-vertical:before {
   -webkit-transform: scale(-1, -1);
+  -ms-transform: scale(-1, 1);
   transform: scale(-1, -1); }
 
 .oi[data-glyph=account-login]:before {
@@ -1070,6 +1076,7 @@ html, body {
     width: 225px;
     height: 100%;
     overflow: hidden;
+    -webkit-transition: left .5s ease-in-out;
     transition: left .5s ease-in-out; }
   html .panelAnimates .menu, body .panelAnimates .menu {
     left: -225px; }
@@ -1080,6 +1087,7 @@ html, body {
     overflow: hidden;
     padding-left: 225px;
     background-color: #fffffa;
+    -webkit-transition: padding-left .5s ease-in-out;
     transition: padding-left .5s ease-in-out; }
     html .content .utilities, body .content .utilities {
       position: fixed;
@@ -1120,10 +1128,14 @@ form .formGroup {
   form .formGroup input[type="text"]:focus,
   form .formGroup input[type="date"]:focus {
     outline: none;
+    -webkit-transition: border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
+    transition: border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
     transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    transition: box-shadow 0.45s, border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
     border-color: #ccc;
     border: solid 1px #ccc;
-    box-shadow: 0 0 5px 1px #ccc; }
+    -webkit-box-shadow: 0 0 5px 1px #ccc;
+            box-shadow: 0 0 5px 1px #ccc; }
   form .formGroup select {
     -webkit-appearance: none !important;
     -webkit-border-radius: 0px;
@@ -1176,10 +1188,14 @@ form button[type="submit"] {
       border: 1px solid #f1592a; }
     .formLogin .formGroup input:focus {
       outline: none;
+      -webkit-transition: border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
+      transition: border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
       transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+      transition: box-shadow 0.45s, border-color 0.45s ease-in-out, -webkit-box-shadow 0.45s;
       border-color: #f1592a;
       border: solid 1px #f1592a;
-      box-shadow: 0 0 5px 1px #f1592a; }
+      -webkit-box-shadow: 0 0 5px 1px #f1592a;
+              box-shadow: 0 0 5px 1px #f1592a; }
     .formLogin .formGroup ::-webkit-input-placeholder {
       color: #f1592a; }
     .formLogin .formGroup :-moz-placeholder {

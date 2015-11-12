@@ -8,12 +8,12 @@
 
 	function MenuController( Menulist, Projectlist, Projectlabel, Projectfilter, $stateParams, $state ) {
 
-		var MenuController = this;
+		var menuController = this;
 
-		MenuController.menuList = Menulist.query();
-		MenuController.projectList = Projectlist.query();
-		MenuController.projectLabel = Projectlabel.query();
-		MenuController.projectFilter = Projectfilter.query();
+		menuController.menuList = Menulist.query();
+		menuController.projectList = Projectlist.query();
+		menuController.projectLabel = Projectlabel.query();
+		menuController.projectFilter = Projectfilter.query();
 
 	}
 

@@ -41,7 +41,7 @@
 
 		registerController.resetVal = function() {
 			$('form').find('input').val('');
-		}
+		};
 
 	}
 

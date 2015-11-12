@@ -34,29 +34,29 @@
 
 	function EdittodoController ( isId, Alltasks, $state ) {
 
-		var EdittodoController = this;
+		var edittodoController = this;
 		var editId = isId.getIdData();
 
-		EdittodoController.idEdit = editId[0];
-		EdittodoController.task = Alltasks.get({},{'id': editId[0]});
+		edittodoController.idEdit = editId[0];
+		edittodoController.task = Alltasks.get({},{'id': editId[0]});
 
 		EdittodoController.editTask = function() {
 			
-			EdittodoController.newTask = {
+			edittodoController.newTask = {
 
 				id: editId[0],
-				project: EdittodoController.task.project,
-				label: EdittodoController.task.label,
-				name: EdittodoController.task.name,
-				dateNum: EdittodoController.task.dateNum,
-				headerComment: EdittodoController.task.headerComment,
-				comment: EdittodoController.task.comment,
-				done: EdittodoController.task.done
+				project: edittodoController.task.project,
+				label: edittodoController.task.label,
+				name: edittodoController.task.name,
+				dateNum: edittodoController.task.dateNum,
+				headerComment: edittodoController.task.headerComment,
+				comment: edittodoController.task.comment,
+				done: edittodoController.task.done
 
 			};
 
-			EdittodoController.newTask.dateNum = new Date (EdittodoController.task.dateNum);
-			Alltasks.update(EdittodoController.newTask);
+			edittodoController.newTask.dateNum = new Date (edittodoController.task.dateNum);
+			Alltasks.update(edittodoController.newTask);
 			$state.go('app.all');
 
 		};
