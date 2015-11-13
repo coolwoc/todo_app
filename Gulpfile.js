@@ -64,6 +64,7 @@ gulp.task('sass', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('css/'))
+        .pipe(reload({stream: true}))
         .pipe(sourcemaps.write())
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -130,7 +131,8 @@ gulp.task('server', ['sass', 'concate'], function() {
 
 // gulp Task
 gulp.task('dev', ['clean','jshint','watch','sass','concate']);
-gulp.task('prod', ['clean','jshint','sass','js']);
+gulp.task('prod', ['clean','sass','js']);
 
 gulp.task('default',['server']);
+
 
