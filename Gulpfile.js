@@ -3,6 +3,10 @@
 // Access Gulp
 var gulp = require('gulp'),
 
+    // browsersync
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload,
+
     //css
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -107,12 +111,27 @@ gulp.task('clean', function(){
 // Watch Task
 gulp.task('watch', function(){
 
-    gulp.watch(PATHS.allsass,['sass','concate']);
+    gulp.watch(PATHS.allsass,['sass']);
     gulp.watch(PATHS.jsALL,['js','concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
 
 });
 
+// Server
+gulp.task('server', ['sass', 'concate'], function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+
+    // sass
+    gulp.watch(PATHS.allsass, ['sass']);
+});
+
 // gulp Task
 gulp.task('dev', ['clean','jshint','watch','sass','concate']);
 gulp.task('prod', ['clean','jshint','sass','js']);
+
+gulp.task('default',['server']);
+
