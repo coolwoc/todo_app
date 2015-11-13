@@ -23,7 +23,6 @@ var gulp = require('gulp'),
     //others
     del = require('del'),
     util = require('gulp-util'),
-    livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify');
 
