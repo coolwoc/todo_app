@@ -30,15 +30,17 @@
 			});
 	}
 
-	function AlltaskController ( Alltasks, $state, isId ) {
+	function AlltaskController ( Alltasks, $state, isId, $timeout ) {
 
 		var alltaskController = this;
 			alltaskController.numberCurrent = 0;
-
-			
 		
 		alltaskController.pageSize = 3;
-		alltaskController.allTasks = Alltasks.query();
+		//alltaskController.allTasks = Alltasks.query();
+
+		$timeout(function(){
+			alltaskController.allTasks = Alltasks.query();
+		}, 10);
 		
 		alltaskController.numberOfPages =  function () {
 			return Math.ceil(alltaskController.allTasks.length / alltaskController.pageSize);

@@ -88,6 +88,9 @@
 	}
 
 	// Service & Factory
+	angular.module('app.api').service('taskList', function() {
+		//http://stackoverflow.com/questions/30508773/ngrepeat-not-updating-after-model-changed
+	})
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
