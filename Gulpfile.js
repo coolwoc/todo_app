@@ -30,7 +30,7 @@ var PATHS = {
     sass: ['css/*.scss'],
     allsass: ['css/**/*.scss'],
     jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
-    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js', 'Gulpfile.js'],
+    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
     jsmin: ['js/main.min.js']
 };
 
@@ -112,7 +112,8 @@ gulp.task('clean', function(){
 gulp.task('watch', function(){
 
     gulp.watch(PATHS.allsass,['sass']);
-    gulp.watch(PATHS.jsALL,['js','concate']);
+    //gulp.watch(PATHS.jsALL,['js']);
+    gulp.watch(PATHS.jsALL,['concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
 
 });
