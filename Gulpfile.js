@@ -128,6 +128,7 @@ gulp.task('server', ['sass', 'concate'], function() {
 
     // sass
     gulp.watch(PATHS.allsass, ['sass']);
+    
 });
 
 // gulp Task
