@@ -29,7 +29,14 @@
 	function ArchivedController( $state, Alltasks ) {
 
 		var archivedController = this;
-		archivedController.allTasks = Alltasks.query();
+			archivedController.numberCurrent = 0;
+			archivedController.pageSize = 3;
+
+			archivedController.allTasks = Alltasks.query();
+
+			archivedController.numberOfPages = function() {
+				return Math.ceil(archivedController.allTasks.length /archivedController.pageSize);
+			}
 
 	}
 
