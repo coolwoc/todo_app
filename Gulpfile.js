@@ -22,7 +22,7 @@ var gulp = require('gulp'),
 
     //others
     del = require('del'),
-    util = require('gulp-util'),
+    gutil = require('gulp-util'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify');
 
@@ -38,7 +38,7 @@ var PATHS = {
 var onError = function(err) {
     gutil.beep();
     console.log(err);
-    this.emit('end');
+    //this.emit('end');
 };
 
 // Definition for autoprefixer.
