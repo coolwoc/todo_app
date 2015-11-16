@@ -36,7 +36,7 @@
 
 			archivedController.numberOfPages = function() {
 				return Math.ceil(archivedController.allTasks.length /archivedController.pageSize);
-			}
+			};
 
 	}
 
