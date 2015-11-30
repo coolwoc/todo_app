@@ -11,3 +11,7 @@ GULP, SASS and AngularJS
 	[authentication] - angular JWT token.
 
 	[re-thing application arquitecture]
+
+
+	** you need to run the server for data in db.json
+	I have been using json-server. Find it at https://github.com/typicode/json-server.
