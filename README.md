@@ -3,7 +3,7 @@ GULP, SASS and AngularJS
 
 ** work in progess ** 
 
-• working branch -> authentication
+• working branch -> authen
 
 
 	[html + CSS] - add google material design template.
