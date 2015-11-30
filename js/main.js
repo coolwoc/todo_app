@@ -7,7 +7,7 @@
 		'ui.router',
 		'ngAnimate',
 		'ngResource',
-		'ngStorage',
+		'angular-storage',
 		'app.api',
 		'app.global',
 		'app.menu',
@@ -26,12 +26,13 @@
 	.constant('apibase', 'http://localhost:3000')
 	.constant('apiversion', '/v1.0')
 
-	.config(config);
-	//.run(run);
+	.config(config)
+	.run(run);
 
-	function config($urlRouterProvider, $httpProvider, $stateProvider) {
+	function config( $httpProvider, $stateProvider, $urlRouterProvider ) {
 
-		$urlRouterProvider.otherwise('/');
+		$httpProvider.interceptors.push('APIInterceptor');
+		$urlRouterProvider.otherwise('/content');
 
 		$stateProvider
 			.state('login', {
@@ -40,8 +41,11 @@
 					'content@': {
 						templateUrl: 'html/login/login.index.html',
 						controller: 'LoginController',
-						controllerAs: 'login',
+						controllerAs: 'login'
 					}
+				},
+				data: {
+					requireLogin: false
 				}
 			})
 			.state('login.register', {
@@ -52,6 +56,9 @@
 						controller: 'RegisterController',
 						controllerAs: 'register'
 					}
+				},
+				data: {
+					requireLogin: false
 				}
 			})
 			.state('app', {
@@ -60,45 +67,36 @@
 					'menu': {
 						templateUrl: 'html/menu/menu.index.html',
 						controller: 'MenuController',
-						controllerAs: 'menuData',
-						data : {
-							roleAdmin: true,
-							roleUser: true,
-							roleGuest: true
-						}
+						controllerAs: 'menuData'
 					},
 					'content@': {
 						templateUrl: 'html/content/content.index.html',
 						controller: 'Contentcontroller',
 						controllerAs: 'content',
-						data : {
-							roleAdmin: true,
-							roleUser: true,
-							roleGuest: true
-						}
 					}
+				},
+				data: {
+					requireLogin: true
 				}
 			});
 	}
-	
-	/*
-	function run( $scopeRoute, $location ) {
 
-		//
-		// roles routes with authentication should be here.
-		// we also need to inject in run() the authentication
-		//
+	function run($rootScope, $state ) {
+		
+		$rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
 
-		$rootScope.$on('$stateChangeStart', function( event, toState, toParams, fromState, fromParams ) {
+			var requireLogin = toState.data.requireLogin;
 
-			console.log('stateChange');
-			//event.preventDefault();
+			if(requireLogin === 'true') {				
+				e.preventDefault();
+				$state.go('app')
 
-		});
-
-		$rootScope.$on('$stateChangeSuccess', function( event, toState, toParams, fromState, fromParams ) {
-			console.log(stateChangeSuccess);
+			} else if (requireLogin === 'false') {
+				e.preventDefault();
+				$state.go('login');
+			}
+			
 		});
 	}
-	*/
+	
 })();

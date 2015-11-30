@@ -1,3 +1,6 @@
+
+// http://stackoverflow.com/questions/33675634/angularjs-pass-data-from-controller-to-app-config
+
 (function () {
 
 	'use strict';
@@ -14,6 +17,57 @@
 			'query': 	{method: 'GET', isArray: true},
 			'delete':  	{method: 'DELETE'}
 		});
+	}
+	angular.module('app.api').service('userService', userService); 
+	function userService (store) {
+
+		var service = this,
+			currentUser = null;
+
+		service.setCurrentUser = function(username) {
+			currentUser = username;
+			store.set('username', username);
+			return currentUser;
+		};
+		service.getCurrentUser = function() {
+			if(!currentUser) {
+				currentUser = store.get('username');
+			}
+			return currentUser;
+		};
+
+	}
+	angular.module('app.api').service('APIInterceptor', APIInterceptor); 
+	function APIInterceptor ($rootScope, userService) {
+
+		var service = this;
+
+		service.request = function(config) {
+
+			/*
+				Access token here.
+
+				var currentUser = UserService.getCurrentUser(),
+		            access_token = currentUser ? currentUser.access_token : null;
+
+		        if (access_token) {
+		            config.headers.authorization = access_token;
+		        }
+
+			*/
+
+			var currentUser = userService.getCurrentUser();
+			return config;
+
+		};
+		service.responseError = function(response) {
+
+			if (response.status === 401) {
+				$rootScope.$broadcast('unauthorized');
+			}
+			return response;
+		};
+
 	}
 
 	// RESTful data
@@ -87,10 +141,6 @@
 		});
 	}
 
-	// Service & Factory
-	angular.module('app.api').service('taskList', function() {
-		//http://stackoverflow.com/questions/30508773/ngrepeat-not-updating-after-model-changed
-	})
 	angular.module('app.api').service('isId', isId);
 	function isId () {
 
