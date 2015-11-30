@@ -28,6 +28,7 @@ var gulp = require('gulp'),
 
 var PATHS = {
     sass: ['css/*.scss'],
+    allHTML: ['*.html', 'html/**/*.html'],
     allsass: ['css/**/*.scss'],
     jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
     hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
