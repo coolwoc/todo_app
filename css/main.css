@@ -9726,6 +9726,8 @@ html, body {
   .formLogin button[type="submit"]:focus {
     background-color: #fffffa;
     color: #999999; }
+  .formLogin .input-field.hasError {
+    border-bottom: 1px solid #ff0000; }
 
 .loginLinks {
   position: relative;

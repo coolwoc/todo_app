@@ -28,7 +28,9 @@
 	}
 
 	/* errorMSG */
-	
+	.input-field.hasError {
+		border-bottom: 1px solid $error
+	}
 
 }
 .loginLinks {
