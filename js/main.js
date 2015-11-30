@@ -31,8 +31,8 @@
 
 	function config( $httpProvider, $stateProvider, $urlRouterProvider ) {
 
-		$httpProvider.interceptors.push('APIInterceptor');
-		$urlRouterProvider.otherwise('/content');
+		//$httpProvider.interceptors.push('APIInterceptor');
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
 			.state('login', {
@@ -85,6 +85,7 @@
 		
 		$rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
 
+			/*
 			var requireLogin = toState.data.requireLogin;
 
 			if(requireLogin === 'true') {				
@@ -95,6 +96,7 @@
 				e.preventDefault();
 				$state.go('login');
 			}
+			*/
 			
 		});
 	}

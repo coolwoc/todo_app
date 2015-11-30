@@ -9718,12 +9718,19 @@ html, body {
     background: #f1592a url("/images/logo-small.png") no-repeat 5% 10px; }
   .formLogin label {
     display: none; }
-  .formLogin button[type="submit"] {
-    float: right;
+  .formLogin button {
     margin-top: 15px;
-    background-color: #999999; }
+    float: right; }
+  .formLogin button[type="submit"] {
+    background-color: #fffffa; }
   .formLogin button[type="submit"]:hover,
   .formLogin button[type="submit"]:focus {
+    background-color: #fffffa; }
+  .formLogin button[type="reset"] {
+    margin-right: 20px;
+    background-color: #999999; }
+  .formLogin button[type="reset"]:hover,
+  .formLogin button[type="reset"]:focus {
     background-color: #fffffa;
     color: #999999; }
   .formLogin .input-field.hasError {
@@ -9739,6 +9746,18 @@ html, body {
     .loginLinks a:hover {
       color: #039be5;
       text-decoration: underline; }
+
+.formLogin.registerForm {
+  width: 60%; }
+  .formLogin.registerForm legend {
+    text-align: center;
+    background-image: none;
+    padding: 20px 0 10px 0; }
+  .formLogin.registerForm .errorLogin {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #ff0000; }
 
 .pagination {
   width: 165px;

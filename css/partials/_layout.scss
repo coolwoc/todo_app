@@ -1,3 +1,4 @@
+
 html,body {
 	position: relative;
 	width: 100%;
@@ -42,9 +43,11 @@ html,body {
 		overflow: hidden;
 	    transition:left .5s ease-in-out;
 	}
+	
 	.panelAnimates .menu {
   		left: -225px;
 	}
+
 	/*
 	.content {
 		float: right;

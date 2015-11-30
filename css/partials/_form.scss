@@ -16,20 +16,34 @@
 	label {
 		display: none;
 	}
-	button[type="submit"] {
-		float: right;
+	button {
 		margin-top: 15px;
-		background-color: $grey;
+		float: right;
 	}
+	button[type="submit"] {
+		background-color: $white;
+	}
+
 	button[type="submit"]:hover,
 	button[type="submit"]:focus {
+		background-color: $white;
+		//color: #fff;
+	}
+
+	button[type="reset"] {
+		margin-right: 20px;
+		background-color: $grey;
+	}
+
+	button[type="reset"]:hover,
+	button[type="reset"]:focus {
 		background-color: $white;
 		color: $grey;
 	}
 
 	/* errorMSG */
 	.input-field.hasError {
-		border-bottom: 1px solid $error
+		border-bottom: 1px solid $error;
 	}
 
 }
@@ -44,5 +58,19 @@
 			color: $blueLink;
 			text-decoration: underline;
 		}
+	}
+}
+.formLogin.registerForm {
+	width: 60%;
+	legend {
+		text-align: center;
+		background-image: none;
+		padding: 20px 0 10px 0;
+	}
+	.errorLogin {
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+		color: $error;
 	}
 }
