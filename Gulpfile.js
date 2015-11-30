@@ -91,7 +91,7 @@ gulp.task('js', function(){
         .pipe(notify({message: 'MINIFY & CONCATENATE tasks complete'}));
 });
 
-// Task CONCAT
+// Task Just CONCAT
 gulp.task('concate', function() { 
     return gulp.src(PATHS.jsALL)
         .pipe(plumber({errorHandler: onError}))
@@ -108,17 +108,7 @@ gulp.task('clean', function(){
     del(PATHS.jsmin);
 });
 
-// Watch Task
-gulp.task('watch', function(){
-
-    gulp.watch(PATHS.allsass,['sass']);
-    //gulp.watch(PATHS.jsALL,['js']);
-    gulp.watch(PATHS.jsALL,['concate']);
-    gulp.watch(PATHS.hintFiles,['jshint']);
-
-});
-
-// Server
+// Run Tasks
 gulp.task('server', ['sass', 'concate'], function() {
     browserSync.init({
         server: {
@@ -126,15 +116,24 @@ gulp.task('server', ['sass', 'concate'], function() {
         }
     });
 
-    // sass
+    // watch sass + HTML injection.
     gulp.watch(PATHS.allsass, ['sass']);
+    gulp.watch(PATHS.allHTML).on('change', reload);
     
 });
 
-// gulp Task
-gulp.task('dev', ['clean','jshint','watch','sass','concate']);
-gulp.task('prod', ['clean','sass','js']);
+gulp.task('jshint', ['jshint'], function() {
+    gulp.watch(PATHS.jsALL,['concate']);
+    gulp.watch(PATHS.hintFiles,['jshint']);
+});
 
-gulp.task('default',['server']);
+gulp.task('dev', ['clean', 'sass', 'jshint', 'concate'], function() {
+    gulp.watch(PATHS.allsass,['sass']);
+    gulp.watch(PATHS.jsALL,['concate']);
+    gulp.watch(PATHS.hintFiles,['jshint']);
+});
 
-
+gulp.task('prod', ['clean', 'sass', 'js'], function() {
+    gulp.watch(PATHS.allsass,['sass']);
+    gulp.watch(PATHS.jsALL,['js']);
+});
