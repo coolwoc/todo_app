@@ -8,8 +8,7 @@
 	function LoginController ( $rootScope, $state, Login, userService ) { 
 
 		var loginController = this;
-		
-		/*
+
 		loginController.submitLogin = function() {
 
 			loginController.userlogin = {};
@@ -53,27 +52,7 @@
 
 			$timeout(userRegister, 500);
 		};
-		*/
-
-		loginController.submitLogin = function () {
-
-			loginController.userlogin = {};
-			loginController.userlogin = {
-				username: loginController.username,
-				password: loginController.password
-			};
-
-			var loginResult = Login.get(loginController.userlogin, function () {
-
-				userService.setCurrentUser(loginController.username);
-				$rootScope.$broadcast('authorized');
-				console.log(loginResult);
-				$('.formLogin').empty();
-				$state.go('app');
-
-			});
-
-		}
+		
 	}
 
 })();
