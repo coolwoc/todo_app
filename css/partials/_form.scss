@@ -21,26 +21,13 @@
 		float: right;
 	}
 	button[type="submit"] {
-		background-color: $white;
+		background-color: $grey;
 	}
 
 	button[type="submit"]:hover,
 	button[type="submit"]:focus {
-		background-color: $white;
-		//color: #fff;
-	}
-
-	button[type="reset"] {
-		margin-right: 20px;
 		background-color: $grey;
 	}
-
-	button[type="reset"]:hover,
-	button[type="reset"]:focus {
-		background-color: $white;
-		color: $grey;
-	}
-
 	/* errorMSG */
 	.input-field.hasError {
 		border-bottom: 1px solid $error;
@@ -60,12 +47,25 @@
 		}
 	}
 }
+
+//** Registration Form **//
 .formLogin.registerForm {
 	width: 60%;
 	legend {
 		text-align: center;
 		background-image: none;
 		padding: 20px 0 10px 0;
+	}
+
+	button[type="reset"] {
+		margin-right: 20px;
+		background-color: $grey;
+	}
+
+	button[type="reset"]:hover,
+	button[type="reset"]:focus {
+		background-color: $white;
+		color: $grey;
 	}
 	.errorLogin {
 		width: 100%;

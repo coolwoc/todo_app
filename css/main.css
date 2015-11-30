@@ -9645,6 +9645,11 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   /*
+	.panelAnimates .menu {
+  		left: -225px;
+	}
+	*/
+  /*
 	.content {
 		float: right;
 		width: 100%;
@@ -9694,8 +9699,6 @@ html, body {
     overflow: hidden;
     -webkit-transition: left .5s ease-in-out;
     transition: left .5s ease-in-out; }
-  html .panelAnimates .menu, body .panelAnimates .menu {
-    left: -225px; }
   html .panelAnimates .content, body .panelAnimates .content {
     padding-left: 0; }
   html .container .row, body .container .row {
@@ -9722,17 +9725,10 @@ html, body {
     margin-top: 15px;
     float: right; }
   .formLogin button[type="submit"] {
-    background-color: #fffffa; }
+    background-color: #999999; }
   .formLogin button[type="submit"]:hover,
   .formLogin button[type="submit"]:focus {
-    background-color: #fffffa; }
-  .formLogin button[type="reset"] {
-    margin-right: 20px;
     background-color: #999999; }
-  .formLogin button[type="reset"]:hover,
-  .formLogin button[type="reset"]:focus {
-    background-color: #fffffa;
-    color: #999999; }
   .formLogin .input-field.hasError {
     border-bottom: 1px solid #ff0000; }
 
@@ -9753,6 +9749,13 @@ html, body {
     text-align: center;
     background-image: none;
     padding: 20px 0 10px 0; }
+  .formLogin.registerForm button[type="reset"] {
+    margin-right: 20px;
+    background-color: #999999; }
+  .formLogin.registerForm button[type="reset"]:hover,
+  .formLogin.registerForm button[type="reset"]:focus {
+    background-color: #fffffa;
+    color: #999999; }
   .formLogin.registerForm .errorLogin {
     width: 100%;
     padding: 10px;

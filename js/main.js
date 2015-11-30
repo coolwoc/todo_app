@@ -31,7 +31,6 @@
 
 	function config( $httpProvider, $stateProvider, $urlRouterProvider ) {
 
-		//$httpProvider.interceptors.push('APIInterceptor');
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
@@ -97,7 +96,7 @@
 				$state.go('login');
 			}
 			*/
-			
+
 		});
 	}
 	
