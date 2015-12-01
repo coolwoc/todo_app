@@ -1,17 +1,29 @@
 # todo_app
 GULP, SASS and AngularJS 
 
-** work in progess ** 
+• [ Stable branch ] -> Master
+	
 
-• working branch -> authen
+	The user can register and login.
+	The user can add tasks.
+	They can edit and remove tasks.
+	The app filters by :
 
+		[] Task done.
+		[] Task archived.
+		[] Next 7 days tasks.
+		[] Daily tasks.
+
+• [ working branch ] -> authen
+
+	[re-thing application arquitecture]
 
 	[html + CSS] - add google material design template.
 	[webServer] - Using node.js and express
 	[authentication] - angular JWT token.
+	[user app delegation]
 
-	[re-thing application arquitecture]
 
-
-	** you need to run the server for data in db.json
-	I have been using json-server. Find it at https://github.com/typicode/json-server.
+** Important ** 
+you need to run the server for data in db.json
+I have been using json-server. Find it at https://github.com/typicode/json-server.
