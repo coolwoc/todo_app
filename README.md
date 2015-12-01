@@ -1,8 +1,8 @@
 # todo_app
 GULP, SASS and AngularJS 
 
-• branch -> Master
-	[Stable]
+• [ Stable branch ] -> Master
+	
 
 	The user can register and login.
 	The user can add tasks.
@@ -14,9 +14,7 @@ GULP, SASS and AngularJS
 		[] Next 7 days tasks.
 		[] Daily tasks.
 
-** work in progess ** 
-
-• working branch -> authen
+• [ working branch ] -> authen
 
 	[re-thing application arquitecture]
 
