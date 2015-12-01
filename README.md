@@ -1,6 +1,6 @@
 # todo_app
-GULP, SASS and AngularJS 
-• branch -> master
+GULP, SASS and AngularJS<br/> 
+• branch -> master <br/>
 	[Face 1]Finished.
 
 ** work in progess ** 
