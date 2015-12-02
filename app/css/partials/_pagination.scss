@@ -1,0 +1,25 @@
+.pagination {
+	width: 165px;
+	margin: 0 auto;
+	overflow: hidden;
+	li {
+		float: left;
+		span {
+			display: block;
+			margin-top: 12px;
+		}
+
+	}
+	li:first-child {
+		padding-right: 8px;
+		span {
+			margin-top: 0;
+		}
+	}
+	li:last-child {
+		padding-left: 8px;
+		span {
+			margin-top: 0;
+		}
+	}
+}

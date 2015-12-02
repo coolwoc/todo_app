@@ -1,0 +1,47 @@
+<h2>Archived Tasks</h2>
+
+<!-- list of tasks -->
+<div class="dataWrapper" ng-show="archived.allTasks.length">
+	<ul class="allTask">
+		<li ng-repeat= "task in archived.allTasks | filter: {done: true} | orderBy: 'dateNum':true | pagination: archived.numberCurrent * archived.pageSize | limitTo: archived.pageSize" >
+			<ul class="stamp">
+				<li>
+					<h3>{{task.project}}</h3>
+					<ul class="taskStatus">
+						<li class="date">
+							<span>Date:</span> {{task.dateNum | date: 'dd-MM-yyyy'}}</p>
+						</li>
+						<li class="label strong">
+							<span>isDone:</span> {{task.done}}						
+						</li>
+						<li class="label">
+							<span>Priority:</span> {{task.label}}
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="info">
+				<h3><span>Header:</span>{{task.headerComment}}</h3>
+				<p class="comment"><span>Comment:</span> {{task.comment | limitTo: 100}}</p>
+			</div>
+		</li>
+	</ul>
+	<ul class="pagination">
+	<li>
+		<button class="btn" ng-disabled="archived.numberCurrent == 0" ng-click="archived.numberCurrent = archived.numberCurrent-1">
+			<span class="oi" data-glyph="chevron-left" title="chevron-left" aria-hidden="true">Prev</span>
+		</button>
+	</li>
+	<li><span class="pageCounter">{{archived.numberCurrent + 1}} of {{archived.numberOfPages() }}</span></li>
+	<li>
+		<button class="btn" ng-disabled="archived.numberCurrent >= archived.allTasks.length/archived.pageSize -1" ng-click="archived.numberCurrent = archived.numberCurrent+1">
+			<span class="oi" data-glyph="chevron-right" title="chevron-right" aria-hidden="true">Next</span>
+		</button>
+	</li>
+</ul>
+</div>
+
+<!-- empty records default -->
+<div ng-show="archived.allTasks.length == 0">
+	<p>There is not records of any task done.</p>
+</div>

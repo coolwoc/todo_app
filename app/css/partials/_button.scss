@@ -1,0 +1,60 @@
+/* pagination */
+.btn:focus,
+.btn:visited,
+.btn {
+	border: none;
+	padding: 15px 10px;
+	color: white;
+	font-weight: bold;
+	background-color: #f1582a;
+	outline: none;
+}
+.btn:hover {
+	background-color: #f57E5D;
+	color: $white; 
+}
+.btn:disabled {
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	opacity: 0.2;
+}
+
+/* addTask */
+.btn.addTask {
+	float: right;
+	margin: 10px 0 2px 0;
+	background-color: #C0BCB5;
+	border: 1px solid $white;
+}
+.btn.addTask:hover {
+	color: $orange;
+	background-color: $white;
+	border: 1px solid $orange;
+}
+
+/* icons overwrite */
+.oi:before {
+	padding-right: 5px;
+}
+.oi[data-glyph=chevron-left]:before {
+	top: 2px !important;
+}
+.oi[data-glyph=chevron-right]:before {
+	display: none;
+}
+
+.oi[data-glyph=chevron-right]:after {
+    content: '\e036' !important;
+    position: relative !important;
+    top: 2px !important;
+    font-family: 'Icons' !important;
+    display: inline-block !important;
+    speak: none !important;
+    line-height: 1 !important;
+    vertical-align: baseline !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+.oi:after {
+	padding-left: 5px;
+}

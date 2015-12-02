@@ -27,12 +27,12 @@ var gulp = require('gulp'),
     notify = require('gulp-notify');
 
 var PATHS = {
-    sass: ['css/*.scss'],
-    allHTML: ['*.html', 'html/**/*.html'],
-    allsass: ['css/**/*.scss'],
-    jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
-    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
-    jsmin: ['js/main.min.js']
+    sass: ['app/css/*.scss'],
+    allHTML: ['app/*.html', 'app/html/**/*.html'],
+    allsass: ['app/css/**/*.scss'],
+    jsALL: ['app/js/vendor/*.js','app/js/main.js','app/js/modules/*.js','app/js/service/global.js','app/js/service/filters.js','app/html/**/*.js'],
+    hintFiles: ['app/js/main.js','app/js/service/global.js','app/js/service/filters.js','app/html/**/*.js'],
+    jsmin: ['app/js/main.min.js']
 };
 
 // Plumber error handler.
@@ -110,10 +110,10 @@ gulp.task('clean', function(){
 });
 
 // Run Tasks
-gulp.task('server', ['sass', 'concate'], function() {
+gulp.task('server', ['sass'], function() {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./app/"
         }
     });
 
@@ -123,7 +123,7 @@ gulp.task('server', ['sass', 'concate'], function() {
     
 });
 
-gulp.task('jshint', ['jshint'], function() {
+gulp.task('watchJS', function() {
     gulp.watch(PATHS.jsALL,['concate']);
     gulp.watch(PATHS.hintFiles,['jshint']);
 });
