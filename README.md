@@ -13,6 +13,10 @@ GULP, SASS and AngularJS
 		[] Task archived.
 		[] Next 7 days tasks.
 		[] Daily tasks.
+		
+	** Important ** 
+	you need to run the server for data in db.json
+	I have been using json-server. Find it at https://github.com/typicode/json-server.
 
 • [ working branch ] -> authen
 
@@ -22,8 +26,3 @@ GULP, SASS and AngularJS
 	[webServer] - Using node.js and express
 	[authentication] - angular JWT token.
 	[user app delegation]
-
-
-** Important ** 
-you need to run the server for data in db.json
-I have been using json-server. Find it at https://github.com/typicode/json-server.
