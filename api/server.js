@@ -116,10 +116,44 @@ router.route('/users/:id')
 
 		});
 	})
+	.delete(function (req, res) {
+
+		var response = {};
+
+		//find data
+
+		mongoOp.findById (req.params.id, function (err, data) {
+
+			if (err) {
+
+				response = {'error' : true, 'message' : 'Error deleting data!'};
+
+			} else {
+
+				// data exist, remove it.
+
+				mongoOp.remove({ _id : req.params.id }, function (err) {
+
+					if (err) {
+
+						response = { 'error' : true, 'message' : 'Error deleting data.' };
+
+					} else {
+
+						response = { 'error' : true, 'message' : 'Data associated with ' + req.params.id + ' is deleted'};
+
+					}
+
+					res.json(response);
+
+				});
+			}
+		});
+	})
 
 app.use( '/', router );
-app.listen(3004);
-console.log('Listening to PORT 3004');
+app.listen(3005);
+console.log('Listening to PORT 3005');
 
 
 /** Terminal setUp for app
