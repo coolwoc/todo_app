@@ -58,6 +58,82 @@ router.route('/users')
 		});
 	})
 
+router.route('/users/:id')
+	.get(function ( req, res ) {
+
+		var response = {};
+
+		mongoOp.findById(req.params.id, function ( err, data ) {
+
+			//This will run Mongo Query to fetch Data.
+			if(err) {
+				response = { 'error' : true, 'message' : 'Error fetching data'};
+			} else {
+				response = { 'error' : false, 'message' : data };
+			}
+
+			res.json(response);
+
+		});
+	})
+	.put(function ( req, res ) {
+
+		var response = {};
+
+		// first find if record exist.
+		// if it does then update record
+
+		mongoOp.findById( req.params.id, function (err, data) {
+
+			if (err) {
+
+				response = {'error' : true, 'message' : 'Error fetching data!'};
+			} else {
+
+				if (req.body.username != undefined ) {
+					// case username needs to be updated.
+					data.username = req.body.username;
+				}
+				if ( req.body.userPassword != undefined ) {
+					//case where password needs to be updated.
+					data.userPassword = req.body.password;
+				}
+				// save the data
+				data.save (function (err) {
+
+					if (err) {
+
+						response = {'error': true, 'message' : 'Error updatubg data!'};
+
+					} else {
+
+						response = {'error': false, 'message' : 'Data is updated for ' + req.params.id};
+
+					}
+					res.json(response);
+				})
+			}
+
+		});
+	})
+
 app.use( '/', router );
-app.listen(3009);
-console.log('Listening to PORT 3009');
+app.listen(3004);
+console.log('Listening to PORT 3004');
+
+
+/** Terminal setUp for app
+
+	mongod --dbpath /Users/Shahid/Desktop/mongoData
+
+	new tab. Run:
+	mongo
+
+
+	dataBase -- db_todoApi
+
+	run node with:
+	npm start
+
+
+**/
