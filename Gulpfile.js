@@ -57,15 +57,12 @@ gulp.task('sass', function() {
     return gulp.src(PATHS.sass)
         .pipe(plumber({ errorHandler: onError}))
         .pipe(sourcemaps.init())
-        .pipe(sass({  sourcemap: true, style: 'expanded' }))
+        .pipe(sass({sourcemap: true, style: 'expanded' }))
         .on("error", notify.onError("SASS: <%= error.message %>"))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
-        .pipe(gulp.dest('css/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('css/'))
         .pipe(reload({stream: true}))
-        .pipe(sourcemaps.write())
         .pipe(notify({ message: 'Styles task complete' }));
 });
 

@@ -14,8 +14,14 @@ GULP, SASS and AngularJS
 		[] Next 7 days tasks.
 		[] Daily tasks.
 
+	** Important ** 
+	you need to run the server for data in db.json
+	I have been using json-server. Find it at https://github.com/typicode/json-server.
+
 • [ working branch ] -> authen
 
+	[RESTful API] -> NODE AND MONGODB
+ 
 	[re-thing application arquitecture]
 
 	[html + CSS] - add google material design template.
@@ -24,6 +30,3 @@ GULP, SASS and AngularJS
 	[user app delegation]
 
 
-** Important ** 
-you need to run the server for data in db.json
-I have been using json-server. Find it at https://github.com/typicode/json-server.
