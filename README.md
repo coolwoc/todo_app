@@ -25,7 +25,7 @@ GULP, SASS and AngularJS
 	[re-thing application arquitecture]
 
 	[html + CSS] - add google material design template.
-	[webServer] - Using node.js and express
+
 	[authentication] - angular JWT token.
 	[user app delegation]
 
