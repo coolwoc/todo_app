@@ -27,13 +27,9 @@ GULP, SASS and AngularJS
 	[RESTful API] -> NODE AND MONGODB
  
 	[re-thing application arquitecture]
+	[APIRest] - Using node.js and express
 
 	[html + CSS] - add google material design template.
-	[APIRest] - Using node.js and express
 	[authentication] - angular JWT token.
 	[user app delegation]
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 64f924ab0b18685a0ebad3eedfa528796a6a3190
