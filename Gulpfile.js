@@ -58,15 +58,12 @@ gulp.task('sass', function() {
     return gulp.src(PATHS.sass)
         .pipe(plumber({ errorHandler: onError}))
         .pipe(sourcemaps.init())
-        .pipe(sass({  sourcemap: true, style: 'expanded' }))
+        .pipe(sass({sourcemap: true, style: 'expanded' }))
         .on("error", notify.onError("SASS: <%= error.message %>"))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
-        .pipe(gulp.dest('css/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest('css/'))
-        .pipe(reload({stream: true}))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest('src/css/'))
+        .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
@@ -120,6 +117,9 @@ gulp.task('server', ['sass'], function() {
     // watch sass + HTML injection.
     gulp.watch(PATHS.allsass, ['sass']);
     gulp.watch(PATHS.allHTML).on('change', reload);
+
+    // watch hintFiles
+    gulp.watch(PATHS.hintFiles,['jshint']);
     
 });
 

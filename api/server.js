@@ -1,173 +1,125 @@
+'use strict';
+
+// get packages.
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var mongoOp = require('./models/mongo');
-var router = express.Router();
+var morgan = require('morgan');
+var mongoose = require('mongoose');
 
+var jwt = require('jsonwebtoken');
+var config = require('./config');
+var User = require('./models/user');
+
+// configuration
+var port = process.env.PORT || 8080;
+mongoose.connect(config.database);
+app.set('superSecret', config.secret);
+
+// body parser POST / URL
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ 'extended' : false }));
 
-router.get('/', function ( req, res ) {
-	res.json({ 'error': false, 'message' : 'up and running!' });
+// use morgan to log
+app.use(morgan('dev'));
+
+// basic Route
+app.get('/', function(req, res) {
+	res.send('Api running! http://localhost:' + port + '/api');
 });
 
-router.route('/users')
-	.get(function (req, res) {
+app.get('/setup', function(req, res) {
 
-		var response = {};
+	var nick = new User({
+		name: 'Nick',
+		password: 'password',
+		admin: true
+	});
 
-		mongoOp.find({}, function (err, data) {
+	// save the sample
+	nick.save(function(err) {
 
-			if (err) {
+		if (err) throw err;
 
-				response = {'error' : true, 'message' : 'Error fetching data'};
+		console.log('user saved succesfully!');
+		res.json({ success: true });
 
-			} else {
+	});
 
-				response = {'error': false, 'message' : data};
-			}
+});
 
-			res.json(response);
+// API basic setUp
+var apiRoutes = express.Router();
 
-		});
-	})
-	.post( function (req, res) {
+apiRoutes.get('/', function(req, res) {
+	res.json({ message: 'Welcome to todo-app API' });
+});
 
-		var db = new mongoOp();
-		var response = {};
+apiRoutes.get('/users', function(req, res) {
 
-		// fech username and password from REST request
-		// add strict validation whe  you use this in production
+	User.find({}, function(err, users) {
+		res.json(users);
+	});
 
-		db.username = req.body.username;
-		// Hass the password using SHA1 algorithm.
-		db.userPassword = require('crypto')
-							.createHash('sha1')
-							.update(req.body.password)
-							.digest('base64');
+});
 
-		db.save( function (err) {
-			// save() will run insert() command in MongoDB
-			// it will add new data in collection
-			if(err) {
-				response = { 'error' : true, 'message' : 'Error adding data' };
-			} else {
-				response = { 'error' : false, 'message' : 'Data added' };
-			}
-			res.json(response);
-		});
-	})
+app.use('/api', apiRoutes);
 
-router.route('/users/:id')
-	.get(function ( req, res ) {
+// API ROUTES
+var apiRoutes = express.Router();
 
-		var response = {};
+// route authentication user
+// POST http://localhost:8080/api/authenticate
 
-		mongoOp.findById(req.params.id, function ( err, data ) {
+apiRoutes.post('/authenticate', function(req, res) {
 
-			//This will run Mongo Query to fetch Data.
-			if(err) {
-				response = { 'error' : true, 'message' : 'Error fetching data'};
-			} else {
-				response = { 'error' : false, 'message' : data };
-			}
+	User.findOne({
 
-			res.json(response);
+		name: req.body.name
 
-		});
-	})
-	.put(function ( req, res ) {
+	}, function (err, user) {
 
-		var response = {};
+		if(err) throw err;
 
-		// first find if record exist.
-		// if it does then update record
+		if(!user) {
 
-		mongoOp.findById( req.params.id, function (err, data) {
+			console.log('nopeUser!');
 
-			if (err) {
+			res.json({ success: false, message: 'Authentication failed. User not found.' })
 
-				response = {'error' : true, 'message' : 'Error fetching data!'};
-			} else {
+		} else if (user) {
 
-				if (req.body.username != undefined ) {
-					// case username needs to be updated.
-					data.username = req.body.username;
-				}
-				if ( req.body.userPassword != undefined ) {
-					//case where password needs to be updated.
-					data.userPassword = req.body.password;
-				}
-				// save the data
-				data.save (function (err) {
+			console.log('yeapUser!');
 
-					if (err) {
+			if (user.password != req.body.password) {
 
-						response = {'error': true, 'message' : 'Error updatubg data!'};
-
-					} else {
-
-						response = {'error': false, 'message' : 'Data is updated for ' + req.params.id};
-
-					}
-					res.json(response);
-				})
-			}
-
-		});
-	})
-	.delete(function (req, res) {
-
-		var response = {};
-
-		//find data
-
-		mongoOp.findById (req.params.id, function (err, data) {
-
-			if (err) {
-
-				response = {'error' : true, 'message' : 'Error deleting data!'};
+				res.json({ success: false, message: 'Authentication failed. Wrong password' });
 
 			} else {
 
-				// data exist, remove it.
+				// if user is found and password match.
+				// create token for authentication
 
-				mongoOp.remove({ _id : req.params.id }, function (err) {
+				//var temp = {name:user.name, password:user.password}
+				var token = jwt.sign(user, app.get('superScret'), {
 
-					if (err) {
-
-						response = { 'error' : true, 'message' : 'Error deleting data.' };
-
-					} else {
-
-						response = { 'error' : true, 'message' : 'Data associated with ' + req.params.id + ' is deleted'};
-
-					}
-
-					res.json(response);
+					expiresInMinutes: 1440 // expires in 24hrs.
 
 				});
+
+				// return information including token as JSON.
+
+				res.json({
+					success: true,
+					message: 'we done it!',
+					token: token
+				});
 			}
-		});
-	})
+		}
+	});
+});
 
-app.use( '/', router );
-app.listen(3005);
-console.log('Listening to PORT 3005');
-
-
-/** Terminal setUp for app
-
-	mongod --dbpath /Users/Shahid/Desktop/mongoData
-
-	new tab. Run:
-	mongo
-
-
-	dataBase -- db_todoApi
-
-	run node with:
-	npm start
-
-
-**/
+// server starts.
+app.listen(port);
+console.log('Magic happens always!');

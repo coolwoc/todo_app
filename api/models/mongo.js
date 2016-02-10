@@ -6,8 +6,15 @@ var mongoSchema = mongoose.Schema;
 
 // create schema
 var userSchema = {
+	
+	'id' : Number,
 	'username' : String,
-	'password' : String
+	'firstname' : String,
+	'lastname' : String,
+	'password' : String,
+	'email': String,
+	'role' : String
+
 };
 
 // create model if not exist.

@@ -3,15 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "Server.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": ""
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "author": "M Pia Gamon",
   "license": "ISC",
   "bugs": {
@@ -19,8 +16,11 @@
   },
   "homepage": "",
   "dependencies": {
-    "body-parser": "^1.13.3",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "mongoose": "^4.1.2"
+    "jsonwebtoken": "^5.4.1",
+    "mongoose": "^4.2.9",
+    "morgan": "^1.6.1"
   }
 }
