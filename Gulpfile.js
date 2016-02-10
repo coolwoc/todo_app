@@ -62,7 +62,11 @@ gulp.task('sass', function() {
         .on("error", notify.onError("SASS: <%= error.message %>"))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
         .pipe(sourcemaps.write())
+<<<<<<< HEAD
         .pipe(gulp.dest('src/css/'))
+=======
+        .pipe(gulp.dest('css/'))
+>>>>>>> 64f924ab0b18685a0ebad3eedfa528796a6a3190
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
 });

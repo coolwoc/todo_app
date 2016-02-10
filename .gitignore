@@ -5,5 +5,10 @@ data.json
 dataCast.json
 icons.html
 node_modules
+<<<<<<< HEAD
 mongoData
 npm-debug.log
+=======
+api
+app
+>>>>>>> 64f924ab0b18685a0ebad3eedfa528796a6a3190
