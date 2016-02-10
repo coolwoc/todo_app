@@ -169,7 +169,7 @@ router.route('/users/:id')
 
 
 app.use( '/', router );
-app.listen(3001);
+app.listen(3000);
 console.log('Listening to PORT 3001');
 
 
