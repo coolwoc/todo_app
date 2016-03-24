@@ -65,6 +65,16 @@ gulp.task('sass', function() {
         .pipe(reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
 });
+    
+gulp.task('sass:concate', function() {
+return gulp.src(['css/main.css','src/css/bundle.css'])
+        .pipe(minifycss())
+        .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
+        .pipe(concat('main.min.css'))
+        .pipe(gulp.dest('css/'))
+        .pipe(notify({message: 'Prod: css conc & minify'}));
+});
+
 
 // Task JSHINT
 gulp.task('jshint', function() {
@@ -129,7 +139,7 @@ gulp.task('server', ['sass', 'concate'], function() {
 });
 
 // gulp Task
-gulp.task('dev', ['clean','jshint','watch','sass','concate']);
+gulp.task('dev', ['clean','jshint','watch','sass','concate', 'sass:concate']);
 gulp.task('prod', ['clean','sass','js']);
 
 gulp.task('default',['server']);
