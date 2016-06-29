@@ -211,14 +211,13 @@
       "id": 19
     },
     {
+      "id": 20,
       "project": "gggg",
       "label": "medium",
-      "username": "guest",
       "dateNum": "2015-11-14T22:00:00.000Z",
       "headerComment": "ssss",
       "comment": "ssss",
-      "done": false,
-      "id": 20
+      "done": false
     }
   ]
 }

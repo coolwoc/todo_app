@@ -74,7 +74,7 @@
 			return Alltasks;	
 		};
 
-		return $resource(apibase + '/task/:id', {id:'@id'}, 
+		return $resource(apibase + '/task/:id/', {id:'@id'}, 
 		{
 			
 			'get':    {method:'GET', transformResponse: dateJson },

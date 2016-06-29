@@ -40,6 +40,13 @@
 		edittodoController.idEdit = editId[0];
 		edittodoController.task = Alltasks.get({},{'id': editId[0]});
 
+		console.log(edittodoController.task);
+
+		edittodoController.task.$promise.then(function(data){
+			console.log(data);
+			console.log(data.comment);
+		});
+
 		edittodoController.editTask = function() {
 			
 			edittodoController.newTask = {
