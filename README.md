@@ -12,7 +12,7 @@ GULP, SASS and AngularJS
 		[] Daily tasks.
 
 	** Important ** 
-	you need to run the server for data in db.json
-	I have been using json-server. Find it at https://github.com/typicode/json-server.
+	I have been using json-server. 
+	https://github.com/typicode/json-server.
 
 
