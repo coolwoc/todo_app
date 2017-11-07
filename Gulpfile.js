@@ -36,6 +36,13 @@ var PATHS = {
         'js/service/global.js',
         'js/service/filters.js',
         'html/**/*.js'],
+    js: [
+        'js/main.js',
+        'js/modules/*.js',
+        'js/service/global.js',
+        'js/service/filters.js',
+        'html/**/*.js'
+    ],
     jsmin: ['js/main.min.js']
 };
 
@@ -100,6 +107,3 @@ gulp.task('server', ['sass', 'js-watch'], function() {
 
 // gulp Task
 gulp.task('dev', ['server']);
-
-
-
