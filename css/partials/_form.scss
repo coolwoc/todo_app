@@ -93,6 +93,11 @@ form {
 		label {
 			display: none;
 		}
+        .help-block {
+            padding-top: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
 		input {
 			width: 100%;
 			border: 1px solid $orange;
@@ -120,7 +125,7 @@ form {
 		   color: $orange;
 		}
 	}
-	button[type='button'],
+	.btn.resetBtn,
 	button[type='submit'] {
 		color: $white;
 		border: none;
