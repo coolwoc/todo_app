@@ -1,5 +1,5 @@
 # todo_app
-GULP, SASS and AngularJS 
+GULP, SASS and Angular 1.3
 
 	The user can register and login.
 	The user can add tasks.
@@ -14,5 +14,3 @@ GULP, SASS and AngularJS
 	** Important ** 
 	I have been using json-server. 
 	https://github.com/typicode/json-server.
-
-
