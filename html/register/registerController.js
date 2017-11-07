@@ -28,15 +28,17 @@
             Login.save(registerController.dataRegister);
             
             // clear form
-            registerController = {};
+            registerController.dataRegister = {};
 
+            // state to login
             $state.go('login');
 
 		};
 
         registerController.resetForm = function() {
+
             // clear form
-            registerController = {};
+            $('form').find('input').val('');
 
         };
 	}
