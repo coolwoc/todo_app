@@ -1,24 +1,24 @@
 <section class="formLogin">
 
-	<form name="login.formLogin" ng-submit="login.submitLogin()" novalidate>
+	<form name="formLogin" ng-submit="login.submitLogin()" novalidate>
 
 		<fieldset>
 
 			<legend>Login To-Do app</legend>
 
-			<div class="formGroup" ng-class="{'hasError': login.username.$invalid && login.username.$pristine}">
+			<div class="formGroup" ng-class="{'hasError': formLogin.username.$invalid && !formLogin.username.$pristine}">
 				<label for="name">Enter your username</label>
-				<input type="text" name="username" placeholder="Sign-up with username" ng-model="login.username">
+				<input type="text" name="username" placeholder="Sign-up with username" ng-model="login.username" required>
+                <p ng-show="formLogin.username.$invalid && !formLogin.username.$pristine" class="help-block">The username is required</p>
 			</div>
 
-			<div class="formGroup" ng-class="{'hasError': login.password.$invalid && login.password.$pristine}">
+			<div class="formGroup" ng-class="{'hasError': formLogin.password.$invalid && !formLogin.password.$pristine}">
 				<label for="password">Enter your password</label>
-				<input type="password" name="password" placeholder="Enter password" ng-model="login.password">
+				<input type="password" name="password" placeholder="Enter password" ng-model="login.password" required>
+                <p ng-show="formLogin.password.$invalid && !formLogin.password.$pristine" class="help-block">The password is required</p>
 			</div>
 
-			<p class="errorLogin">{{login.errorData}}</p>
-
-			<button type="submit" ng-disabled="login.formLogin.$invalid">LogIn</button>
+			<button type="submit" ng-disabled="formLogin.$invalid">LogIn</button>
 
 		</fieldset>
 

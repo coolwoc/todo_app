@@ -23,7 +23,7 @@
 				$localStorage.username = loginController.username;
 
 				// clearBrowser before load next page.
-				$('.formLogin').empty();
+				loginController.userlogin = {};
 
 				// re-direct to main app.
 				$state.go('app');
