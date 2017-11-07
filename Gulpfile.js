@@ -29,8 +29,13 @@ var gulp = require('gulp'),
 var PATHS = {
     sass: ['css/*.scss'],
     allsass: ['css/**/*.scss'],
-    jsALL: ['js/vendor/*.js','js/main.js','js/modules/*.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
-    hintFiles: [ 'js/main.js','js/service/global.js','js/service/filters.js','html/**/*.js'],
+    jsALL: [
+        'js/vendor/*.js',
+        'js/main.js',
+        'js/modules/*.js',
+        'js/service/global.js',
+        'js/service/filters.js',
+        'html/**/*.js'],
     jsmin: ['js/main.min.js']
 };
 
@@ -49,36 +54,18 @@ var AUTOPREFIXER_BROWSER = [
 // Task SASS
 gulp.task('sass', function() {
     return gulp.src(PATHS.sass)
-        .pipe(plumber({ errorHandler: onError}))
         .pipe(sourcemaps.init())
-        .pipe(sass({sourcemap: true, style: 'expanded' }))
+        .pipe(sass({
+            style: 'expanded'
+        }))
         .on("error", notify.onError("SASS: <%= error.message %>"))
         .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('css/'))
-        .pipe(reload({stream: true}))
-        .pipe(notify({ message: 'Styles task complete' }));
-});
-    
-gulp.task('sass:concate', function() {
-return gulp.src(['css/main.css','src/css/bundle.css'])
-        .pipe(minifycss())
-        .pipe(autoprefixer(AUTOPREFIXER_BROWSER))
-        .pipe(concat('main.min.css'))
-        .pipe(gulp.dest('css/'))
-        .pipe(notify({message: 'Prod: css conc & minify'}));
+        .pipe(reload({stream: true}));
 });
 
-
-// Task JSHINT
-gulp.task('jshint', function() {
-  return gulp.src(PATHS.hintFiles)
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(notify({message: 'JSHINT task compteted'}));
-});
-
-// Task MINIFY + CONCATENATE
+// Task concatenate & minify JS
 gulp.task('js', function(){
     return gulp.src(PATHS.jsALL)
         .pipe(plumber({errorHandler: onError}))
@@ -89,53 +76,30 @@ gulp.task('js', function(){
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('js/'))
-        .pipe(notify({message: 'MINIFY & CONCATENATE tasks complete'}));
+        .pipe(notify({message: 'CONCATENATE & Minify tasks complete'}));
 });
 
-// Task CONCAT
-gulp.task('concate', function() { 
-    return gulp.src(PATHS.jsALL)
-        .pipe(plumber({errorHandler: onError}))
-        .pipe(sourcemaps.init())
-        .pipe(concat('main.js',{newLine:';'}))
-        .pipe(ngAnnotate({add:true}))
-        .pipe(sourcemaps.write())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('js/'))
-        .pipe(notify({message: 'CONCATENATE task complete'}));
-});
-
-gulp.task('clean', function(){
-    del(PATHS.jsmin);
-});
-
-// Watch Task
-gulp.task('watch', function(){
-
-    gulp.watch(PATHS.allsass,['sass']);
-    //gulp.watch(PATHS.jsALL,['js']);
-    gulp.watch(PATHS.jsALL,['concate']);
-    gulp.watch(PATHS.hintFiles,['jshint']);
-
+gulp.task('js-watch',['js'], function(done) {
+    browserSync.reload();
+    done()
 });
 
 // Server
-gulp.task('server', ['sass', 'concate'], function() {
+gulp.task('server', ['sass', 'js-watch'], function() {
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
 
-    // sass
+    // watches
     gulp.watch(PATHS.allsass, ['sass']);
+    gulp.watch(PATHS.jsALL,['js-watch']);
     
 });
 
 // gulp Task
-gulp.task('dev', ['clean','jshint','watch','sass','concate', 'sass:concate']);
-gulp.task('prod', ['clean','sass','js']);
+gulp.task('dev', ['server']);
 
-gulp.task('default',['server']);
 
 
