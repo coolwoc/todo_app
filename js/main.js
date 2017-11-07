@@ -27,17 +27,8 @@
 	.constant('apiversion', '/v1.0')
 
 	.config(config);
-	//.run(run);
 
-	function config($urlRouterProvider, $httpProvider, $stateProvider) {
-
-		$resourceProvider.defaults.stripTrailingSlashes = false;
-
-        // ui-Router.
-        $locationProvider.html5Mode(true);
-        
-        $urlRouterProvider.otherwise('/');
-
+	function config( $urlRouterProvider, $httpProvider, $stateProvider ) {
 		$stateProvider
 			.state('login', {
 				url:'',
@@ -81,8 +72,15 @@
 							roleUser: true,
 							roleGuest: true
 						}
-					}
+					},
+                    'utilities@app': {
+                        templateUrl: 'html/utilities/utilities.index.html',
+                        controller: 'UtilitiesController',
+                        controllerAs: 'utilities'
+                    }
 				}
 			});
+
+        $urlRouterProvider.otherwise('/');
 	}
 })();
