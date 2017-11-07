@@ -30,7 +30,7 @@
             // clear form
             registerController = {};
 
-            $state.go('app');
+            $state.go('login');
 
 		};
 
