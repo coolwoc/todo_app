@@ -11,38 +11,34 @@
 
 		registerController.submitRegister = function() {
 
-			if (registerController.formRegister.$valid) {
+            registerController.dataRegister = {};
 
-				registerController.dataRegister = {};
+            registerController.dataRegister = {
 
-				registerController.dataRegister = {
+                firstName: registerController.firstName,
+                lastName: registerController.lastName,
+                username: registerController.username,
+                mail: registerController.mail,
+                password: registerController.password,
+                role: 'user'
 
-					firstName: registerController.firstName,
-					lastName: registerController.lastName,
-					username: registerController.username,
-					mail: registerController.mail,
-					password: registerController.password,
-					role: 'user'
+            };
 
-				};
+            // Save data in fake-db.json
+            Login.save(registerController.dataRegister);
+            
+            // clear form
+            registerController = {};
 
-				Login.save(registerController.dataRegister);
-				
-				$('.formLogin').empty();
+            $state.go('app');
 
-				$state.go('app');
-
-			} else {
-
-				registerController.errorData = 'All fields are required';
-
-			}
 		};
 
-		registerController.resetVal = function() {
-			$('form').find('input').val('');
-		};
+        registerController.resetForm = function() {
+            // clear form
+            registerController = {};
 
+        };
 	}
 
 })();

@@ -1,38 +1,43 @@
 <section class="formLogin">
 	
-	<form name="register.formRegister" ng-submit="register.submitRegister()" role="form" novalidate>
+	<form name="formRegister" ng-submit="register.submitRegister()" role="form" novalidate>
 		
 		<fieldset>
 			
 			<legend>User Registration</legend>
 
-			<div class="formGroup" ng-class="{ 'has-error': register.firstName.$invalid && register.firstName.$pristine }">
+			<div class="formGroup" ng-class="{ 'has-error': formRegister.firstName.$invalid && !formRegister.firstName.$pristine }">
 	            <label for="firstName">First name</label>
-	            <input type="text" name="firstName" id="firstName" placeholder="Firstname required." ng-model="register.firstName" required />
+	            <input type="text" name="firstName" placeholder="Firstname required." ng-model="register.firstName" required />
+                <p ng-show="formRegister.firstName.$invalid && !formRegister.firstName.$pristine" class="help-block">The first name is required</p>
 	        </div>
-	        <div class="formGroup" ng-class="{ 'has-error': register.lastName.$invalid && register.lastName.$pristine }">
+	        <div class="formGroup" ng-class="{ 'has-error': formRegister.lastName.$invalid && !formRegister.lastName.$pristine }">
 	            <label for="lastName">Last name</label>
-	            <input type="text" name="lastName" id="Text1" placeholder="Lastname required." ng-model="register.lastName" required />
+	            <input type="text" name="lastName" placeholder="Lastname required." ng-model="register.lastName" required />
+                <p ng-show="formRegister.lastName.$invalid && !formRegister.lastName.$pristine" class="help-block">The last name is required</p>
 	        </div>
-	        <div class="formGroup" ng-class="{ 'has-error': register.username.$invalid && register.username.$pristine }">
+	        <div class="formGroup" ng-class="{ 'has-error': formRegister.username.$invalid && !formRegister.username.$pristine }">
 	            <label for="username">Username</label>
-	            <input type="text" name="username" id="username" placeholder="Username required." ng-model="register.username" required />
+	            <input type="text" name="username" placeholder="Username required." ng-model="register.username" required />
+                <p ng-show="formRegister.username.$invalid && !formRegister.username.$pristine" class="help-block">The username is required</p>
 	        </div>
 
-	        <div class="formGroup" ng-class="{ 'has-error': register.mail.$invalid && register.mail.$pristine }">
+	        <div class="formGroup" ng-class="{ 'has-error': formRegister.mail.$invalid && !formRegister.mail.$pristine }">
 	            <label for="mail">Email</label>
-	            <input type="email" name="mail" id="mail" placeholder="Email required." ng-model="register.mail" required />
+	            <input type="email" name="mail" placeholder="Email required." ng-model="register.mail" required />
+                <p ng-show="formRegister.mail.$invalid && !formRegister.mail.$pristine" class="help-block">The email is required</p>
 	        </div>
 
-	        <div class="formGroup" ng-class="{ 'has-error': register.password.$invalid && register.password.$pristine }">
+	        <div class="formGroup" ng-class="{ 'has-error': formRegister.password.$invalid && !formRegister.password.$pristine }">
 	            <label for="password">Password</label>
-	            <input type="password" name="password" id="password" placeholder="Password required." ng-model="register.password" required />
+	            <input type="password" name="password" placeholder="Password required." ng-model="register.password" required />
+                <p ng-show="formRegister.password.$invalid && !formRegister.password.$pristine" class="help-block">The password is required</p>
 	        </div>
 
 	        <p class="errorLogin">{{register.errorData}}</p>
 
-	        <button type="submit"  class="btn" ng-disabled="register.formRegister.$invalid">Register</button>
-	        <button type="button" class="btn" ng-click="register.resetVal()">Reset</button>
+            <button type="submit" class="btn" ng-disabled="register.formRegister.$invalid">Register</button>
+            <button type="button" class="btn resetBtn" ng-click="register.resetForm()">Reset</button>
 
 		</fieldset>
 
