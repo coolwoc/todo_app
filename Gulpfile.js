@@ -43,13 +43,7 @@ var onError = function(err) {
 
 // Definition for autoprefixer.
 var AUTOPREFIXER_BROWSER = [
-    'last 3 versions',
-    'ie >= 8 ',
-    'safari 5',
-    'opera 12.1',
-    'ios >= 7',
-    'android >= 4.4',
-    'bb >= 10'
+    'last 3 versions'
 ];
 
 // Task SASS
